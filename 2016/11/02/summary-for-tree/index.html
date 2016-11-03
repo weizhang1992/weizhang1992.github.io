@@ -3,14 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>summary for tree | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="分类总结之Treebasic knowledge
+search/traversal:
+
+preOrder: 
+
+recursion: 
+12345678public void preOrder(Node root) &amp;#123;    if (root == null) &amp;#123;        return;     &amp;#125;    visit(root);    preOrder(roo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="summary for tree">
+<meta property="og:url" content="http://yoursite.com/2016/11/02/summary-for-tree/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="分类总结之Treebasic knowledge
+search/traversal:
+
+preOrder: 
+
+recursion: 
+12345678public void preOrder(Node root) &amp;#123;    if (root == null) &amp;#123;        return;     &amp;#125;    visit(root);    preOrder(roo">
+<meta property="og:updated_time" content="2016-11-03T03:55:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="summary for tree">
+<meta name="twitter:description" content="分类总结之Treebasic knowledge
+search/traversal:
+
+preOrder: 
+
+recursion: 
+12345678public void preOrder(Node root) &amp;#123;    if (root == null) &amp;#123;        return;     &amp;#125;    visit(root);    preOrder(roo">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,77 +81,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-summary-for-Array-Sort" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/02/summary-for-Array-Sort/" class="article-date">
-  <time datetime="2016-11-03T03:54:36.000Z" itemprop="datePublished">2016-11-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/02/summary-for-Array-Sort/">summary for Array Sort</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="分类总结之Array-amp-Sort"><a href="#分类总结之Array-amp-Sort" class="headerlink" title="分类总结之Array &amp; Sort"></a>分类总结之Array &amp; Sort</h1><h2 id="Sorting-knowledge"><a href="#Sorting-knowledge" class="headerlink" title="Sorting knowledge"></a>Sorting knowledge</h2><h4 id="old-fashion-sort"><a href="#old-fashion-sort" class="headerlink" title="old fashion sort:"></a>old fashion sort:</h4><ul>
-<li>bubble sort</li>
-<li>select sort</li>
-<li>insert sort</li>
-</ul>
-<h4 id="compare-based-sort"><a href="#compare-based-sort" class="headerlink" title="compare based sort:"></a>compare based sort:</h4><ol>
-<li><p>merge sort:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//t: O(nlogn), s: O(n)</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</div><div class="line">    mergeSort(arr, <span class="keyword">new</span> <span class="keyword">int</span>[arr.length], <span class="number">0</span>, arr.length - <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span>[] temp, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (l &lt; r) &#123;</div><div class="line">        <span class="keyword">int</span> m = (l + r) / <span class="number">2</span>;</div><div class="line">        mergeSort(arr, temp, l, m);</div><div class="line">        mergeSort(arr , temp, m + <span class="number">1</span>, r);</div><div class="line">        merge(arr, l, m, r, temp);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> m, <span class="keyword">int</span> r, <span class="keyword">int</span>[] temp)</span> </span>&#123;</div><div class="line">   <span class="keyword">int</span> n1 = m - l + <span class="number">1</span>;</div><div class="line">   <span class="keyword">int</span> n2 = r - m;</div><div class="line"></div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= m; ++i) &#123;</div><div class="line">       temp[i] = arr[i];</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> j = m + <span class="number">1</span>; j &lt;= r; ++j) &#123;</div><div class="line">       temp[j] = arr[j];</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="keyword">int</span> i = l, j = m + <span class="number">1</span>, k = l;</div><div class="line">   <span class="keyword">while</span> (i &lt; m + <span class="number">1</span> &amp;&amp; j &lt; r + <span class="number">1</span>) &#123;</div><div class="line">       <span class="keyword">if</span> (temp[i] &lt;= temp[j]) &#123;</div><div class="line">           arr[k++] = temp[i++];</div><div class="line">       &#125; <span class="keyword">else</span> &#123;</div><div class="line">           arr[k++] = temp[j++];</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">while</span> (i &lt; m + <span class="number">1</span>) &#123;</div><div class="line">       arr[k++] = temp[i++];</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="keyword">while</span> (j &lt; r + <span class="number">1</span>) &#123;</div><div class="line">       arr[k++] = temp[j++];</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>quick sort:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//t: O(nlogn), s: O(1)</span></div><div class="line"><span class="comment">//unstable</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] n)</span> </span>&#123;</div><div class="line">    quickSort(n, <span class="number">0</span>, n.length - <span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] n, <span class="keyword">int</span> l, <span class="keyword">int</span> h)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (l &lt; h) &#123;</div><div class="line">        <span class="keyword">int</span> pivotIndex = partition(n, l, h);</div><div class="line">        quickSort(n, l, pivotIndex - <span class="number">1</span>);</div><div class="line">        quickSort(n, pivotIndex + <span class="number">1</span>, h);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//this can also used for quick select</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span>[] n, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> pivot = start;</div><div class="line">    <span class="keyword">while</span> (start &lt;= end) &#123;</div><div class="line">        <span class="keyword">while</span> (start &lt;= end &amp;&amp; n[start] &lt;= n[pivot]) &#123;</div><div class="line">            start++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (start &lt;= end &amp;&amp; n[end] &gt; n[pivot]) &#123;</div><div class="line">            end--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (start &lt; end) &#123;</div><div class="line">            swap(n, start, end);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    swap(n, pivot, end);</div><div class="line">    <span class="keyword">return</span> end;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] n, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> temp = n[a];</div><div class="line">    n[a] = n[b];</div><div class="line">    n[b] = temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>quick select:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// find kth largest number in array</span></div><div class="line"><span class="comment">// avg O(n), worst case: O(n^2), rondomly choose pivot can reduce worst case prob</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> rank = nums.length - k;</div><div class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> hi = nums.length - <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (lo &lt; hi) &#123;</div><div class="line">        <span class="keyword">int</span> cur = partition(nums, lo, hi);</div><div class="line">        <span class="keyword">if</span>(cur &lt; rank) &#123;</div><div class="line">            lo = cur + <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cur &gt; rank) &#123;</div><div class="line">            hi = cur - <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> nums[rank];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Heapsort</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Queue q = <span class="keyword">new</span> PriorityQueue()</div></pre></td></tr></table></figure>
-</li>
-<li><p>external sort:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">/* </span></div><div class="line">   1.For example, for sorting 900 megabytes of data using only 100 megabytes of RAM:</div><div class="line">   2.Read 100 MB of the data in main memory and sort by some conventional method。 Write the sorted data to disk.</div><div class="line">   3.Read the first 10 MB (= 100MB / (9 chunks + 1)) of each sorted chunk into input buffers in main memory and allocate the remaining 10 MB for an output buffer. (In practice, it might provide better performance to make the output buffer larger and the input buffers slightly smaller.)</div><div class="line">   4.Perform a 9-way merge and store the result in the output buffer. Whenever the output buffer fills, write it to the final sorted file and empty it. Whenever any of the 9 input buffers empties, fill it with the next 10 MB of its associated 100 MB sorted chunk until no more data from the chunk is available. This is the key step that makes external merge sort work externally -- because the merge algorithm only makes one pass sequentially through each of the chunks, each chunk does not have to be loaded completely; rather, sequential parts of the chunk can be loaded as needed.</div><div class="line">   */</div><div class="line">Queue q = <span class="keyword">new</span> PriorityQueue()</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="non-compare-based-sort"><a href="#non-compare-based-sort" class="headerlink" title="non-compare based sort"></a>non-compare based sort</h4><ol>
-<li><p>count sort:<br>当输入的元素是n个0到k之间的整数时，它的运行时间是Θ(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。<br>example qustions: <a href="https://leetcode.com/problems/sort-characters-by-frequency/" target="_blank" rel="external">sort characters by frequency</a><br><strong>time</strong>: O(n + k)<br><strong>space</strong>: O(n + k)</p>
-</li>
-<li><p>radix sort:<br>排序过程：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。基数排序法将要排序的元素分配至 0~9 个桶。<br><strong>time</strong>:  O(wn) for n keys which are integers of word size w<br><strong>space</strong>: O(w + N)</p>
-</li>
-<li><p>bucket sort:<br>当使用count sort时, 数组里数值的范围太大怎么办。分范围count sort。<br><strong>time</strong>: O(N + NlogN - NlogM), M为桶的个数<br><strong>space</strong>: O(M)</p>
-</li>
-</ol>
-<hr>
-<h2 id="questions-and-thoughts"><a href="#questions-and-thoughts" class="headerlink" title="questions and thoughts"></a>questions and thoughts</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">?</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ1tmejk0000zh9z0as4z76g" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-summary-for-tree" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-summary-for-tree" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/02/summary-for-tree/" class="article-date">
   <time datetime="2016-11-03T03:54:26.000Z" itemprop="datePublished">2016-11-02</time>
@@ -142,8 +94,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/02/summary-for-tree/">summary for tree</a>
+    <h1 class="article-title" itemprop="name">
+      summary for tree
     </h1>
   
 
@@ -233,110 +185,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-summary-for-graph" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/02/summary-for-graph/" class="article-date">
-  <time datetime="2016-11-03T03:54:18.000Z" itemprop="datePublished">2016-11-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2016/11/02/summary-for-Array-Sort/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
         
+          summary for Array Sort
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/02/summary-for-graph/">summary for graph</a>
-    </h1>
   
+    <a href="/2016/11/02/summary-for-graph/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">summary for graph</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="分类总结之Graph"><a href="#分类总结之Graph" class="headerlink" title="分类总结之Graph"></a>分类总结之Graph</h1><h3 id="basic-knowledge"><a href="#basic-knowledge" class="headerlink" title="basic knowledge"></a>basic knowledge</h3><ul>
-<li>search/traverse:<ul>
-<li>dfs: <ul>
-<li>recursion: same memory cost as iterative way, stack memory .vs. heap memory</li>
-<li>iterative: stack</li>
-<li>time complexity: O(V + E)</li>
-<li>use case: Generate Maze</li>
-</ul>
-</li>
-<li>bfs:<ul>
-<li>recursion: no</li>
-<li>iterative: Queue</li>
-<li>time complexity: O(V + E)</li>
-<li>use case: Min distance</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>storage:<ul>
-<li>objects and pointers:</li>
-<li>matrix:</li>
-<li>adjacency list:</li>
-</ul>
-</li>
-</ul>
-<h3 id="undirected-graph"><a href="#undirected-graph" class="headerlink" title="undirected graph"></a><a href="http://algs4.cs.princeton.edu/41graph/" target="_blank" rel="external">undirected graph</a></h3><ul>
-<li>shortest path: BFS</li>
-<li>find Path(print path): </li>
-<li>cycle-detection: dfs, <a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank" rel="external">LC261:Graph Valid Tree</a></li>
-<li>connectivity<ul>
-<li>static: dfs, <a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank" rel="external">LC261:Graph Valid Tree</a>, bfs, <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/" target="_blank" rel="external">LC323:Number of Connected Components in an Undirected Graph</a></li>
-<li>dynamic: union find</li>
-</ul>
-</li>
-</ul>
-<h3 id="directed-graph"><a href="#directed-graph" class="headerlink" title="directed graph"></a><a href="http://algs4.cs.princeton.edu/42digraph/" target="_blank" rel="external">directed graph</a></h3><ul>
-<li>shortest path: BFS</li>
-<li>dependency: Topological sort: <a href="https://leetcode.com/problems/course-schedule/" target="_blank" rel="external">course schedule</a>, <a href="https://leetcode.com/problems/alien-dictionary/" target="_blank" rel="external">alien dictionary</a></li>
-<li>cycle-detection: <a href="http://www.geeksforgeeks.org/detect-cycle-in-a-graph/" target="_blank" rel="external">DFS</a></li>
-<li>connectivity<ul>
-<li>static: dfs</li>
-<li>dynamic: union find</li>
-</ul>
-</li>
-</ul>
-<h3 id="shortest-path-algorithm"><a href="#shortest-path-algorithm" class="headerlink" title="shortest path algorithm"></a><a href="https://en.wikipedia.org/wiki/Shortest_path_problem" target="_blank" rel="external">shortest path algorithm</a></h3><ul>
-<li>Dijkstra</li>
-<li>A*  </li>
-</ul>
-<h3 id="useful-data-structure"><a href="#useful-data-structure" class="headerlink" title="useful data structure"></a>useful data structure</h3><ul>
-<li><a href="http://www.cs.princeton.edu/courses/archive/spring07/cos226/lectures/01union-find.pdf" target="_blank" rel="external">union find</a>(for connectivity): <ul>
-<li><a href="http://www.geeksforgeeks.org/union-find/" target="_blank" rel="external">http://www.geeksforgeeks.org/union-find/</a></li>
-<li><a href="http://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/" target="_blank" rel="external">http://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/</a><ul>
-<li>quick find: </li>
-<li>quick union: </li>
-<li>weighted quick union: </li>
-<li>path compression:</li>
-<li>implementation:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeightedQuickUnionWithPC</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span>[] size;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span>[] id;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WeightedQuickUnionWithPC</span><span class="params">(<span class="keyword">int</span> length)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.count = length;</div><div class="line">        <span class="keyword">this</span>.id = <span class="keyword">new</span> <span class="keyword">int</span>[length];</div><div class="line">        <span class="keyword">this</span>.size = <span class="keyword">new</span> <span class="keyword">int</span>[length];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; ++i) &#123;</div><div class="line">            size[i] = <span class="number">1</span>;</div><div class="line">            id[i] = i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.count;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> parent(i) == parent(j);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> rootI = parent(i);</div><div class="line">        <span class="keyword">int</span> rootJ = parent(j);</div><div class="line">        <span class="keyword">if</span> (rootI == rootJ) <span class="keyword">return</span>;</div><div class="line">        <span class="comment">// make smaller root point to larger one</span></div><div class="line">        <span class="keyword">int</span> rootSmall = size[rootI] &lt; size[rootJ] ? rootI : rootJ;</div><div class="line">        <span class="keyword">int</span> rootLarge = size[rootI] &lt; size[rootJ] ? rootJ : rootI;</div><div class="line">        id[rootSmall] = rootLarge;</div><div class="line">        size[rootLarge] += size[rootSmall];</div><div class="line">        count--;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">parent</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> root = i;</div><div class="line">        <span class="keyword">while</span> (root != id[root]) &#123;</div><div class="line">            root = id[root];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (root != i) &#123;</div><div class="line">            <span class="keyword">int</span> old = id[i];</div><div class="line">            id[i] = root;</div><div class="line">            i = old;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> root;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Question-in-leetcode"><a href="#Question-in-leetcode" class="headerlink" title="Question in leetcode"></a>Question in leetcode</h3><h3 id="Question-in-mianjing"><a href="#Question-in-mianjing" class="headerlink" title="Question in mianjing"></a>Question in mianjing</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ1tmejo0001zh9zh6ditd3d" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         

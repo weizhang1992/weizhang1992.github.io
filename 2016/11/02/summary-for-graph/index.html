@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>summary for graph | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分类总结之Graphbasic knowledge
+search/traverse:
+dfs: 
+recursion: same memory cost as iterative way, stack memory .vs. heap memory
+iterative: stack
+time complexity: O(V + E)
+use case: Generate Maze
+
+
+bfs:
+r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="summary for graph">
+<meta property="og:url" content="http://yoursite.com/2016/11/02/summary-for-graph/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="分类总结之Graphbasic knowledge
+search/traverse:
+dfs: 
+recursion: same memory cost as iterative way, stack memory .vs. heap memory
+iterative: stack
+time complexity: O(V + E)
+use case: Generate Maze
+
+
+bfs:
+r">
+<meta property="og:updated_time" content="2016-11-03T03:55:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="summary for graph">
+<meta name="twitter:description" content="分类总结之Graphbasic knowledge
+search/traverse:
+dfs: 
+recursion: same memory cost as iterative way, stack memory .vs. heap memory
+iterative: stack
+time complexity: O(V + E)
+use case: Generate Maze
+
+
+bfs:
+r">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-summary-for-graph" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/02/summary-for-graph/" class="article-date">
+  <time datetime="2016-11-03T03:54:18.000Z" itemprop="datePublished">2016-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      summary for graph
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="分类总结之Graph"><a href="#分类总结之Graph" class="headerlink" title="分类总结之Graph"></a>分类总结之Graph</h1><h3 id="basic-knowledge"><a href="#basic-knowledge" class="headerlink" title="basic knowledge"></a>basic knowledge</h3><ul>
+<li>search/traverse:<ul>
+<li>dfs: <ul>
+<li>recursion: same memory cost as iterative way, stack memory .vs. heap memory</li>
+<li>iterative: stack</li>
+<li>time complexity: O(V + E)</li>
+<li>use case: Generate Maze</li>
+</ul>
+</li>
+<li>bfs:<ul>
+<li>recursion: no</li>
+<li>iterative: Queue</li>
+<li>time complexity: O(V + E)</li>
+<li>use case: Min distance</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>storage:<ul>
+<li>objects and pointers:</li>
+<li>matrix:</li>
+<li>adjacency list:</li>
+</ul>
+</li>
+</ul>
+<h3 id="undirected-graph"><a href="#undirected-graph" class="headerlink" title="undirected graph"></a><a href="http://algs4.cs.princeton.edu/41graph/" target="_blank" rel="external">undirected graph</a></h3><ul>
+<li>shortest path: BFS</li>
+<li>find Path(print path): </li>
+<li>cycle-detection: dfs, <a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank" rel="external">LC261:Graph Valid Tree</a></li>
+<li>connectivity<ul>
+<li>static: dfs, <a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank" rel="external">LC261:Graph Valid Tree</a>, bfs, <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/" target="_blank" rel="external">LC323:Number of Connected Components in an Undirected Graph</a></li>
+<li>dynamic: union find</li>
+</ul>
+</li>
+</ul>
+<h3 id="directed-graph"><a href="#directed-graph" class="headerlink" title="directed graph"></a><a href="http://algs4.cs.princeton.edu/42digraph/" target="_blank" rel="external">directed graph</a></h3><ul>
+<li>shortest path: BFS</li>
+<li>dependency: Topological sort: <a href="https://leetcode.com/problems/course-schedule/" target="_blank" rel="external">course schedule</a>, <a href="https://leetcode.com/problems/alien-dictionary/" target="_blank" rel="external">alien dictionary</a></li>
+<li>cycle-detection: <a href="http://www.geeksforgeeks.org/detect-cycle-in-a-graph/" target="_blank" rel="external">DFS</a></li>
+<li>connectivity<ul>
+<li>static: dfs</li>
+<li>dynamic: union find</li>
+</ul>
+</li>
+</ul>
+<h3 id="shortest-path-algorithm"><a href="#shortest-path-algorithm" class="headerlink" title="shortest path algorithm"></a><a href="https://en.wikipedia.org/wiki/Shortest_path_problem" target="_blank" rel="external">shortest path algorithm</a></h3><ul>
+<li>Dijkstra</li>
+<li>A*  </li>
+</ul>
+<h3 id="useful-data-structure"><a href="#useful-data-structure" class="headerlink" title="useful data structure"></a>useful data structure</h3><ul>
+<li><a href="http://www.cs.princeton.edu/courses/archive/spring07/cos226/lectures/01union-find.pdf" target="_blank" rel="external">union find</a>(for connectivity): <ul>
+<li><a href="http://www.geeksforgeeks.org/union-find/" target="_blank" rel="external">http://www.geeksforgeeks.org/union-find/</a></li>
+<li><a href="http://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/" target="_blank" rel="external">http://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/</a><ul>
+<li>quick find: </li>
+<li>quick union: </li>
+<li>weighted quick union: </li>
+<li>path compression:</li>
+<li>implementation:<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeightedQuickUnionWithPC</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span>[] size;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span>[] id;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WeightedQuickUnionWithPC</span><span class="params">(<span class="keyword">int</span> length)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.count = length;</div><div class="line">        <span class="keyword">this</span>.id = <span class="keyword">new</span> <span class="keyword">int</span>[length];</div><div class="line">        <span class="keyword">this</span>.size = <span class="keyword">new</span> <span class="keyword">int</span>[length];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; ++i) &#123;</div><div class="line">            size[i] = <span class="number">1</span>;</div><div class="line">            id[i] = i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.count;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> parent(i) == parent(j);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> rootI = parent(i);</div><div class="line">        <span class="keyword">int</span> rootJ = parent(j);</div><div class="line">        <span class="keyword">if</span> (rootI == rootJ) <span class="keyword">return</span>;</div><div class="line">        <span class="comment">// make smaller root point to larger one</span></div><div class="line">        <span class="keyword">int</span> rootSmall = size[rootI] &lt; size[rootJ] ? rootI : rootJ;</div><div class="line">        <span class="keyword">int</span> rootLarge = size[rootI] &lt; size[rootJ] ? rootJ : rootI;</div><div class="line">        id[rootSmall] = rootLarge;</div><div class="line">        size[rootLarge] += size[rootSmall];</div><div class="line">        count--;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">parent</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> root = i;</div><div class="line">        <span class="keyword">while</span> (root != id[root]) &#123;</div><div class="line">            root = id[root];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (root != i) &#123;</div><div class="line">            <span class="keyword">int</span> old = id[i];</div><div class="line">            id[i] = root;</div><div class="line">            i = old;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> root;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Question-in-leetcode"><a href="#Question-in-leetcode" class="headerlink" title="Question in leetcode"></a>Question in leetcode</h3><h3 id="Question-in-mianjing"><a href="#Question-in-mianjing" class="headerlink" title="Question in mianjing"></a>Question in mianjing</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ1tmejo0001zh9zh6ditd3d" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/02/summary-for-tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          summary for tree
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/02/summary-for-Array-Sort/">summary for Array Sort</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/summary-for-tree/">summary for tree</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/02/summary-for-graph/">summary for graph</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
