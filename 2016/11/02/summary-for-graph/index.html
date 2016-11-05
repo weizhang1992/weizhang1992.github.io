@@ -11,11 +11,7 @@ dfs:
 recursion: same memory cost as iterative way, stack memory .vs. heap memory
 iterative: stack
 time complexity: O(V + E)
-use case: Generate Maze
-
-
-bfs:
-r">
+use case: Generate Maze, check i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="summary for graph">
 <meta property="og:url" content="http://yoursite.com/2016/11/02/summary-for-graph/index.html">
@@ -26,12 +22,8 @@ dfs:
 recursion: same memory cost as iterative way, stack memory .vs. heap memory
 iterative: stack
 time complexity: O(V + E)
-use case: Generate Maze
-
-
-bfs:
-r">
-<meta property="og:updated_time" content="2016-11-04T04:31:50.000Z">
+use case: Generate Maze, check i">
+<meta property="og:updated_time" content="2016-11-05T04:47:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summary for graph">
 <meta name="twitter:description" content="分类总结之Graphbasic knowledge
@@ -40,11 +32,7 @@ dfs:
 recursion: same memory cost as iterative way, stack memory .vs. heap memory
 iterative: stack
 time complexity: O(V + E)
-use case: Generate Maze
-
-
-bfs:
-r">
+use case: Generate Maze, check i">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -121,29 +109,29 @@ r">
 <li>recursion: same memory cost as iterative way, stack memory .vs. heap memory</li>
 <li>iterative: stack</li>
 <li>time complexity: O(V + E)</li>
-<li>use case: Generate Maze</li>
+<li>use case: Generate Maze, check if exist a path, print path, cycle detection</li>
 </ul>
 </li>
 <li>bfs:<ul>
 <li>recursion: no</li>
-<li>iterative: Queue</li>
+<li>iterative: Queue or rolling array</li>
 <li>time complexity: O(V + E)</li>
-<li>use case: Min distance</li>
+<li>use case: Min distance(only deal with weight = 1), <strong>multi-end bfs</strong> to solve <a href="https://leetcode.com/problems/shortest-distance-from-all-buildings/" target="_blank" rel="external">shortest distance to all buildings</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>storage:<ul>
-<li>objects and pointers:</li>
-<li>matrix:</li>
-<li>adjacency list:</li>
+<li>representation:<ul>
+<li>objects and pointers: Node { int val; List<node> neighbors;}</node></li>
+<li>matrix: graph[][], graph[i][j] = 1 means i and j are connected </li>
+<li>adjacent list: List<list<integer>&gt; graph</list<integer></li>
 </ul>
 </li>
 </ul>
 <h3 id="undirected-graph"><a href="#undirected-graph" class="headerlink" title="undirected graph"></a><a href="http://algs4.cs.princeton.edu/41graph/" target="_blank" rel="external">undirected graph</a></h3><ul>
-<li>shortest path: BFS</li>
-<li>exist Path or print one valid path: DFS</li>
-<li><p>cycle-detection: dfs with visited and parent check, <a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank" rel="external">LC261:Graph Valid Tree</a></p>
+<li>unweighted shortest path: BFS</li>
+<li>find any path: DFS</li>
+<li><p>cycle-detection: dfs with <strong>visited[] and parent</strong> check, <a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank" rel="external">LC261:Graph Valid Tree</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CycleDetectionInUndirectedGraph</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; graph, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">boolean</span>[] visit = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">            <span class="keyword">if</span> (!visit[i]) &#123;</div><div class="line">                <span class="keyword">if</span> (containsCycle(i, visit, graph)) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">containsCycle</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">boolean</span>[] visit, List&lt;List&lt;Integer&gt;&gt; graph)</span> </span>&#123;</div><div class="line">        visit[i] = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> node : graph.get(i)) &#123;</div><div class="line">            <span class="keyword">if</span> (!visit[node]) &#123;</div><div class="line">                <span class="keyword">if</span> (containsCycle(node, visit, graph)) &#123;</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node != i) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>connectivity</p>
@@ -154,7 +142,7 @@ r">
 </li>
 </ul>
 <h3 id="directed-graph"><a href="#directed-graph" class="headerlink" title="directed graph"></a><a href="http://algs4.cs.princeton.edu/42digraph/" target="_blank" rel="external">directed graph</a></h3><ul>
-<li>shortest path: BFS</li>
+<li>unweighted shortest path: BFS</li>
 <li><p>dependency: Topological sort: <a href="https://leetcode.com/problems/course-schedule/" target="_blank" rel="external">course schedule</a>, <a href="https://leetcode.com/problems/alien-dictionary/" target="_blank" rel="external">alien dictionary</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">printTologicalOrder</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; graph, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    <span class="keyword">int</span>[] inDegree = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">    <span class="comment">//build indegree array</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">        <span class="keyword">for</span> (Integer node : graph.get(i)) &#123;</div><div class="line">            inDegree[node]++;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//push node with 0 indegree to queue</span></div><div class="line">    Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">        <span class="keyword">if</span> (inDegree[i] == <span class="number">0</span>) &#123;</div><div class="line">            q.offer(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//delete node with 0 indegree and related edge</span></div><div class="line">    <span class="keyword">while</span>(!q.isEmpty()) &#123;</div><div class="line">        Integer cur = q.poll();</div><div class="line">        res.add(cur);</div><div class="line">        <span class="keyword">for</span> (Integer node : graph.get(cur)) &#123;</div><div class="line">            inDegree[node]--;</div><div class="line">            <span class="keyword">if</span> (inDegree[node] == <span class="number">0</span>) &#123;</div><div class="line">                q.offer(node);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -168,15 +156,12 @@ r">
 </ul>
 </li>
 </ul>
-<h3 id="shortest-path-algorithm"><a href="#shortest-path-algorithm" class="headerlink" title="shortest path algorithm"></a><a href="https://en.wikipedia.org/wiki/Shortest_path_problem" target="_blank" rel="external">shortest path algorithm</a></h3><ul>
-<li><p>Dijkstra: 求一个点到其他所有点的最短路径。time complexity with PriorityQueue: O(E + VlogV)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wait</div></pre></td></tr></table></figure>
+<h3 id="weighted-shortest-path-algorithm"><a href="#weighted-shortest-path-algorithm" class="headerlink" title="weighted shortest path algorithm"></a><a href="https://en.wikipedia.org/wiki/Shortest_path_problem" target="_blank" rel="external">weighted shortest path algorithm</a></h3><ul>
+<li><p>Dijkstra(not for negative): dp思想, 求一个点到其他所有点的最短路径。time complexity with PriorityQueue: O(|E| + |V|log|V|)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">NodeWithDist</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> node;</div><div class="line">    <span class="keyword">int</span> dist;</div><div class="line">    NodeWithDist(<span class="keyword">int</span> node, <span class="keyword">int</span> dist) &#123;</div><div class="line">        <span class="keyword">this</span>.node = node;</div><div class="line">        <span class="keyword">this</span>.dist = dist;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] dijkatra(List&lt;List&lt;Integer&gt;&gt; graph, <span class="keyword">int</span> s) &#123;</div><div class="line">    <span class="keyword">int</span> n = graph.size();</div><div class="line">    <span class="keyword">int</span>[] dist = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; graph.get(s).size(); ++i) &#123;</div><div class="line">        dist[i] =  graph.get(s).get(i) != <span class="keyword">null</span> ? graph.get(s).get(i) : Integer.MAX_VALUE;</div><div class="line">    &#125;</div><div class="line">    dist[s] = <span class="number">0</span>;</div><div class="line">    PriorityQueue&lt;NodeWithDist&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> v = <span class="number">0</span>; v &lt; n; v++) &#123;</div><div class="line">        <span class="keyword">if</span> (v != s) &#123;</div><div class="line">            q.offer(<span class="keyword">new</span> NodeWithDist(v, dist[v]));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//used reached or treeSet(how to handle duplicate value) to avoid O(n) remove(obj) in PriorityQueue</span></div><div class="line">    <span class="comment">//laze deletion, in this way, you don't need to implement a heap with update functionality</span></div><div class="line">    <span class="keyword">boolean</span>[] finished = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</div><div class="line">    finished[s] = <span class="keyword">true</span>;</div><div class="line">    <span class="keyword">while</span>(!q.isEmpty()) &#123;</div><div class="line">        Integer u = q.poll().node;</div><div class="line">        <span class="keyword">if</span> (!finished[u]) &#123;</div><div class="line">            finished[u] = <span class="keyword">true</span>;</div><div class="line">            <span class="keyword">for</span> (Integer v : graph.get(u)) &#123;</div><div class="line">                <span class="keyword">if</span> (dist[u] + graph.get(u).get(v) &lt; dist[v] &amp;&amp; !finished[v]) &#123;</div><div class="line">                    dist[v] = dist[u] + graph.get(u).get(v);</div><div class="line">                    q.offer(<span class="keyword">new</span> NodeWithDist(v, dist[v]));</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> dist;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>A*  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wait</div></pre></td></tr></table></figure>
-</li>
-<li><p>floyd</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wait</div></pre></td></tr></table></figure>
+<li><p>(multi source)floyd: 求所有点到所有点的最短路径 O(|V|^3)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//from geeksforgeeks</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] floyd(<span class="keyword">int</span> graph[][], <span class="keyword">int</span> n) &#123;</div><div class="line">    <span class="keyword">int</span> dist[][] = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</div><div class="line">    <span class="keyword">int</span> i, j, k;</div><div class="line">    <span class="comment">/* Initialize the solution matrix same as input graph matrix.</span></div><div class="line">       Or we can say the initial values of shortest distances</div><div class="line">       are based on shortest paths considering no intermediate</div><div class="line">       vertex. */</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">            dist[i][j] = graph[i][j];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/* Add all vertices one by one to the set of intermediate</span></div><div class="line">       vertices.</div><div class="line">      ---&gt; Before start of a iteration, we have shortest</div><div class="line">           distances between all pairs of vertices such that</div><div class="line">           the shortest distances consider only the vertices in</div><div class="line">           set &#123;0, 1, 2, .. k-1&#125; as intermediate vertices.</div><div class="line">      ----&gt; After the end of a iteration, vertex no. k is added</div><div class="line">            to the set of intermediate vertices and the set</div><div class="line">            becomes &#123;0, 1, 2, .. k&#125; */</div><div class="line">    <span class="keyword">for</span> (k = <span class="number">0</span>; k &lt; n; k++) &#123;</div><div class="line">        <span class="comment">// Pick all vertices as source one by one</span></div><div class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            <span class="comment">// Pick all vertices as destination for the</span></div><div class="line">            <span class="comment">// above picked source</span></div><div class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">                <span class="comment">// If vertex k is on the shortest path from</span></div><div class="line">                <span class="comment">// i to j, then update the value of dist[i][j]</span></div><div class="line">                <span class="keyword">if</span> (dist[i][k] + dist[k][j] &lt; dist[i][j]) &#123;</div><div class="line">                    dist[i][j] = dist[i][k] + dist[k][j];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> dist;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="useful-data-structure"><a href="#useful-data-structure" class="headerlink" title="useful data structure"></a>useful data structure</h3><ul>
@@ -198,7 +183,7 @@ r">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ3ab8et0003qk9zviloidce" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ4qbkdu0002mo9zpylrbswe" class="article-share-link">Share</a>
       
       
     </footer>
