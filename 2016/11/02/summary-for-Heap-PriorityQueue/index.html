@@ -5,13 +5,34 @@
   
   <title>summary for Heap PriorityQueue | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Basic Knowledge
+Priority Queue 的底层实现是bcomplete binary min-heap. 
+
+log(n) for offer(e), poll()
+not sort interval, just know head is largest/smallest one.
+remove(e) need O(n) time
+do not support for upd">
+<meta property="og:type" content="article">
 <meta property="og:title" content="summary for Heap PriorityQueue">
 <meta property="og:url" content="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2016-11-03T03:58:05.000Z">
+<meta property="og:description" content="Basic Knowledge
+Priority Queue 的底层实现是bcomplete binary min-heap. 
+
+log(n) for offer(e), poll()
+not sort interval, just know head is largest/smallest one.
+remove(e) need O(n) time
+do not support for upd">
+<meta property="og:updated_time" content="2016-11-05T11:54:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summary for Heap PriorityQueue">
+<meta name="twitter:description" content="Basic Knowledge
+Priority Queue 的底层实现是bcomplete binary min-heap. 
+
+log(n) for offer(e), poll()
+not sort interval, just know head is largest/smallest one.
+remove(e) need O(n) time
+do not support for upd">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -82,11 +103,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h2><ol>
+<li><p>Priority Queue 的底层实现是bcomplete binary min-heap. </p>
+<ul>
+<li>log(n) for offer(e), poll()</li>
+<li>not sort interval, just know head is largest/smallest one.</li>
+<li>remove(e) need O(n) time</li>
+<li>do not support for update operation(Dijkstra need use laze deletion)</li>
+</ul>
+</li>
+<li><p>Priority Queue useage</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//let the class implements Comparable&lt;T&gt; interface, and implement compareTo(T that) method</span></div><div class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Pair</span>&gt; </span>&#123;</div><div class="line">    <span class="keyword">int</span> val;</div><div class="line">    <span class="keyword">int</span> count;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(<span class="keyword">int</span> val, <span class="keyword">int</span> count)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.val = val;</div><div class="line">        <span class="keyword">this</span>.count = count;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Pair that)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.count - that.count;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Queue&lt;Pair&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</div><div class="line"></div><div class="line"><span class="comment">//pass a construct method as argument here</span></div><div class="line">Queue&lt;LinkedList&lt;Interval&gt;&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> Comparator&lt;LinkedList&lt;Interval&gt;&gt;() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(LinkedList&lt;Interval&gt; o1, LinkedList&lt;Interval&gt; o2)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> o1.getLast().end - o2.getLast().end);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//pass a construct method as argument use java 8 lambda, treat functionality as method argument</span></div><div class="line">Queue&lt;LinkedList&lt;Interval&gt;&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;((o1, o2) -&gt; o1.getLast().end - o2.getLast().end);</div></pre></td></tr></table></figure>
+</li>
+<li><p>complete binary min-heap: 任意一个非叶子节点的权值，都不大于其左右子节点的权值, 也就意味着可以通过数组来作为PriorityQueue的底层实现。</p>
+</li>
+<li><p>heapify: O(n)</p>
+</li>
+<li><p>difference with TreeSet, TreeMap</p>
+</li>
+</ol>
+<h2 id="question-use-as-key-component-in-other-question"><a href="#question-use-as-key-component-in-other-question" class="headerlink" title="question: use as key component in other question"></a>question: use as key component in other question</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ4qbkdy0004mo9zax7lywtm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ55kj2t0000ti9zkobejbuv" class="article-share-link">Share</a>
       
       
     </footer>

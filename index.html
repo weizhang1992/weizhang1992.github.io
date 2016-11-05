@@ -113,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ4qbkdr0001mo9zqjawejbr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ55kj390002ti9zalwchcez" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,11 +145,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h2><ol>
+<li><p>Priority Queue 的底层实现是bcomplete binary min-heap. </p>
+<ul>
+<li>log(n) for offer(e), poll()</li>
+<li>not sort interval, just know head is largest/smallest one.</li>
+<li>remove(e) need O(n) time</li>
+<li>do not support for update operation(Dijkstra need use laze deletion)</li>
+</ul>
+</li>
+<li><p>Priority Queue useage</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//let the class implements Comparable&lt;T&gt; interface, and implement compareTo(T that) method</span></div><div class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Pair</span>&gt; </span>&#123;</div><div class="line">    <span class="keyword">int</span> val;</div><div class="line">    <span class="keyword">int</span> count;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(<span class="keyword">int</span> val, <span class="keyword">int</span> count)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.val = val;</div><div class="line">        <span class="keyword">this</span>.count = count;</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Pair that)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.count - that.count;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Queue&lt;Pair&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</div><div class="line"></div><div class="line"><span class="comment">//pass a construct method as argument here</span></div><div class="line">Queue&lt;LinkedList&lt;Interval&gt;&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="keyword">new</span> Comparator&lt;LinkedList&lt;Interval&gt;&gt;() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(LinkedList&lt;Interval&gt; o1, LinkedList&lt;Interval&gt; o2)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> o1.getLast().end - o2.getLast().end);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//pass a construct method as argument use java 8 lambda, treat functionality as method argument</span></div><div class="line">Queue&lt;LinkedList&lt;Interval&gt;&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;((o1, o2) -&gt; o1.getLast().end - o2.getLast().end);</div></pre></td></tr></table></figure>
+</li>
+<li><p>complete binary min-heap: 任意一个非叶子节点的权值，都不大于其左右子节点的权值, 也就意味着可以通过数组来作为PriorityQueue的底层实现。</p>
+</li>
+<li><p>heapify: O(n)</p>
+</li>
+<li><p>difference with TreeSet, TreeMap</p>
+</li>
+</ol>
+<h2 id="question-use-as-key-component-in-other-question"><a href="#question-use-as-key-component-in-other-question" class="headerlink" title="question: use as key component in other question"></a>question: use as key component in other question</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ4qbkdy0004mo9zax7lywtm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ55kj2t0000ti9zkobejbuv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ4qbkdn0000mo9z5fltxkbs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ55kj370001ti9zewcxernx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civ4qbkdw0003mo9z0dffev0c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civ55kj3b0003ti9zy14ejtup" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +395,7 @@
 </ul>
 </li>
 <li>representation:<ul>
-<li>objects and pointers: Node { int val; List<node> neighbors;}</node></li>
+<li>objects and pointers:</li>
 <li>matrix: graph[][], graph[i][j] = 1 means i and j are connected </li>
 <li>adjacent list: List<list<integer>&gt; graph</list<integer></li>
 </ul>
@@ -437,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ4qbkdu0002mo9zpylrbswe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ55kj3c0004ti9z8w46h3zd" class="article-share-link">Share</a>
       
       
     </footer>
