@@ -61,6 +61,70 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-onsite-interview-流程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/06/onsite-interview-流程/" class="article-date">
+  <time datetime="2016-11-06T23:14:23.000Z" itemprop="datePublished">2016-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/06/onsite-interview-流程/">onsite interview 流程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>45 min</p>
+<ol>
+<li><p>1 min: you got a question</p>
+</li>
+<li><p>2 min:</p>
+<ul>
+<li>make sure you understand the question, clarify the question</li>
+<li>let interviewer give you some example, run some example</li>
+<li><strong>state your assumption(write down)</strong></li>
+<li>clarify the function signature</li>
+</ul>
+</li>
+<li><p>7 min:</p>
+<ul>
+<li>think a method, basic run time analsis, tell interviewer,</li>
+<li>if it’s not ok, find a better solution</li>
+<li>if it’s ok, write code</li>
+</ul>
+</li>
+<li><p>15 min:</p>
+<ul>
+<li><strong>check input</strong></li>
+<li><strong>write comment/document</strong></li>
+<li><strong>write test case</strong></li>
+<li>if test case pass, tell interviewer you are done</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/06/onsite-interview-流程/" data-id="civ7dt26a0000ri9zzl4nfnl5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-summary-for-stack-related-question" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/11/05/summary-for-stack-related-question/" class="article-date">
@@ -87,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ779sfo0006hk9zc569po7w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ7dt26p0008ri9z0oh821gs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -123,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="civ779sfj0003hk9zbr6ijvpy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="civ7dt26i0004ri9z6p3d6p09" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-dp/" data-id="civ779sfl0005hk9zyvfp49kb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-dp/" data-id="civ7dt26l0006ri9zfu39ziao" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,6 +281,9 @@
 <li>P(n, k) = n! / (n - k)!</li>
 <li>P(n, k) = C(n, k) * k!</li>
 <li>use above equation to do time complexity analysis</li>
+<li><p>next permutation:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*  </span></div><div class="line">   Reverse find first number which breaks descending order.</div><div class="line">   Exchange this number with the least number that's greater than this number.</div><div class="line">   Reverse sort the numbers after the exchanged number.</div><div class="line">   */</div><div class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nextPermutation</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">           <span class="keyword">int</span> i = nums.length - <span class="number">2</span>;</div><div class="line">           <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; nums[i + <span class="number">1</span>] &lt;= nums[i]) &#123;</div><div class="line">               i--;</div><div class="line">           &#125;</div><div class="line">           <span class="keyword">if</span> (i &gt;= <span class="number">0</span>) &#123;</div><div class="line">               <span class="keyword">int</span> j = nums.length - <span class="number">1</span>;</div><div class="line">               <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; nums[j] &lt;= nums[i]) &#123;</div><div class="line">                   j--;</div><div class="line">               &#125;</div><div class="line">               swap(nums, i, j);</div><div class="line">           &#125;</div><div class="line">           reverse(nums, i + <span class="number">1</span>);</div><div class="line">       &#125;</div><div class="line">   </div><div class="line">       <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start)</span> </span>&#123;</div><div class="line">           <span class="keyword">int</span> i = start, j = nums.length - <span class="number">1</span>;</div><div class="line">           <span class="keyword">while</span> (i &lt; j) &#123;</div><div class="line">               swap(nums, i, j);</div><div class="line">               i++;</div><div class="line">               j--;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   </div><div class="line">       <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">           <span class="keyword">int</span> temp = nums[i];</div><div class="line">           nums[i] = nums[j];</div><div class="line">           nums[j] = temp;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
 <li><p>Permutation:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permute(<span class="keyword">int</span>[] nums) &#123;</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        generateRes(nums, res, <span class="keyword">new</span> ArrayList&lt;&gt;(), <span class="keyword">new</span> <span class="keyword">boolean</span>[nums.length]);</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">generateRes</span><span class="params">(<span class="keyword">int</span>[] nums, List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; temp, <span class="keyword">boolean</span>[] used)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (temp.size() == nums.length) &#123;</div><div class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;&gt;(temp));</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</div><div class="line">            <span class="keyword">if</span> (!used[i]) &#123;</div><div class="line">                temp.add(nums[i]);</div><div class="line">                used[i] = <span class="keyword">true</span>;</div><div class="line">                generateRes(nums, res, temp, used);</div><div class="line">                temp.remove(temp.size() - <span class="number">1</span>);</div><div class="line">                used[i] = <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -239,6 +306,12 @@
 <li><p>Generalized Abbreviation</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">generateAbbreviations</span><span class="params">(String word)</span> </span>&#123;</div><div class="line">        List&lt;String&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        buildResult(result, word, <span class="keyword">new</span> StringBuilder(), <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buildResult</span><span class="params">(List&lt;String&gt; result, String word, StringBuilder temp, <span class="keyword">int</span> pos, <span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = temp.length();</div><div class="line">        <span class="keyword">if</span> (pos == word.length()) &#123;</div><div class="line">            temp.append(num &gt; <span class="number">0</span> ? num : <span class="string">""</span>);            </div><div class="line">            result.add(temp.toString());</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// abbrev</span></div><div class="line">            buildResult(result, word, temp, pos + <span class="number">1</span>, num + <span class="number">1</span>);</div><div class="line">            <span class="comment">// not abbrev</span></div><div class="line">            temp.append(num &gt; <span class="number">0</span> ? num : <span class="string">""</span>);</div><div class="line">            buildResult(result, word, temp.append(word.charAt(pos)), pos + <span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">        temp.setLength(len);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
+<li><p>word break 2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//time complexity analysis</span></div><div class="line"><span class="comment">//2^n for this one.</span></div><div class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution1</span> </span>&#123;</div><div class="line">       <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">wordBreak</span><span class="params">(String s, Set&lt;String&gt; wordDict)</span> </span>&#123;</div><div class="line">           List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">           <span class="keyword">boolean</span>[] possible = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length() + <span class="number">1</span>];</div><div class="line">           Arrays.fill(possible, <span class="keyword">true</span>);</div><div class="line">           buildRes(s, wordDict, <span class="keyword">new</span> StringBuilder(), <span class="number">0</span>, res, possible);</div><div class="line">           <span class="keyword">return</span> res;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buildRes</span><span class="params">(String s, Set&lt;String&gt; wordDict, StringBuilder sb, <span class="keyword">int</span> Pos, List&lt;String&gt; res, <span class="keyword">boolean</span>[] possible)</span> </span>&#123;</div><div class="line">           <span class="keyword">if</span> (Pos &gt;= s.length()) &#123;</div><div class="line">               res.add(sb.substring(<span class="number">0</span>, sb.length() - <span class="number">1</span>));</div><div class="line">               <span class="keyword">return</span>;</div><div class="line">           &#125;</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = Pos + <span class="number">1</span>; i &lt;= s.length(); ++i) &#123;</div><div class="line">               <span class="keyword">int</span> sbLen = sb.length();</div><div class="line">               String thisWord = s.substring(Pos, i);</div><div class="line">               <span class="keyword">if</span> (wordDict.contains(thisWord) &amp;&amp; possible[i]) &#123;</div><div class="line">                   <span class="keyword">int</span> before = res.size();</div><div class="line">                   sb.append(thisWord).append(<span class="string">" "</span>);</div><div class="line">                   buildRes(s, wordDict, sb, i, res, possible);</div><div class="line">                   <span class="comment">// key point check res.size()</span></div><div class="line">                   <span class="keyword">if</span> (before == res.size()) &#123;</div><div class="line">                       possible[i] = <span class="keyword">false</span>;</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">               sb.setLength(sbLen);</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="comment">//DP: time: O(n^2*k), space: O(nk), 假设k表示平均每个长度对应解的个数</span></div><div class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution2</span> </span>&#123;</div><div class="line">       <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">wordBreak</span><span class="params">(String s, Set&lt;String&gt; wordDict)</span> </span>&#123;</div><div class="line">           <span class="comment">// 判断是否能够分解</span></div><div class="line">           <span class="keyword">if</span> (!helper(s, wordDict)) &#123;</div><div class="line">               <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="comment">// 记录字符串s.substring(0, i)对应的解</span></div><div class="line">           HashMap&lt;Integer, List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">           map.put(<span class="number">0</span>, <span class="keyword">new</span> ArrayList&lt;&gt;());</div><div class="line">           map.get(<span class="number">0</span>).add(<span class="string">""</span>);</div><div class="line"></div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= s.length(); i++) &#123;</div><div class="line">               <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</div><div class="line">                   <span class="keyword">if</span> (map.containsKey(j) &amp;&amp; wordDict.contains(s.substring(j, i))) &#123;</div><div class="line">                       <span class="keyword">if</span> (!map.containsKey(i))</div><div class="line">                           map.put(i, <span class="keyword">new</span> ArrayList&lt;&gt;());</div><div class="line">                       <span class="keyword">for</span> (String str : map.get(j)) &#123;</div><div class="line">                           map.get(i).add(str + (str.equals(<span class="string">""</span>) ? <span class="string">""</span> : <span class="string">" "</span>) + s.substring(j, i));</div><div class="line">                       &#125;</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line"></div><div class="line">           <span class="keyword">return</span> map.get(s.length());</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">helper</span><span class="params">(String s, Set&lt;String&gt; wordDict)</span> </span>&#123;</div><div class="line">           <span class="keyword">boolean</span> dp[] = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length() + <span class="number">1</span>];</div><div class="line">           dp[<span class="number">0</span>] = <span class="keyword">true</span>;</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= s.length(); i++) &#123;</div><div class="line">               <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</div><div class="line">                   <span class="keyword">if</span> (dp[j] &amp;&amp; wordDict.contains(s.substring(j, i))) &#123;</div><div class="line">                       dp[i] = <span class="keyword">true</span>;</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           <span class="keyword">return</span> dp[s.length()];</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>KDimensionNeighbors</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">       <span class="keyword">public</span> List&lt;<span class="keyword">int</span>[]&gt; solve(<span class="keyword">int</span>[] p) &#123;</div><div class="line">           <span class="keyword">int</span> k = p.length;</div><div class="line">           <span class="keyword">int</span>[] directions = &#123;-<span class="number">1</span>, <span class="number">1</span>&#125;;</div><div class="line">           LinkedList&lt;<span class="keyword">int</span>[]&gt; ans = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">           ans.offer(Arrays.copyOf(p, k));</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; ++i) &#123;</div><div class="line">               <span class="keyword">int</span> n = ans.size();</div><div class="line">               <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</div><div class="line">                   <span class="keyword">for</span> (<span class="keyword">int</span> d: directions) &#123;</div><div class="line">                       <span class="keyword">int</span>[] copy = Arrays.copyOf(ans.get(j), k);</div><div class="line">                       copy[i] += d;</div><div class="line">                       ans.offer(copy);</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           ans.pollFirst();</div><div class="line">           <span class="keyword">return</span> ans;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ol>
@@ -246,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-combination-permutation-backtracking/" data-id="civ779sfa0001hk9zthswz38m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-combination-permutation-backtracking/" data-id="civ7dt26h0003ri9z6vga5q9h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,7 +381,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ779sfi0002hk9z7tmp02y1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ7dt26g0002ri9zjg7xuia7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ779sfk0004hk9za7y2y7yp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ7dt26j0005ri9z2tav6r5t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ779sf60000hk9z6214b1xy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ7dt26e0001ri9zh5o0wlhh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -542,7 +615,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civ779sfr0008hk9zldssvz3m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civ7dt26q0009ri9zu3bazif9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -654,7 +727,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ779sfo0007hk9zxd4cegys" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ7dt26m0007ri9zao8bjkka" class="article-share-link">Share</a>
       
       
     </footer>
@@ -694,6 +767,10 @@
       <ul>
         
           <li>
+            <a href="/2016/11/06/onsite-interview-流程/">onsite interview 流程</a>
+          </li>
+        
+          <li>
             <a href="/2016/11/05/summary-for-stack-related-question/">summary for stack related question</a>
           </li>
         
@@ -707,10 +784,6 @@
         
           <li>
             <a href="/2016/11/05/summary-for-combination-permutation-backtracking/">summary for combination, permutation, backtracking</a>
-          </li>
-        
-          <li>
-            <a href="/2016/11/03/summary-for-Binary-Search/">summary for Binary Search</a>
           </li>
         
       </ul>
