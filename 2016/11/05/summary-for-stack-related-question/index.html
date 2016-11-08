@@ -5,13 +5,22 @@
   
   <title>summary for stack related question | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Stack, Deque, Queue related questions
+Basic Calculator
+123456789101112131415161718192021222324252627282930public class Solution &amp;#123;    public int calculate(String s) &amp;#123;        Deque&amp;lt;Integer&amp;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="summary for stack related question">
 <meta property="og:url" content="http://yoursite.com/2016/11/05/summary-for-stack-related-question/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2016-11-05T12:37:26.000Z">
+<meta property="og:description" content="Stack, Deque, Queue related questions
+Basic Calculator
+123456789101112131415161718192021222324252627282930public class Solution &amp;#123;    public int calculate(String s) &amp;#123;        Deque&amp;lt;Integer&amp;">
+<meta property="og:updated_time" content="2016-11-08T05:42:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summary for stack related question">
+<meta name="twitter:description" content="Stack, Deque, Queue related questions
+Basic Calculator
+123456789101112131415161718192021222324252627282930public class Solution &amp;#123;    public int calculate(String s) &amp;#123;        Deque&amp;lt;Integer&amp;">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -49,9 +58,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -82,11 +91,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Stack-Deque-Queue-related-questions"><a href="#Stack-Deque-Queue-related-questions" class="headerlink" title="Stack, Deque, Queue related questions"></a>Stack, Deque, Queue related questions</h1><ul>
+<li><p><a href="https://leetcode.com/problems/basic-calculator/" target="_blank" rel="external">Basic Calculator</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculate</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        Deque&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">        <span class="keyword">int</span> sign = <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</div><div class="line">            <span class="keyword">char</span> c = s.charAt(i);</div><div class="line">            <span class="keyword">if</span> (Character.isDigit(c)) &#123;</div><div class="line">                <span class="keyword">int</span> sum = s.charAt(i) - <span class="string">'0'</span>;</div><div class="line">                <span class="keyword">while</span> (i + <span class="number">1</span> &lt; s.length() &amp;&amp; Character.isDigit(s.charAt(i + <span class="number">1</span>))) &#123;</div><div class="line">                    sum = sum * <span class="number">10</span> + s.charAt(i + <span class="number">1</span>) - <span class="string">'0'</span>;</div><div class="line">                    i++;</div><div class="line">                &#125;</div><div class="line">                res += sign * sum;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'+'</span> || c == <span class="string">'-'</span>) &#123;</div><div class="line">                sign = c == <span class="string">'+'</span> ? <span class="number">1</span> : -<span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">'('</span>) &#123;</div><div class="line">                stack.addFirst(res);</div><div class="line">                stack.addFirst(sign);</div><div class="line">                res = <span class="number">0</span>;</div><div class="line">                sign = <span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c == <span class="string">')'</span>) &#123;</div><div class="line">                <span class="keyword">int</span> lastSign = stack.pollFirst();</div><div class="line">                <span class="keyword">int</span> lastRes = stack.pollFirst();</div><div class="line">                res = lastRes + lastSign * res;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/flatten-nested-list-iterator/" target="_blank" rel="external">Flatten Nested List Iterator</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//consider the situation like [[], 1, 2], should put populate stack logic in hasNext method</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NestedIterator</span> <span class="keyword">implements</span> <span class="title">Iterator</span>&lt;<span class="title">Integer</span>&gt; </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Deque&lt;NestedInteger&gt; stack;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NestedIterator</span><span class="params">(List&lt;NestedInteger&gt; nestedList)</span> </span>&#123;</div><div class="line">        stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nestedList.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</div><div class="line">            stack.addFirst(nestedList.get(i));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">next</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> stack.removeFirst().getInteger();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; !stack.peekFirst().isInteger()) &#123;</div><div class="line">            List&lt;NestedInteger&gt; nestedList = stack.removeFirst().getList();</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = nestedList.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</div><div class="line">                stack.addFirst(nestedList.get(i));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> !stack.isEmpty();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Min Stack</p>
+</li>
+<li><p>Sliding Window Maximum</p>
+</li>
+<li><p>2d Sliding Window Maximum</p>
+</li>
+<li><p><a href="https://leetcode.com/problems/remove-k-digits/" target="_blank" rel="external">Remove K Digits</a></p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ909v650008xw9zmgwxdlbr" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ92ljm000082r9zlkxyg06r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -96,7 +121,7 @@
 <nav id="article-nav">
   
     <a href="/2016/11/06/onsite-interview-流程/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           onsite interview 流程
@@ -106,7 +131,7 @@
   
   
     <a href="/2016/11/05/summary-for-Design-Data-Structure/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">summary for Design, Data Structure</div>
     </a>
   
@@ -139,7 +164,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -176,7 +201,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
