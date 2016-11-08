@@ -115,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/06/onsite-interview-流程/" data-id="civ92ljlm00002r9z6ygskh7x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/06/onsite-interview-流程/" data-id="civ9inujs0000999zw8wmb2aw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,17 +157,20 @@
 <li><p>Min Stack</p>
 </li>
 <li><p>Sliding Window Maximum</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//deque: time complexity: O(n)</span></div><div class="line"><span class="comment">//store what in the queue?  index</span></div><div class="line"><span class="comment">//the element smaller than right in the queue are useless, why? before right one got out of the deque,</span></div><div class="line"><span class="comment">//they have no chance to be max. However, left one always get out before right one. so, make the element inside queue</span></div><div class="line"><span class="comment">//like a &gt; b &gt; c, how to achieve that? from the right side(not left side) of queue, poll element smaller than current element</span></div><div class="line"><span class="comment">//base on this rule, leftest element in queue are the max Element.</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] maxSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</div><div class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> nums;</div><div class="line">        &#125;</div><div class="line">        Deque&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">        <span class="keyword">int</span> [] res = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length - k + <span class="number">1</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">            <span class="comment">// remove numbers out of range k</span></div><div class="line">            <span class="keyword">while</span> (!q.isEmpty() &amp;&amp; q.peekFirst() &lt; i - k + <span class="number">1</span>) &#123;</div><div class="line">                q.pollFirst();</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// remove smaller numbers in k range as they are useless</span></div><div class="line">            <span class="keyword">while</span> (!q.isEmpty() &amp;&amp; nums[q.peekLast()] &lt; nums[i]) &#123;</div><div class="line">                q.pollLast();</div><div class="line">            &#125;</div><div class="line">            q.offerLast(i);</div><div class="line">            <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>) &#123;</div><div class="line">                res[i - k + <span class="number">1</span>] = nums[q.peekFirst()];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>2d Sliding Window Maximum</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//假设n * n的矩阵，要求k * k的结果</span></div><div class="line"><span class="comment">//类似shrink的操作, 先对每行做一个slide window maximum。这样子矩阵变成了 n * k。</span></div><div class="line"><span class="comment">//再对每列做slide window maximum，这样子矩阵就编程了 k * k.</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://leetcode.com/problems/remove-k-digits/" target="_blank" rel="external">Remove K Digits</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//值得写几遍的题目，很多edge case要考虑。</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">removeKdigits</span><span class="params">(String num, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        Deque&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">        <span class="keyword">int</span> removed = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> cur = num.charAt(i) - <span class="string">'0'</span>;</div><div class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peekFirst() &gt; cur &amp;&amp; removed &lt; k) &#123;</div><div class="line">                stack.removeFirst();</div><div class="line">                removed++;</div><div class="line">            &#125;</div><div class="line">            stack.addFirst(cur);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (removed &lt; k) &#123;</div><div class="line">            stack.removeFirst();</div><div class="line">            removed++;</div><div class="line">        &#125;</div><div class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peekLast() == <span class="number">0</span>) &#123;</div><div class="line">            stack.removeLast();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</div><div class="line">            res.append(stack.removeFirst());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res.length() == <span class="number">0</span> ? <span class="string">"0"</span> : res.reverse().toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ92ljm000082r9zlkxyg06r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ9inuk50007999zcmuoyub1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="civ92ljls00022r9zzwkdp850" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="civ9inuk00003999z78qqal34" class="article-share-link">Share</a>
       
       
     </footer>
@@ -242,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-dp/" data-id="civ92ljlv00052r9z1aboa2ma" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-dp/" data-id="civ9inuk10004999zzpakyjfx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-combination-permutation-backtracking/" data-id="civ92ljlx00062r9ziv9kechp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-combination-permutation-backtracking/" data-id="civ9inuk20005999z5uvjd6o2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -420,7 +423,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ92ljlq00012r9zbtggrwd1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ9inujy0002999zygtb075p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -504,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ92ljlu00042r9z41w5zf3b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ9inuk40006999znjz72hb1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -572,7 +575,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ92ljlt00032r9zfdfocy6r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ9inujw0001999z1h3rq75r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -680,7 +683,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civ92ljm100092r9zz8otsf25" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civ9inuk60008999z23m27omi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -793,7 +796,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ92ljly00072r9z6sk21or4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ9inuk70009999z7ct3ie4m" class="article-share-link">Share</a>
       
       
     </footer>
