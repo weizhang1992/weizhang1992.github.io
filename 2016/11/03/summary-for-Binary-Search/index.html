@@ -15,7 +15,7 @@ Situation
 <meta property="og:description" content="Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [0000111111] list.
 Situation
 有序数组中有且仅有一个target，那么返回indexexample: no duplicate target list : [1, 2, 5, 8, 9, 10, 1">
-<meta property="og:updated_time" content="2016-11-07T22:49:53.000Z">
+<meta property="og:updated_time" content="2016-11-08T02:41:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summary for Binary Search">
 <meta name="twitter:description" content="Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [0000111111] list.
@@ -58,9 +58,9 @@ Situation
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -131,11 +131,7 @@ Situation
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> | nums.length == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span>[] increasingSeq = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</div><div class="line">        increasingSeq[<span class="number">0</span>] = nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</div><div class="line">            <span class="keyword">int</span> pos = findPositionToReplace(increasingSeq, <span class="number">0</span>, len - <span class="number">1</span>, nums[i]);</div><div class="line">            increasingSeq[pos] = nums[i];</div><div class="line">            <span class="keyword">if</span> (pos == len) &#123;</div><div class="line">                len++;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> len;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findPositionToReplace</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</div><div class="line">            <span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span> (target &gt; a[mid]) &#123;</div><div class="line">                l = mid;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; a[mid]) &#123;</div><div class="line">                r = mid;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span> mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (target &lt;= a[l]) &#123;</div><div class="line">            <span class="keyword">return</span> l;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; a[r]) &#123;</div><div class="line">            <span class="keyword">return</span> r + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> r;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>pupolar number</p>
-<ul>
-<li>unsorted: hashmap</li>
-<li>sorted: binary search<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//key point: find candidate target at n/4, n/2, 3*n/4</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// unsorted: hashmap</span></div><div class="line"><span class="comment">// sorted: binary search</span></div><div class="line"><span class="comment">// key point: find candidate target at n/4, n/2, 3*n/4</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>weighted random</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">大概就是一个数组, 1,4,2,6.... 每次调用一个函数，按照数组里面的数字的大小，返回相应的Index。</div><div class="line">比如， 上面的例子就是, 1/13 的概率返回0, 4/13的概率返回1.</div><div class="line">**/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeightedRandom</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] sum; <span class="comment">// sum[i] is the sum of weight [0, i]</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WeightedRandom</span><span class="params">(<span class="keyword">int</span> weight[])</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = weight.length;</div><div class="line">        sum = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        sum[<span class="number">0</span>] = weight[<span class="number">0</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</div><div class="line">            sum[i] = sum[i - <span class="number">1</span>] + weight[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> w)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = sum.length - <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</div><div class="line">            <span class="keyword">int</span> mid = l + (r - l) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span> (sum[mid] &lt; w) &#123;</div><div class="line">                l = mid;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum[mid] == w) &#123;</div><div class="line">                <span class="keyword">return</span> mid;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                r = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (w == sum[l]) &#123;</div><div class="line">            <span class="keyword">return</span> l;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> r;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nextIndex</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// generate random weight in [1, sum[n-1]]</span></div><div class="line">        Random random = <span class="keyword">new</span> Random();</div><div class="line">        <span class="keyword">return</span> search(random.nextInt(sum[sum.length - <span class="number">1</span>]) + <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -145,7 +141,7 @@ Situation
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ8nv47s0000kl9zs309nje3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ909v5x0003xw9z462btl0r" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -155,7 +151,7 @@ Situation
 <nav id="article-nav">
   
     <a href="/2016/11/05/summary-for-combination-permutation-backtracking/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           summary for combination, permutation, backtracking
@@ -165,7 +161,7 @@ Situation
   
   
     <a href="/2016/11/02/summary-for-Heap-PriorityQueue/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">summary for Heap PriorityQueue</div>
     </a>
   
@@ -198,7 +194,7 @@ Situation
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -235,7 +231,7 @@ Situation
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
