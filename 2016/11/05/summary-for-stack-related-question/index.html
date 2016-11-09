@@ -15,7 +15,7 @@ Basic Calculator
 <meta property="og:description" content="Stack, Deque, Queue related questions
 Basic Calculator
 123456789101112131415161718192021222324252627282930public class Solution &amp;#123;    public int calculate(String s) &amp;#123;        Deque&amp;lt;Integer&amp;">
-<meta property="og:updated_time" content="2016-11-08T13:12:04.000Z">
+<meta property="og:updated_time" content="2016-11-09T00:39:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summary for stack related question">
 <meta name="twitter:description" content="Stack, Deque, Queue related questions
@@ -58,9 +58,9 @@ Basic Calculator
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -109,12 +109,15 @@ Basic Calculator
 <li><p><a href="https://leetcode.com/problems/remove-k-digits/" target="_blank" rel="external">Remove K Digits</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//值得写几遍的题目，很多edge case要考虑。</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">removeKdigits</span><span class="params">(String num, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        Deque&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">        <span class="keyword">int</span> removed = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> cur = num.charAt(i) - <span class="string">'0'</span>;</div><div class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peekFirst() &gt; cur &amp;&amp; removed &lt; k) &#123;</div><div class="line">                stack.removeFirst();</div><div class="line">                removed++;</div><div class="line">            &#125;</div><div class="line">            stack.addFirst(cur);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (removed &lt; k) &#123;</div><div class="line">            stack.removeFirst();</div><div class="line">            removed++;</div><div class="line">        &#125;</div><div class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peekLast() == <span class="number">0</span>) &#123;</div><div class="line">            stack.removeLast();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</div><div class="line">            res.append(stack.removeFirst());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res.length() == <span class="number">0</span> ? <span class="string">"0"</span> : res.reverse().toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
+<li><p>Index Of First Larger After Self</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//G 家面经题, 返回数组的每个元素是原数组中右边的第一个大于该位置元素的 index.</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] firstLargerAfterSelf(<span class="keyword">int</span>[] nums) &#123;</div><div class="line">    <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</div><div class="line">    Deque&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt; -<span class="number">1</span>; --i) &#123;</div><div class="line">        <span class="keyword">while</span>(!stack.isEmpty() &amp;&amp; nums[stack.peekLast()] &lt;= nums[i]) &#123;</div><div class="line">            stack.pollLast();</div><div class="line">        &#125;</div><div class="line">        ans[i] = stack.isEmpty()? -<span class="number">1</span> :stack.peekLast();</div><div class="line">        stack.offerLast(i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ9inuk50007999zcmuoyub1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civa7sfbp0006kz9z6t5stb8p" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -124,7 +127,7 @@ Basic Calculator
 <nav id="article-nav">
   
     <a href="/2016/11/06/onsite-interview-流程/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           onsite interview 流程
@@ -134,7 +137,7 @@ Basic Calculator
   
   
     <a href="/2016/11/05/summary-for-Design-Data-Structure/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">summary for Design, Data Structure</div>
     </a>
   
@@ -167,7 +170,7 @@ Basic Calculator
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -204,7 +207,7 @@ Basic Calculator
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

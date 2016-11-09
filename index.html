@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -115,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/06/onsite-interview-流程/" data-id="civ9inujs0000999zw8wmb2aw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/06/onsite-interview-流程/" data-id="civa7sfbi0001kz9zs3ercchp" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -165,12 +165,15 @@
 <li><p><a href="https://leetcode.com/problems/remove-k-digits/" target="_blank" rel="external">Remove K Digits</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//值得写几遍的题目，很多edge case要考虑。</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">removeKdigits</span><span class="params">(String num, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        Deque&lt;Integer&gt; stack = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">        <span class="keyword">int</span> removed = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length(); ++i) &#123;</div><div class="line">            <span class="keyword">int</span> cur = num.charAt(i) - <span class="string">'0'</span>;</div><div class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peekFirst() &gt; cur &amp;&amp; removed &lt; k) &#123;</div><div class="line">                stack.removeFirst();</div><div class="line">                removed++;</div><div class="line">            &#125;</div><div class="line">            stack.addFirst(cur);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (removed &lt; k) &#123;</div><div class="line">            stack.removeFirst();</div><div class="line">            removed++;</div><div class="line">        &#125;</div><div class="line">        StringBuilder res = <span class="keyword">new</span> StringBuilder();</div><div class="line">        <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peekLast() == <span class="number">0</span>) &#123;</div><div class="line">            stack.removeLast();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</div><div class="line">            res.append(stack.removeFirst());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res.length() == <span class="number">0</span> ? <span class="string">"0"</span> : res.reverse().toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
+<li><p>Index Of First Larger After Self</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//G 家面经题, 返回数组的每个元素是原数组中右边的第一个大于该位置元素的 index.</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] firstLargerAfterSelf(<span class="keyword">int</span>[] nums) &#123;</div><div class="line">    <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</div><div class="line">    Deque&lt;Integer&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt; -<span class="number">1</span>; --i) &#123;</div><div class="line">        <span class="keyword">while</span>(!stack.isEmpty() &amp;&amp; nums[stack.peekLast()] &lt;= nums[i]) &#123;</div><div class="line">            stack.pollLast();</div><div class="line">        &#125;</div><div class="line">        ans[i] = stack.isEmpty()? -<span class="number">1</span> :stack.peekLast();</div><div class="line">        stack.offerLast(i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civ9inuk50007999zcmuoyub1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="civa7sfbp0006kz9z6t5stb8p" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -209,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="civ9inuk00003999z78qqal34" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="civa7sfbk0002kz9zcadf3tvo" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -245,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-dp/" data-id="civ9inuk10004999zzpakyjfx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-dp/" data-id="civa7sfbm0004kz9zb5tqi8xh" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -341,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-combination-permutation-backtracking/" data-id="civ9inuk20005999z5uvjd6o2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-combination-permutation-backtracking/" data-id="civa7sfbn0005kz9zc3goubyi" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -423,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civ9inujy0002999zygtb075p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/03/summary-for-Binary-Search/" data-id="civa7sfbl0003kz9z1zdvaz82" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -507,7 +510,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civ9inuk40006999znjz72hb1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="civa7sfbq0007kz9zdejlt2z7" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -554,6 +557,11 @@
 <li><p>quick select:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// find kth largest number in array</span></div><div class="line"><span class="comment">// avg O(n), worst case: O(n^2), rondomly choose pivot can reduce worst case prob</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> rank = nums.length - k;</div><div class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> hi = nums.length - <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (lo &lt; hi) &#123;</div><div class="line">        <span class="keyword">int</span> cur = partition(nums, lo, hi);</div><div class="line">        <span class="keyword">if</span>(cur &lt; rank) &#123;</div><div class="line">            lo = cur + <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cur &gt; rank) &#123;</div><div class="line">            hi = cur - <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> nums[rank];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
+</ol>
+<ul>
+<li><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/" target="_blank" rel="external">Kth Largest Element in an Array</a>: avg time O(n)</li>
+</ul>
+<ol>
 <li><p>Heapsort</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Queue q = <span class="keyword">new</span> PriorityQueue()</div></pre></td></tr></table></figure>
 </li>
@@ -562,20 +570,83 @@
 </li>
 </ol>
 <h4 id="non-compare-based-sort"><a href="#non-compare-based-sort" class="headerlink" title="non-compare based sort"></a>non-compare based sort</h4><ol>
-<li><p>count sort:<br>当输入的元素是n个0到k之间的整数时，它的运行时间是Θ(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。<br>example qustions: <a href="https://leetcode.com/problems/sort-characters-by-frequency/" target="_blank" rel="external">sort characters by frequency</a><br><strong>time</strong>: O(n + k)<br><strong>space</strong>: O(n + k)</p>
-</li>
+<li>count sort:<br>当输入的元素是n个0到k之间的整数时，它的运行时间是Θ(n + k)。计数排序不是比较排序，排序的速度快于任何比较排序算法。<br>example qustions: <a href="https://leetcode.com/problems/sort-characters-by-frequency/" target="_blank" rel="external">sort characters by frequency</a><br><strong>time</strong>: O(n + k)<br><strong>space</strong>: O(n + k)</li>
+</ol>
+<ul>
+<li><a href="https://leetcode.com/problems/h-index/" target="_blank" rel="external">H-Index</a></li>
+</ul>
+<ol>
 <li><p>radix sort:<br>排序过程：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。基数排序法将要排序的元素分配至 0~9 个桶。<br><strong>time</strong>:  O(wn) for n keys which are integers of word size w<br><strong>space</strong>: O(w + N)</p>
 </li>
 <li><p>bucket sort:<br>当使用count sort时, 数组里数值的范围太大怎么办。分范围count sort。<br><strong>time</strong>: O(N + NlogN - NlogM), M为桶的个数<br><strong>space</strong>: O(M)</p>
 </li>
 </ol>
 <hr>
-<h2 id="questions-and-thoughts"><a href="#questions-and-thoughts" class="headerlink" title="questions and thoughts"></a>questions and thoughts</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">?</div></pre></td></tr></table></figure>
+<h3 id="two-point-related-question"><a href="#two-point-related-question" class="headerlink" title="two point related question"></a>two point related question</h3><ul>
+<li><p><a href="">longest consecutive sequence</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//set with two point</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Three Sum Smaller</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">threeSumSmaller</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">    Arrays.sort(nums);</div><div class="line">    <span class="keyword">int</span> len = nums.length;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len-<span class="number">2</span>; i++) &#123;</div><div class="line">        <span class="keyword">int</span> left = i+<span class="number">1</span>, right = len-<span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(left &lt; right) &#123;</div><div class="line">            <span class="keyword">if</span>(nums[i] + nums[left] + nums[right] &lt; target) &#123;</div><div class="line">                count += right-left;</div><div class="line">                left++;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                right--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>leftSumEqualsToRightSum</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">centre</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> x : nums) sum += x;</div><div class="line">    <span class="keyword">if</span> ((sum &amp; <span class="number">1</span>) == <span class="number">1</span>) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">    sum &gt;&gt;= <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</div><div class="line">        sum -= nums[i];</div><div class="line">        <span class="keyword">if</span> (sum == <span class="number">0</span>) <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">weightedCentre</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> sumAll = <span class="number">0</span>, right = <span class="number">0</span>, left = <span class="number">0</span>, sum = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt; -<span class="number">1</span>; --i) &#123;</div><div class="line">        right += sumAll;</div><div class="line">        sumAll += nums[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</div><div class="line">        left += sum;</div><div class="line">        <span class="keyword">if</span> (left == right) <span class="keyword">return</span> i;</div><div class="line">        sum += nums[i];</div><div class="line">        right -= sumAll - sum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="sort-related-questions"><a href="#sort-related-questions" class="headerlink" title="sort related questions"></a>sort related questions</h3><ul>
+<li><p><a href="https://leetcode.com/problems/top-k-frequent-elements/" target="_blank" rel="external">Top K Frequent Elements</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//count sort</span></div><div class="line"><span class="comment">//O(n)</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>wiggle sort</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//O(n)</span></div><div class="line"><span class="comment">//如果i是奇数，nums[i] &gt;= nums[i - 1]</span></div><div class="line"><span class="comment">//如果i是偶数，nums[i] &lt;= nums[i - 1]</span></div><div class="line"><span class="comment">//后面的交换不会影响前面的, num[i-1] &lt; num[i] &lt; num[i+1] -&gt; nums[i-1] &lt; nums[i+1]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>wiggle sort2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//wtf</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wiggleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> median = KthLargestElementInArray.findKthLargest(nums, nums.length &gt;&gt; <span class="number">1</span>);</div><div class="line">    <span class="keyword">int</span> s = <span class="number">0</span>, t = nums.length-<span class="number">1</span>, mid = (nums.length+<span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span>[] tmp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] &lt; median) tmp[s++] = nums[i];</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] &gt; median) tmp[t--] = nums[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span>(s &lt; mid) tmp[s++] = median;</div><div class="line">    <span class="keyword">while</span>(t &gt;= mid) tmp[t--] = median;</div><div class="line">    t = nums.length;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</div><div class="line">        nums[i] = (i &amp; <span class="number">1</span>) == <span class="number">0</span> ? tmp[--s] : tmp[--t];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/count-of-range-sum/" target="_blank" rel="external">Count of Range Sum</a></p>
+</li>
+<li><p><a href="https://leetcode.com/problems/h-index/" target="_blank" rel="external">H-Index</a></p>
+</li>
+<li><p><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/" target="_blank" rel="external">Kth Largest Element in an Array</a>: avg time O(n)</p>
+</li>
+</ul>
+<h3 id="other-questions"><a href="#other-questions" class="headerlink" title="other questions:"></a>other questions:</h3><ul>
+<li><p><a href="https://leetcode.com/problems/game-of-life/" target="_blank" rel="external">Game of Life</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//00 = die  &lt;- die, 01 = die  &lt;- live, 10 = live &lt;- die, 11 = live &lt;- live</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/insert-interval/" target="_blank" rel="external">Insert Interval</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">//1. insertInterval before current, change to null after inserted</span></div><div class="line">    <span class="comment">//2. insertInterval after current,</span></div><div class="line">    <span class="comment">//3. overlap</span></div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;Interval&gt; <span class="title">insert</span><span class="params">(List&lt;Interval&gt; intervals, Interval newInterval)</span> </span>&#123;</div><div class="line">        List&lt;Interval&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">        <span class="keyword">if</span> (intervals == <span class="keyword">null</span> || intervals.size() == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> Collections.singletonList(newInterval);</div><div class="line">        &#125;</div><div class="line">        Interval insert = <span class="keyword">new</span> Interval(newInterval.start, newInterval.end);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; intervals.size(); ++i) &#123;</div><div class="line">            Interval curInterval = intervals.get(i);</div><div class="line">            <span class="keyword">if</span> (insert == <span class="keyword">null</span> || curInterval.end &lt; insert.start) &#123;</div><div class="line">                res.add(curInterval);</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (curInterval.start &gt; insert.end) &#123;</div><div class="line">                res.add(insert);</div><div class="line">                res.add(curInterval);</div><div class="line">                insert = <span class="keyword">null</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                insert = mergeInterval(curInterval, insert);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (insert != <span class="keyword">null</span>) &#123;</div><div class="line">            res.add(insert);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> Interval <span class="title">mergeInterval</span> <span class="params">(Interval cur, Interval insert)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = Math.min(cur.start, insert.start);</div><div class="line">        <span class="keyword">int</span> end = Math.max(cur.end, insert.end);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Interval(start, end);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/merge-intervals/" target="_blank" rel="external">Merge Intervals</a></p>
+</li>
+<li><p><a href="https://leetcode.com/problems/missing-ranges/" target="_blank" rel="external">Missing Ranges</a></p>
+</li>
+<li><p><a href="https://leetcode.com/problems/patching-array/" target="_blank" rel="external">Patching Array</a></p>
+</li>
+<li><p><a href="https://leetcode.com/problems/perfect-rectangle/" target="_blank" rel="external">Perfect Rectangle</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>. the large rectangle area should be equal to the sum of small rectangles</div><div class="line"><span class="number">2</span>. count of all the points should be even, and that of all the four corner points should be one</div></pre></td></tr></table></figure>
+</li>
+<li><p>LinedList plus one</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">addOne</span><span class="params">(Node head)</span> </span>&#123;</div><div class="line">        Node not9 = <span class="keyword">new</span> Node(<span class="number">0</span>);</div><div class="line">        not9.next = head;</div><div class="line">        head = not9;</div><div class="line">        <span class="keyword">for</span> (Node node = head; node != <span class="keyword">null</span>; node = node.next) &#123;</div><div class="line">            <span class="keyword">if</span> (node.val != <span class="number">9</span>) not9 = node;</div><div class="line">        &#125;</div><div class="line">        not9.val += <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> (Node node = not9.next; node != <span class="keyword">null</span>; node = node.next) &#123;</div><div class="line">            node.val = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> head.val &gt; <span class="number">0</span> ? head : head.next;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/queue-reconstruction-by-height/" target="_blank" rel="external">Queue Reconstruction by Height</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//pick up the tallest guy first</span></div><div class="line"><span class="comment">//when insert the next tall guy, just need to insert him into kth position</span></div><div class="line"><span class="comment">//repeat until all people are inserted into list</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="external">trapping rain water</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//O(n) time, O(1) space</span></div><div class="line"><span class="comment">//find the bin with max height</span></div><div class="line"><span class="comment">//from 0 to this bin, right side max already know</span></div><div class="line"><span class="comment">//from length to this bin, left side max already know</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Rearrange Array</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">然后是一道关于按照固定的顺序重新排序，多少次排序才能回到初始顺序的题目，我们总是把第x个位置的元素移到第y个位置，比如【0，1，2，3】就是完全不换顺序，一次排序就回去了；【3，2，1，0】是位置3和位置0互换，位置2和位置1互换，两次排序就能回到原顺序；而【1，2，3，0】就是每次把一个位置上的元素往后移动一个位置，那显然转一圈就回来了。</div><div class="line"></div><div class="line">举个例子，原来的input为[20, 34, 7, 9], 排序要求为[1, 3, 2, 0]</div><div class="line">一次排序后：</div><div class="line">[20, 34, 7, 9]  -&gt; [34, 9, 7, 20]</div><div class="line">二次排序后:</div><div class="line">[34, 9, 7, 20]  -&gt; [9, 20, 7, 34]</div><div class="line">三次排序后：</div><div class="line">[9, 20, 7, 34]  -&gt; [20, 34, 7, 9]  (此时和初始顺序一致，所以是用了三个iteration恢复原样)</div><div class="line"></div><div class="line">排序规则[1, 3, 2, 0]的意思是把在位置1的元素排到第0个位置，位置3的元素排到第2个位置，位置2的元素还是在位置2，位置0的元素放到位置3去。 排序规则不变，每次只是Input被按照规则改变了顺序。</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minRearrange</span><span class="params">(<span class="keyword">int</span>[] pattern)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> n = pattern.length;</div><div class="line">    <span class="keyword">boolean</span>[] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</div><div class="line">        <span class="keyword">if</span> (visited[i]) <span class="keyword">continue</span>;</div><div class="line">        <span class="keyword">int</span> j = i, k = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">            visited[j] = <span class="keyword">true</span>;</div><div class="line">            k++;</div><div class="line">            j = pattern[j];</div><div class="line">            <span class="keyword">if</span> (j == i) <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">if</span> (j &lt; <span class="number">0</span> || j &gt;= n || visited[j]) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        ans = lcm(ans, k);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">lcm</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> a / gcd(a, b) * b;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a % b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>X-Straight</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">Define “X-Straight” as X cards with consecutive numbers (X &gt;= 3).</div><div class="line">Determine if the deck can be fully divided into sets of “X-Straight”.</div><div class="line">*/</div><div class="line"><span class="comment">// assuming number on the card is 1 to 13</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XStraight</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> m = <span class="number">13</span>;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isXStraights</span><span class="params">(<span class="keyword">int</span>[] cards)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span>[] count = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> card : cards) count[card]++;</div><div class="line"></div><div class="line">        <span class="keyword">int</span>[] head = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</div><div class="line">        head[<span class="number">1</span>] = count[<span class="number">1</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; m + <span class="number">2</span>; ++i) &#123;</div><div class="line">            head[i] = Math.max(<span class="number">0</span>, count[i] - count[i - <span class="number">1</span>]);</div><div class="line">            <span class="keyword">if</span> (count[i] &lt; head[i - <span class="number">1</span>] + head[i - <span class="number">2</span>])</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civ9inujw0001999z1h3rq75r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Array-Sort/" data-id="civa7sfbe0000kz9z50edmpgm" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -683,7 +754,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civ9inuk60008999z23m27omi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="civa7sfbt0009kz9zqfr4f1h7" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -796,7 +867,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civ9inuk70009999z7ct3ie4m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-graph/" data-id="civa7sfbs0008kz9zvi1rnomb" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -831,7 +902,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -868,7 +939,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
