@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>search | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [0000111111] list.  有序数组中有且仅有一个target，那么返回indexexample: no duplicate target list : [1, 2, 5, 8, 9, 10, 15] 中找2 12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="search">
+<meta property="og:url" content="http://yoursite.com/2019/01/11/summary-for-Binary-Search/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [0000111111] list.  有序数组中有且仅有一个target，那么返回indexexample: no duplicate target list : [1, 2, 5, 8, 9, 10, 15] 中找2 12">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-11T21:44:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="search">
+<meta name="twitter:description" content="Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [0000111111] list.  有序数组中有且仅有一个target，那么返回indexexample: no duplicate target list : [1, 2, 5, 8, 9, 10, 15] 中找2 12">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-summary-for-Binary-Search" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/11/summary-for-Binary-Search/" class="article-date">
+  <time datetime="2019-01-11T14:39:28.000Z" itemprop="datePublished">2019-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      search
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h1><p>used to reduce O(n) time complexity to O(logn) for ordered, part ordered, [0000111111] list.</p>
+<ul>
+<li><p>有序数组中有且仅有一个target，那么返回index<br>example: no duplicate target list : [1, 2, 5, 8, 9, 10, 15] 中找2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//edge case, when left + 1 = right, when left = right</span></span><br><span class="line"><span class="keyword">while</span>(left &lt;= right) &#123;</span><br><span class="line">    <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">        right = mid - <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        left  = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> -<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组中没有target，我们应该返回比target大的元素的index还是比之小的index?<br>example: <a href="https://leetcode.com/problems/search-insert-position/" target="_blank" rel="noopener">search insert position</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// insert 5 to [2, 4, 7, 8, 9], return 2</span></span><br><span class="line"><span class="keyword">while</span>(left + <span class="number">1</span> &lt; right) &#123;</span><br><span class="line">    <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">        <span class="keyword">return</span> mid;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">        right = mid;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        left = mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (target &lt;= nums[left]) &#123;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[right]) &#123;</span><br><span class="line">    <span class="keyword">return</span> right + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> right;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>数组中含有多个target，我们应该返回哪一个的index?<br>example: <a href="https://leetcode.com/problems/first-bad-version/" target="_blank" rel="noopener">first bad version</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//find first 5 in [1, 2, 3, 5, 5, 5, 6, 7, 8]</span></span><br><span class="line"><span class="comment">//find last  5 in [1, 2, 3, 5, 5, 5, 6, 7, 8]</span></span><br><span class="line"><span class="comment">//find first 1 in [0, 0, 0, 0, 1, 1, 1, 1, 1]</span></span><br><span class="line"><span class="comment">//here we are trying to find leftmost</span></span><br><span class="line"><span class="keyword">while</span>(left + <span class="number">1</span> &lt; right) &#123;</span><br><span class="line">    <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">        right = mid;<span class="comment">//should change based on condition</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">        right = mid;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        left  = mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> nums[left] == target ? left : right;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Go through edge case</p>
+</li>
+</ul>
+<ol>
+<li>left == right<ul>
+<li>target &lt; left</li>
+<li>target == left</li>
+<li>target &gt; left</li>
+</ul>
+</li>
+<li>left + 1 == right<ul>
+<li>target &lt; left</li>
+<li>left &lt; target &lt; right</li>
+<li>target &gt; right</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>Interview Questions</p>
+<ul>
+<li><a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/" target="_blank" rel="noopener">Kth Smallest Element in a Sorted Matrix</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KthSmallestElementInSortedMatrix</span> </span>&#123;</span><br><span class="line">    <span class="comment">//binary search</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kthSmallest</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> n = matrix.length, m = matrix[<span class="number">0</span>].length;</span><br><span class="line">            <span class="keyword">int</span> minVal = matrix[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> maxVal = matrix[n - <span class="number">1</span>][m - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">while</span> (minVal &lt;= maxVal) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = minVal + (maxVal - minVal)/<span class="number">2</span>;</span><br><span class="line">                <span class="keyword">if</span> (getRank(mid, matrix, n, m) &lt; k) &#123;</span><br><span class="line">                    minVal = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    maxVal = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> minVal;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getRank</span><span class="params">(<span class="keyword">int</span> mid, <span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> n, <span class="keyword">int</span> m)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> i = n -<span class="number">1</span>, j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &lt; m) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] &gt; mid) &#123;</span><br><span class="line">                    i--;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (matrix[i][j] &lt;= mid) &#123;</span><br><span class="line">                    <span class="comment">//key point</span></span><br><span class="line">                    res += (i + <span class="number">1</span>);</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>* [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MedianOfTwoSortedArrays</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> m = nums1.length, n = nums2.length;</span><br><span class="line">            <span class="keyword">if</span>((m + n) % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> findKth(nums1, <span class="number">0</span>, m - <span class="number">1</span>, nums2, <span class="number">0</span>, n -<span class="number">1</span>, (m + n) / <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> (findKth(nums1, <span class="number">0</span>, m - <span class="number">1</span>, nums2, <span class="number">0</span>, n - <span class="number">1</span>, (m + n) / <span class="number">2</span>) + findKth(nums1, <span class="number">0</span>, m - <span class="number">1</span>, nums2, <span class="number">0</span>, n - <span class="number">1</span>, (m + n) / <span class="number">2</span> + <span class="number">1</span>)) / <span class="number">2.0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findKth</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> al, <span class="keyword">int</span> ar, <span class="keyword">int</span>[] b, <span class="keyword">int</span> bl, <span class="keyword">int</span> br, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(al &gt; ar) <span class="keyword">return</span> b[bl + k - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(bl &gt; br) <span class="keyword">return</span> a[al + k - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> amid = al + (ar - al) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> bmid = bl + (br - bl) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(a[amid] &gt;= b[bmid]) &#123;</span><br><span class="line">                <span class="keyword">if</span>(k &lt;= (amid - al) + (bmid - bl) + <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> findKth(a, al, amid - <span class="number">1</span>, b, bl, br, k);</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> findKth(a, al, ar, b, bmid + <span class="number">1</span>, br, k - (bmid - bl + <span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(k &lt;= (amid - al) + (bmid - bl) + <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> findKth(a, al, ar, b, bl, bmid - <span class="number">1</span>, k);</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> findKth(a, amid + <span class="number">1</span>, ar, b, bl, br, k -(amid - al + <span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+* [Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Sort the array. Ascend on width and descend on height if width are same.</span></span><br><span class="line"><span class="comment">//Find the longest increasing subsequence based on height.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxEnvelopes</span><span class="params">(<span class="keyword">int</span>[][] envelopes)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(envelopes == <span class="keyword">null</span> || envelopes.length == <span class="number">0</span> || envelopes[<span class="number">0</span>] == <span class="keyword">null</span> || envelopes[<span class="number">0</span>].length != <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        Arrays.sort(envelopes, <span class="keyword">new</span> Comparator&lt;<span class="keyword">int</span>[]&gt;()&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span>[] thisArray, <span class="keyword">int</span>[] that)</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> thisArray[<span class="number">0</span>] == that[<span class="number">0</span>] ? that[<span class="number">1</span>] - thisArray[<span class="number">1</span>] : thisArray[<span class="number">0</span>] - that[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[envelopes.length];</span><br><span class="line">        <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span>[] envelope: envelopes) &#123;</span><br><span class="line">            <span class="comment">// binary search</span></span><br><span class="line">            <span class="keyword">int</span> left = <span class="number">0</span>, right = size, middle = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> index = findPlace(dp, <span class="number">0</span>, size, envelope[<span class="number">1</span>]);</span><br><span class="line">            <span class="comment">// left is the right position to 'replace' in dp array</span></span><br><span class="line">            dp[index] = envelope[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(index == size) size++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findPlace</span><span class="params">(<span class="keyword">int</span>[] dp, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(left != right) &#123;</span><br><span class="line">            <span class="keyword">int</span> middle = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(key &gt; dp[middle]) &#123;</span><br><span class="line">                left = middle + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (key &lt; dp[middle]) &#123;</span><br><span class="line">                right = middle;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = middle;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+* [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> | nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] increasingSeq = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        increasingSeq[<span class="number">0</span>] = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = findPositionToReplace(increasingSeq, <span class="number">0</span>, len - <span class="number">1</span>, nums[i]);</span><br><span class="line">            increasingSeq[pos] = nums[i];</span><br><span class="line">            <span class="keyword">if</span> (pos == len) &#123;</span><br><span class="line">                len++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findPositionToReplace</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target &gt; a[mid]) &#123;</span><br><span class="line">                l = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; a[mid]) &#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (target &lt;= a[l]) &#123;</span><br><span class="line">            <span class="keyword">return</span> l;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; a[r]) &#123;</span><br><span class="line">            <span class="keyword">return</span> r + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+* pupolar number
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// unsorted: hashmap</span></span><br><span class="line"><span class="comment">// sorted: binary search</span></span><br><span class="line"><span class="comment">// key point: find candidate target at n/4, n/2, 3*n/4</span></span><br></pre></td></tr></table></figure>
+
+
+* weighted random
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">大概就是一个数组, 1,4,2,6.... 每次调用一个函数，按照数组里面的数字的大小，返回相应的Index。</span></span><br><span class="line"><span class="comment">比如， 上面的例子就是, 1/13 的概率返回0, 4/13的概率返回1.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeightedRandom</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] sum; <span class="comment">// sum[i] is the sum of weight [0, i]</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WeightedRandom</span><span class="params">(<span class="keyword">int</span> weight[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = weight.length;</span><br><span class="line">        sum = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        sum[<span class="number">0</span>] = weight[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + weight[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = sum.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (sum[mid] &lt; w) &#123;</span><br><span class="line">                l = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum[mid] == w) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (w == sum[l]) &#123;</span><br><span class="line">            <span class="keyword">return</span> l;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nextIndex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// generate random weight in [1, sum[n-1]]</span></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">return</span> search(random.nextInt(sum[sum.length - <span class="number">1</span>]) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="Hash-table"><a href="#Hash-table" class="headerlink" title="Hash table"></a>Hash table</h4><ul>
+<li>seperate chain</li>
+<li>linear probing</li>
+<li>implementation<h1 id="bfs-search"><a href="#bfs-search" class="headerlink" title="bfs search"></a>bfs search</h1></li>
+<li>in intree</li>
+<li>in graph</li>
+<li>tree is acyclic connected graph<h1 id="dfs-search"><a href="#dfs-search" class="headerlink" title="dfs search"></a>dfs search</h1></li>
+<li>in tree<ul>
+<li>preorder</li>
+<li>inorder</li>
+<li>postorder </li>
+</ul>
+</li>
+<li>in graph<ul>
+<li>iterative</li>
+<li>recursive <h1 id="binary-search-tree"><a href="#binary-search-tree" class="headerlink" title="binary search tree"></a>binary search tree</h1></li>
+</ul>
+</li>
+<li>usage: search min, max, floor, ceiling, rank, range search</li>
+<li>balanced binary search tree implementation<h1 id="range-search-range-min-max-sum"><a href="#range-search-range-min-max-sum" class="headerlink" title="range search: range min,max,sum"></a>range search: range min,max,sum</h1></li>
+<li>binary index tree</li>
+<li>segment tree</li>
+<li>interval tree/augmented tree<h1 id="string-search"><a href="#string-search" class="headerlink" title="string search"></a>string search</h1></li>
+<li>trie</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/11/summary-for-Binary-Search/" data-id="cjqskkonw00031n9zuzq2tw0f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/11/summary-for-Array-Sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Sort</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/11/summary-for-Binary-Search/">search</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/11/summary-for-Array-Sort/">Sort</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/06/onsite-interview-流程/">onsite interview 流程</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/05/summary-for-stack-related-question/">summary for stack related question</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/05/summary-for-Design-Data-Structure/">summary for Design, Data Structure</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
