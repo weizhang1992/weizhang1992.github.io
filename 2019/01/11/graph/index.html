@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="summary basic knowledge representation basic traverse, found path, print path, maze cycle detection connectivity shortest path schedule networks/dependency advanced: spanning tree, euler cycle, hamlit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-11T22:28:47.000Z">
+<meta property="og:updated_time" content="2019-01-11T22:30:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="graph">
 <meta name="twitter:description" content="summary basic knowledge representation basic traverse, found path, print path, maze cycle detection connectivity shortest path schedule networks/dependency advanced: spanning tree, euler cycle, hamlit">
@@ -104,10 +104,14 @@
 <li>spanning tree</li>
 <li>min spanning tree</li>
 <li>cycle</li>
-<li>acyclic<h2 id="representation"><a href="#representation" class="headerlink" title="representation"></a>representation</h2></li>
+<li>acyclic</li>
+</ol>
+<h2 id="representation"><a href="#representation" class="headerlink" title="representation"></a>representation</h2><ol>
 <li>objects and pointers:</li>
 <li>matrix: graph[][], graph[i][j] = 1 means i and j are connected </li>
-<li>adjacent list: List&lt;List<integer>&gt; graph<h2 id="basic-traverse-found-path-print-path-maze"><a href="#basic-traverse-found-path-print-path-maze" class="headerlink" title="basic traverse, found path, print path, maze"></a>basic traverse, found path, print path, maze</h2></integer></li>
+<li>adjacent list: List&lt;List<integer>&gt; graph</integer></li>
+</ol>
+<h2 id="basic-traverse-found-path-print-path-maze"><a href="#basic-traverse-found-path-print-path-maze" class="headerlink" title="basic traverse, found path, print path, maze"></a>basic traverse, found path, print path, maze</h2><ol>
 <li>dfs: <ul>
 <li>recursion: same memory cost as iterative way, stack memory .vs. heap memory</li>
 <li>iterative: stack</li>
@@ -120,11 +124,11 @@
 <li>iterative: Queue or rolling array</li>
 <li>time complexity: O(V + E)</li>
 <li>use case: Min distance(only deal with weight = 1), </li>
-<li><strong>multi-end bfs</strong> to solve <a href="https://leetcode.com/problems/walls-and-gates/" target="_blank" rel="noopener">Walls and Gates</a><h2 id="cycle-detection"><a href="#cycle-detection" class="headerlink" title="cycle detection"></a>cycle detection</h2></li>
+<li><strong>multi-end bfs</strong> to solve <a href="https://leetcode.com/problems/walls-and-gates/" target="_blank" rel="noopener">Walls and Gates</a></li>
 </ul>
 </li>
 </ol>
-<ul>
+<h2 id="cycle-detection"><a href="#cycle-detection" class="headerlink" title="cycle detection"></a>cycle detection</h2><ul>
 <li><p>undirected graph:<br>  dfs with <strong>visited[] and parent</strong> check, <a href="https://leetcode.com/problems/graph-valid-tree/" target="_blank" rel="noopener">LC261:Graph Valid Tree</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CycleDetectionInUndirectedGraph</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; graph, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span>[] visit = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visit[i]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (containsCycle(i, visit, graph)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">containsCycle</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">boolean</span>[] visit, List&lt;List&lt;Integer&gt;&gt; graph)</span> </span>&#123;</span><br><span class="line">        visit[i] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> node : graph.get(i)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visit[node]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (containsCycle(node, visit, graph)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node != i) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -182,9 +186,9 @@
 </li>
 <li><p>earliest occurence time of job</p>
 </li>
-<li>critical path<h2 id="advanced-graph-algorithm"><a href="#advanced-graph-algorithm" class="headerlink" title="advanced graph algorithm"></a>advanced graph algorithm</h2></li>
+<li>critical path</li>
 </ul>
-<ol>
+<h2 id="advanced-graph-algorithm"><a href="#advanced-graph-algorithm" class="headerlink" title="advanced graph algorithm"></a>advanced graph algorithm</h2><ol>
 <li>spanning tree</li>
 </ol>
 <ul>
@@ -237,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjqsm5sug00085o9zm3nzp8ox" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjqsm7te50007629z1nqw7eki" class="article-share-link">Share</a>
       
       
     </footer>
