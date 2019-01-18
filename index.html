@@ -123,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjr210xz80000q39zk6l6b9dq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjr217qyd0000qi9zntbtk6yf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -310,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjr210xzz0006q39zc4nohtbz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjr217qz30006qi9znvtwsq4h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -502,7 +502,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjr210y050009q39zn78sdzxj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjr217qza0009qi9zqm1sbhmj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -603,7 +603,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjr210xzn0003q39zz1iakj23" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjr217qys0003qi9zsrhgw3th" class="article-share-link">Share</a>
       
       
     </footer>
@@ -699,7 +699,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjr210xzm0002q39zb5a7v3yw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjr217qys0004qi9zmtabs919" class="article-share-link">Share</a>
       
       
     </footer>
@@ -774,6 +774,7 @@
 <h4 id="other-advanced-sort"><a href="#other-advanced-sort" class="headerlink" title="other advanced sort"></a>other advanced sort</h4><ul>
 <li><p>heap sort</p>
 <ul>
+<li><a href="http://weizhang1992.github.io/2016/11/02/summary-for-Heap-PriorityQueue/" target="_blank" rel="noopener">questions</a></li>
 <li>why build heap is O(n)</li>
 <li>PriorityQueue api</li>
 <li>heap-based PQ implementation(bottom up swim, top down sink)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> arr[])</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> n = arr.length; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// Build heap (rearrange array) </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) </span><br><span class="line">        heapify(arr, n, i); </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// One by one extract an element from heap </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n-<span class="number">1</span>; i&gt;=<span class="number">0</span>; i--) &#123; </span><br><span class="line">        <span class="comment">// Move current root to end </span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[<span class="number">0</span>]; </span><br><span class="line">        arr[<span class="number">0</span>] = arr[i]; </span><br><span class="line">        arr[i] = temp; </span><br><span class="line">  </span><br><span class="line">        <span class="comment">// call max heapify on the reduced heap </span></span><br><span class="line">        heapify(arr, i, <span class="number">0</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line">  </span><br><span class="line"><span class="comment">// To heapify a subtree rooted with node i which is </span></span><br><span class="line"><span class="comment">// an index in arr[]. n is size of heap </span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n, <span class="keyword">int</span> i)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> largest = i; <span class="comment">// Initialize largest as root </span></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">2</span>*i + <span class="number">1</span>; <span class="comment">// left = 2*i + 1 </span></span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">2</span>*i + <span class="number">2</span>; <span class="comment">// right = 2*i + 2 </span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">// If left child is larger than root </span></span><br><span class="line">    <span class="keyword">if</span> (l &lt; n &amp;&amp; arr[l] &gt; arr[largest]) </span><br><span class="line">        largest = l; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// If right child is larger than largest so far </span></span><br><span class="line">    <span class="keyword">if</span> (r &lt; n &amp;&amp; arr[r] &gt; arr[largest]) </span><br><span class="line">        largest = r; </span><br><span class="line">  </span><br><span class="line">    <span class="comment">// If largest is not root </span></span><br><span class="line">    <span class="keyword">if</span> (largest != i) &#123; </span><br><span class="line">        swap(arr, largest, i)</span><br><span class="line">  </span><br><span class="line">        <span class="comment">// Recursively heapify the affected sub-tree </span></span><br><span class="line">        heapify(arr, n, largest); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] n, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = n[a];</span><br><span class="line">    n[a] = n[b];</span><br><span class="line">    n[b] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -866,7 +867,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjr210xzo0004q39z30zfpsp3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjr217qyr0002qi9z8zfykww9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -924,7 +925,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjr210xzc0001q39zar4g4wz1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjr217qyh0001qi9zvxwnn55n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -992,7 +993,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjr210xzp0005q39zgc9hpce0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjr217qyt0005qi9zegeadm84" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1076,7 +1077,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjr210y010007q39zehvtbk47" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjr217qz50007qi9zdzcdkml8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1199,7 +1200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjr210y030008q39zmh9j7jtl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjr217qz60008qi9zbqdqcu8b" class="article-share-link">Share</a>
       
       
     </footer>
