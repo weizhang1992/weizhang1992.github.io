@@ -125,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrakc16r00000u9zslxf71y1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjran2oai00004q9zpqap6p3y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -211,7 +211,7 @@
 <h2 id="connectivity"><a href="#connectivity" class="headerlink" title="connectivity"></a>connectivity</h2><ul>
 <li><p>example:</p>
 <ul>
-<li><a href="https://leetcode.com/problems/evaluate-division/" target="_blank" rel="noopener">evaluate-division</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//use dfs to do it first, what's the time complexity</span></span><br><span class="line"><span class="comment">//use union find to do it second, what's the time complexity</span></span><br></pre></td></tr></table></figure>
+<li><a href="https://leetcode.com/problems/evaluate-division/" target="_blank" rel="noopener">evaluate-division</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//use dfs to do it first, what's the time complexity</span></span><br><span class="line"><span class="comment">//use union find to do it second, what's the time complexity</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">double</span>[] calcEquation(String[][] equations, <span class="keyword">double</span>[] values, String[][] queries) &#123;</span><br><span class="line">        <span class="keyword">double</span>[] res = <span class="keyword">new</span> <span class="keyword">double</span>[queries.length];</span><br><span class="line">        UnionFind uf = <span class="keyword">new</span> UnionFind();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; values.length; i++) &#123;</span><br><span class="line">            uf.union(equations[i][<span class="number">0</span>], equations[i][<span class="number">1</span>], values[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; queries.length; i++) &#123;</span><br><span class="line">            res[i] = uf.calc(queries[i][<span class="number">0</span>], queries[i][<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFind</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, String&gt; root = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, Double&gt; factor = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">calc</span><span class="params">(String a, String b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root.containsKey(a) || !root.containsKey(b) || !findParent(a).equals(findParent(b))) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> factor.get(a) / factor.get(b);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(String a, String b, <span class="keyword">double</span> val)</span> </span>&#123;</span><br><span class="line">        String ap = findParent(a);</span><br><span class="line">        String bp = findParent(b);</span><br><span class="line">        root.put(ap, bp);</span><br><span class="line">        factor.put(ap, factor.get(b) * val / factor.get(a));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">findParent</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root.containsKey(s)) &#123;</span><br><span class="line">            root.put(s, s);</span><br><span class="line">            factor.put(s, <span class="number">1.0</span>);</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.get(s).equals(s)) <span class="keyword">return</span> s;</span><br><span class="line">        String lastP = root.get(s);</span><br><span class="line">        String p = findParent(lastP);</span><br><span class="line">        root.put(s, p);</span><br><span class="line">        factor.put(s, factor.get(s) * factor.get(lastP));</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -326,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrakc17p00080u9zkpy997xk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjran2ob800054q9z6w3adc6y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -518,7 +518,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrakc17r00090u9zcbwdi7lh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjran2obm00094q9zsui0kk7g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -619,7 +619,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrakc17800020u9zanrkn60l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjran2oat00034q9zmlm6e7vp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -715,7 +715,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrakc17900030u9zd8od7cg2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjran2oas00024q9zvbv7hrit" class="article-share-link">Share</a>
       
       
     </footer>
@@ -889,7 +889,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrakc17k00050u9zy7q1u0ce" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjran2oba00064q9zc7ihoe8i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -947,7 +947,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrakc16u00010u9zlp1v1mmz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjran2oal00014q9zykglrhgd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1015,7 +1015,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrakc17a00040u9zacnwu68n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjran2oau00044q9zqc8b8d8l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1099,7 +1099,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrakc17m00060u9ztx9godoo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjran2obb00074q9za3gr174e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1222,7 +1222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrakc17n00070u9zuajp2zyz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjran2obc00084q9zy0jaasl0" class="article-share-link">Share</a>
       
       
     </footer>
