@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-18T12:40:06.000Z">
+<meta property="og:updated_time" content="2019-01-24T03:49:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sort">
 <meta name="twitter:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
@@ -159,6 +159,11 @@
 </li>
 <li><p>Regular Expression Matching</p>
 </li>
+<li><p><a href="https://leetcode.com/problems/fruit-into-baskets/submissions/" target="_blank" rel="noopener">fruit-into-baskets</a></p>
+</li>
+<li><p><a href="https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/" target="_blank" rel="noopener">longest-substring-with-at-least-k-repeating-characters</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">totalFruit</span><span class="params">(<span class="keyword">int</span>[] tree)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; count = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tree.length; ++j) &#123;</span><br><span class="line">            count.put(tree[j], count.getOrDefault(tree[j], <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (count.size() &gt; <span class="number">2</span>) &#123;</span><br><span class="line">                count.put(tree[i], count.get(tree[i]) - <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span> (count.get(tree[i]) == <span class="number">0</span>) count.remove(tree[i]);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            res = Math.max(res, j - i + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p><a href="">longest consecutive sequence</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//set with two point</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -222,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjr9yviue0005og9z7sdeqkh2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjra2w38r0006v49zsa1o9ndr" class="article-share-link">Share</a>
       
       
     </footer>
