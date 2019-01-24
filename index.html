@@ -125,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjra2w37y0000v49zvi2pbvms" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjra37pd90000vj9z6obrs43v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjra2w38q0005v49zq9y5zfbc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjra37pe10006vj9zkkya4hrg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -511,7 +511,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjra2w3980009v49zx9488mma" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjra37pe60009vj9ztu0znduy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -612,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjra2w38h0003v49z4wkjzt8m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjra37pdo0003vj9z5ryg5ygh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -708,7 +708,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjra2w38g0002v49zj8uzd3p6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjra37pdo0002vj9zjwux87zd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -815,7 +815,8 @@
 </li>
 <li><p><a href="https://leetcode.com/problems/fruit-into-baskets/submissions/" target="_blank" rel="noopener">fruit-into-baskets</a></p>
 </li>
-<li><p><a href="https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/" target="_blank" rel="noopener">longest-substring-with-at-least-k-repeating-characters</a></p>
+<li><a href="https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/" target="_blank" rel="noopener">longest-substring-with-at-least-k-repeating-characters</a></li>
+<li><p><a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/" target="_blank" rel="noopener">longest-substring-with-at-most-two-distinct-characters/</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">totalFruit</span><span class="params">(<span class="keyword">int</span>[] tree)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; count = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tree.length; ++j) &#123;</span><br><span class="line">            count.put(tree[j], count.getOrDefault(tree[j], <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (count.size() &gt; <span class="number">2</span>) &#123;</span><br><span class="line">                count.put(tree[i], count.get(tree[i]) - <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span> (count.get(tree[i]) == <span class="number">0</span>) count.remove(tree[i]);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            res = Math.max(res, j - i + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="">longest consecutive sequence</a></p>
@@ -881,7 +882,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjra2w38r0006v49zsa1o9ndr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjra37pdy0005vj9zcygzkpdk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -939,7 +940,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjra2w3830001v49z1mcb8ow4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjra37pdd0001vj9zt0tfqiz1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1007,7 +1008,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjra2w38i0004v49zxtjwbiib" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjra37pdp0004vj9zamdy0e6w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1091,7 +1092,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjra2w38t0008v49z2xzz1ds0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjra37pe20007vj9zow17xeuz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1214,7 +1215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjra2w38t0007v49z0tsxxwrc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjra37pe40008vj9z41uqc93m" class="article-share-link">Share</a>
       
       
     </footer>
