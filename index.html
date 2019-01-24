@@ -125,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjr9vs5tq0000ip9zzp0270y7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjr9vvtix0001jb9zinj3gr5x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -272,8 +272,7 @@
 <li>euler cycle</li>
 </ol>
 <ul>
-<li><p>exist condition</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">For the existence of Eulerian trails it is necessary that zero or two vertices have an odd degree; <span class="keyword">this</span> means the Königsberg graph is not Eulerian. If there are no vertices of odd degree, all Eulerian trails are circuits. If there are exactly two vertices of odd degree, all Eulerian trails start at one of them and end at the other</span><br></pre></td></tr></table></figure>
+<li><p>exist condition<br>For the existence of Eulerian trails it is necessary that zero or two vertices have an odd degree; this means the Königsberg graph is not Eulerian. If there are no vertices of odd degree, all Eulerian trails are circuits. If there are exactly two vertices of odd degree, all Eulerian trails start at one of them and end at the other</p>
 </li>
 <li><p>fleury’s algorithm</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less efficient than hierholzer</span><br></pre></td></tr></table></figure>
@@ -281,8 +280,7 @@
 <li><p>hierholzer’s algorithm</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">stack.push(s);</span><br><span class="line"></span><br><span class="line"><span class="comment">// greedily add to putative cycle, depth-first search style</span></span><br><span class="line">cycle = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"><span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = stack.pop();</span><br><span class="line">    <span class="keyword">while</span> (adj[v].hasNext()) &#123;</span><br><span class="line">        stack.push(v);</span><br><span class="line">        v = adj[v].next();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// add vertex with no more leaving edges to cycle</span></span><br><span class="line">    cycle.push(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// check if all edges have been used</span></span><br><span class="line"><span class="comment">// (in case there are two or more vertex-disjoint Eulerian cycles)</span></span><br><span class="line"><span class="keyword">if</span> (cycle.size() != G.E() + <span class="number">1</span>)</span><br><span class="line">    cycle = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>naive algo</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stupid dfs search all possible state. <span class="keyword">if</span> not work, just go back to last work state and <span class="keyword">continue</span>.</span><br></pre></td></tr></table></figure>
+<li><p>naive algo<br>stupid dfs search all possible state. if not work, just go back to last work state and continue.</p>
 </li>
 </ul>
 <ol start="3">
@@ -321,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjr9vs5ui0006ip9z68gwsk8d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjr9vvtjs0008jb9ziv56p96r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -513,7 +511,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjr9vs5ut0009ip9znis5qvt8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjr9vvtju0009jb9zizpvisun" class="article-share-link">Share</a>
       
       
     </footer>
@@ -614,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjr9vs5u70003ip9zx8c8bjow" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjr9vvtja0003jb9ztx495p6h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -710,7 +708,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjr9vs5u60002ip9z06g1fl4y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjr9vvtj90002jb9zl3x5r3vc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -878,7 +876,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjr9vs5u80004ip9z12wh6t7e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjr9vvtjc0005jb9zt1u93uwl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -936,7 +934,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjr9vs5tu0001ip9zuf1v00s4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjr9vvtis0000jb9zauveqs34" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1004,7 +1002,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjr9vs5u90005ip9zicg28fzo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjr9vvtjb0004jb9zdl3j7rze" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1088,7 +1086,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjr9vs5uj0007ip9zegbsbdj6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjr9vvtjn0006jb9z8escuz82" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1211,7 +1209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjr9vs5uk0008ip9z6agqkbgm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjr9vvtjo0007jb9z6xzn1b6g" class="article-share-link">Share</a>
       
       
     </footer>
