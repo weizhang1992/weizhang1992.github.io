@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrcixocb0000h09zwz8z0pme" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrdhjfmb0000xr9z2hkzzv5n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrcixodi0008h09ztvcnzt7q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrdhjfna0008xr9z50nx3cpo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -521,7 +521,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrcixodl0009h09zerlkqpkr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrdhjfnc0009xr9zm1u62nnq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -565,6 +565,10 @@
 <li><p>there may need two recurrence formula, and one depend another</p>
 </li>
 </ol>
+<h2 id="2D-dp"><a href="#2D-dp" class="headerlink" title="2D dp"></a>2D dp</h2><ul>
+<li><a href="https://leetcode.com/problems/unique-paths/" target="_blank" rel="noopener">unique-paths</a></li>
+<li><a href="https://leetcode.com/problems/unique-paths-ii/" target="_blank" rel="noopener">unique-paths-ii</a></li>
+</ul>
 <h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><ul>
 <li><p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">Best Time To Buy And Sell Stock With Cooldown</a><br>buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i]);<br>sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);<br>buy[i] 表示到i哪天为止，最后一个交易动作是buy的最大profit。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> buy = Integer.MIN_VALUE, pre_buy = <span class="number">0</span>, sell = <span class="number">0</span>, pre_sell = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> price : prices) &#123;</span><br><span class="line">            pre_buy = buy;</span><br><span class="line">            buy = Math.max(pre_sell - price, pre_buy);</span><br><span class="line">            pre_sell = sell;</span><br><span class="line">            sell = Math.max(pre_buy + price, pre_sell);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sell;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -622,7 +626,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrcixocs0003h09zr7se5zfn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrdhjfmp0003xr9z0hriaio6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -718,7 +722,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrcixocr0002h09zfklylj0x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrdhjfmo0002xr9ztzjtjo6f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -896,7 +900,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrcixod40005h09z21v3z28z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrdhjfmz0005xr9zv00u6yuy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -954,7 +958,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrcixocf0001h09z9dnvuvbn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrdhjfme0001xr9z8c3ql0gw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -978,7 +982,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/summary-for-Design-Data-Structure/">summary for Design, Data Structure</a>
+      <a class="article-title" href="/2016/11/05/summary-for-Design-Data-Structure/">summary for Design, Hybrid Data Structure, Others</a>
     </h1>
   
 
@@ -987,6 +991,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
+<li><a href="https://leetcode.com/problems/guess-the-word/" target="_blank" rel="noopener">guess the word</a></li>
 <li><p><a href="https://leetcode.com/problems/design-hit-counter/" target="_blank" rel="noopener">Design hit counter</a></p>
 </li>
 <li><p><a href="https://leetcode.com/problems/flatten-2d-vector/" target="_blank" rel="noopener">Flatten 2D Vector</a></p>
@@ -1022,7 +1027,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrcixoct0004h09znl9gs8vh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrdhjfmr0004xr9zn5942him" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1106,7 +1111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrcixod60007h09zrmelmxds" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrdhjfn00006xr9zkqdawql3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1229,7 +1234,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrcixod50006h09zsiunby2z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrdhjfn10007xr9z7dn3qsui" class="article-share-link">Share</a>
       
       
     </footer>
