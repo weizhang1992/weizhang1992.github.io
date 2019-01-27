@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrewmhh10000sf9zhhs5xdmz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrexfq4b0000t39zwf2wt40z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrewmhhu0008sf9zvgd0rjyz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrexfq570008t39zypiccmfm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrewmhhv0009sf9zzx0fjpdd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrexfq590009t39z846eb6bx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -572,7 +572,8 @@
 </li>
 </ol>
 <h2 id="greedy"><a href="#greedy" class="headerlink" title="greedy"></a>greedy</h2><ul>
-<li><a href="https://leetcode.com/problems/split-array-into-consecutive-subsequences/" target="_blank" rel="noopener">split-array-into-consecutive-subsequences</a></li>
+<li><a href="https://leetcode.com/problems/split-array-into-consecutive-subsequences/" target="_blank" rel="noopener">split-array-into-consecutive-subsequences</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPossible</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; count = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    Map&lt;Integer, Integer&gt; tails = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> x: nums) count.put(x, count.getOrDefault(x, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> x: nums) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count.get(x) == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (tails.getOrDefault(x, <span class="number">0</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            tails.put(x, tails.get(x) - <span class="number">1</span>);</span><br><span class="line">            tails.put(x + <span class="number">1</span>, tails.getOrDefault(x + <span class="number">1</span>, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (count.getOrDefault(x+<span class="number">1</span>, <span class="number">0</span>) &gt; <span class="number">0</span> &amp;&amp; count.getOrDefault(x+<span class="number">2</span>, <span class="number">0</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            count.put(x + <span class="number">1</span>, count.get(x + <span class="number">1</span>) -<span class="number">1</span>);</span><br><span class="line">            count.put(x + <span class="number">2</span>, count.get(x + <span class="number">2</span>) -<span class="number">1</span>);</span><br><span class="line">            tails.put(x + <span class="number">3</span>, tails.getOrDefault(x + <span class="number">3</span>, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        count.put(x, count.getOrDefault(x, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="2D-dp"><a href="#2D-dp" class="headerlink" title="2D dp"></a>2D dp</h2><ul>
 <li><a href="https://leetcode.com/problems/unique-paths/" target="_blank" rel="noopener">unique-paths</a></li>
@@ -635,7 +636,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrewmhhf0003sf9zgdnqub9d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrexfq500004t39zxf3ev0gx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -731,7 +732,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrewmhhe0002sf9z7qiv8q0x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrexfq4l0002t39z6vmbvhjc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -913,7 +914,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrewmhho0005sf9zp5obdf5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrexfq510005t39z11wrub2x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -971,7 +972,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrewmhh50001sf9zpbq8dwms" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrexfq4f0001t39z5dxdtsdw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1045,7 +1046,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrewmhhg0004sf9z18njqi5p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrexfq4m0003t39zj6dnq1ti" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1129,7 +1130,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrewmhhr0006sf9z484u6exq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrexfq530006t39z1mucujg8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1252,7 +1253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrewmhhr0007sf9zrpuv9o49" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrexfq540007t39zwthi7iw4" class="article-share-link">Share</a>
       
       
     </footer>
