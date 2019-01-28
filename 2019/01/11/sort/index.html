@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-27T13:21:55.000Z">
+<meta property="og:updated_time" content="2019-01-28T00:16:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sort">
 <meta name="twitter:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
@@ -131,8 +131,13 @@
 <ul>
 <li><a href="http://weizhang1992.github.io/2016/11/02/summary-for-Heap-PriorityQueue/" target="_blank" rel="noopener">questions</a></li>
 <li>why build heap is O(n)</li>
-<li>PriorityQueue api<ul>
-<li><a href="https://leetcode.com/problems/minimum-cost-to-hire-k-workers/" target="_blank" rel="noopener">minimum-cost-to-hire-k-workers</a></li>
+<li><p>PriorityQueue api</p>
+<ul>
+<li><p><a href="https://leetcode.com/problems/meeting-rooms-ii/" target="_blank" rel="noopener">meeting-rooms-ii</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minMeetingRooms</span><span class="params">(Interval[] intervals)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (intervals == <span class="keyword">null</span> || intervals.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    Arrays.sort(intervals, (a, b) -&gt; a.start == b.start ? a.end - b.end : a.start - b.start);</span><br><span class="line">    PriorityQueue&lt;Integer&gt; pq= <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; intervals.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pq.isEmpty() &amp;&amp; pq.peek() &lt;= intervals[i].start) pq.poll();</span><br><span class="line">        pq.offer(intervals[i].end);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pq.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/minimum-cost-to-hire-k-workers/" target="_blank" rel="noopener">minimum-cost-to-hire-k-workers</a></p>
+</li>
 <li><a href="https://leetcode.com/problems/exam-room/" target="_blank" rel="noopener">exam-room</a></li>
 </ul>
 </li>
@@ -237,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrfk8bqy00046z9zr8lr6nm4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrfl2a6g0004909zfn4e3zml" class="article-share-link">Share</a>
       
       
     </footer>
