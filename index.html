@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrfl2a5t0000909zzacy7331" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrfohmu60000fk9zkrd2dut7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,7 +191,11 @@
 <li>iterative: stack</li>
 <li>time complexity: O(V + E)</li>
 <li>use case: Generate Maze, check if exist a path, print path, cycle detection</li>
-<li><a href="https://leetcode.com/problems/bricks-falling-when-hit/" target="_blank" rel="noopener">bricks-falling-when-hit</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] hitBricks(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span>[][] hits) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = grid.length;</span><br><span class="line">        <span class="keyword">int</span> m = grid[<span class="number">0</span>].length;</span><br><span class="line">        Set&lt;Integer&gt; visited = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[hits.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; hits.length; i++)</span><br><span class="line">            grid[hits[i][<span class="number">0</span>]][hits[i][<span class="number">1</span>]]--;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">            <span class="keyword">if</span> (!visited.contains(i) &amp;&amp; grid[<span class="number">0</span>][i] == <span class="number">1</span>)</span><br><span class="line">                search(grid, visited, <span class="number">0</span>, i);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = hits.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">int</span> lastSize = visited.size();</span><br><span class="line">            <span class="keyword">int</span> x = hits[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> y = hits[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (grid[x][y] != -<span class="number">1</span>) &#123;</span><br><span class="line">                grid[x][y]++;</span><br><span class="line">                <span class="keyword">if</span> (x + <span class="number">1</span> &lt; n &amp;&amp; visited.contains((x + <span class="number">1</span>) * m + y) ||</span><br><span class="line">                    x - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; visited.contains((x - <span class="number">1</span>) * m + y) ||</span><br><span class="line">                    y - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; visited.contains(x * m + y - <span class="number">1</span>) ||</span><br><span class="line">                    y + <span class="number">1</span> &lt; m &amp;&amp; visited.contains(x * m + y + <span class="number">1</span>) ||</span><br><span class="line">                    x == <span class="number">0</span>) &#123;</span><br><span class="line">                    search(grid, visited, x, y);</span><br><span class="line">                    res[i] = visited.size() - lastSize - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[][] grid, Set&lt;Integer&gt; visited, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = grid.length;</span><br><span class="line">        <span class="keyword">int</span> m = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (x &gt;= n || x &lt; <span class="number">0</span> || y &gt;= m || y &lt; <span class="number">0</span> || visited.contains(x * m + y) || grid[x][y] != <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">        visited.add(x * m + y);</span><br><span class="line">        search(grid, visited, x - <span class="number">1</span>, y);</span><br><span class="line">        search(grid, visited, x + <span class="number">1</span>, y);</span><br><span class="line">        search(grid, visited, x, y - <span class="number">1</span>);</span><br><span class="line">        search(grid, visited, x, y + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><a href="https://app.laicode.io/app/problem/218" target="_blank" rel="noopener">Generate Random Maze</a></li>
+<li><p>围棋判断是否被包围 思<br>路是DFS,一定要问清楚各种条件以及各种算包围的方式。<br>从一个符合条件的点开始做DFS/BFS,遇到边界返回false,<br>在不允许留白的情况下,可以直接遇到白色或者边界 返回false,即没有被包围。</p>
+</li>
+<li><p><a href="https://leetcode.com/problems/bricks-falling-when-hit/" target="_blank" rel="noopener">bricks-falling-when-hit</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] hitBricks(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span>[][] hits) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = grid.length;</span><br><span class="line">        <span class="keyword">int</span> m = grid[<span class="number">0</span>].length;</span><br><span class="line">        Set&lt;Integer&gt; visited = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[hits.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; hits.length; i++)</span><br><span class="line">            grid[hits[i][<span class="number">0</span>]][hits[i][<span class="number">1</span>]]--;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">            <span class="keyword">if</span> (!visited.contains(i) &amp;&amp; grid[<span class="number">0</span>][i] == <span class="number">1</span>)</span><br><span class="line">                search(grid, visited, <span class="number">0</span>, i);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = hits.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="keyword">int</span> lastSize = visited.size();</span><br><span class="line">            <span class="keyword">int</span> x = hits[i][<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> y = hits[i][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (grid[x][y] != -<span class="number">1</span>) &#123;</span><br><span class="line">                grid[x][y]++;</span><br><span class="line">                <span class="keyword">if</span> (x + <span class="number">1</span> &lt; n &amp;&amp; visited.contains((x + <span class="number">1</span>) * m + y) ||</span><br><span class="line">                    x - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; visited.contains((x - <span class="number">1</span>) * m + y) ||</span><br><span class="line">                    y - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; visited.contains(x * m + y - <span class="number">1</span>) ||</span><br><span class="line">                    y + <span class="number">1</span> &lt; m &amp;&amp; visited.contains(x * m + y + <span class="number">1</span>) ||</span><br><span class="line">                    x == <span class="number">0</span>) &#123;</span><br><span class="line">                    search(grid, visited, x, y);</span><br><span class="line">                    res[i] = visited.size() - lastSize - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[][] grid, Set&lt;Integer&gt; visited, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = grid.length;</span><br><span class="line">        <span class="keyword">int</span> m = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">if</span> (x &gt;= n || x &lt; <span class="number">0</span> || y &gt;= m || y &lt; <span class="number">0</span> || visited.contains(x * m + y) || grid[x][y] != <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">        visited.add(x * m + y);</span><br><span class="line">        search(grid, visited, x - <span class="number">1</span>, y);</span><br><span class="line">        search(grid, visited, x + <span class="number">1</span>, y);</span><br><span class="line">        search(grid, visited, x, y - <span class="number">1</span>);</span><br><span class="line">        search(grid, visited, x, y + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -338,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrfl2a6n0008909zw2m62ogn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrfohmv70009fk9z0zrz81ho" class="article-share-link">Share</a>
       
       
     </footer>
@@ -537,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrfl2a6o0009909zckdrgxca" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrfohmv60008fk9zqfi4w67s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -646,7 +650,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrfl2a6h0005909zv1rn8pjz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrfohmuu0004fk9z6rku8ed7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -742,7 +746,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrfl2a650002909z6sray93d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrfohmuj0002fk9zmdu2wa4z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -930,7 +934,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrfl2a6g0004909zfn4e3zml" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrfohmuv0005fk9zubrzynxy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -988,7 +992,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrfl2a5w0001909zcpnyzekm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrfohmua0001fk9z953mnnmp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1062,7 +1066,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrfl2a660003909z7rj3ls8x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrfohmuk0003fk9zirncypv2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1146,7 +1150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrfl2a6k0007909ze498e10q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrfohmux0007fk9zxo2fclx7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1269,7 +1273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrfl2a6j0006909zbarhuy6k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrfohmuw0006fk9z5ijfbl4j" class="article-share-link">Share</a>
       
       
     </footer>
