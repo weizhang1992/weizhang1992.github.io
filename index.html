@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrfov0e20000g99zed04x7ky" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrhsq2n70000ae9zii30mebk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -344,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrfov0ex0008g99zd35548lb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrhsq2o90008ae9zkvo02qeu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -543,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrfov0ey0009g99zy0ynseag" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrhsq2oa0009ae9za06o6ke6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -595,6 +595,7 @@
 <li><a href="https://leetcode.com/problems/unique-paths/" target="_blank" rel="noopener">unique-paths</a></li>
 <li><a href="https://leetcode.com/problems/unique-paths-ii/" target="_blank" rel="noopener">unique-paths-ii</a></li>
 </ul>
+<h2 id="2-state-dp-treeMap-two-recurrence-formula-and-one-depend-another"><a href="#2-state-dp-treeMap-two-recurrence-formula-and-one-depend-another" class="headerlink" title="2 state(dp + treeMap):two recurrence formula, and one depend another"></a>2 state(dp + treeMap):two recurrence formula, and one depend another</h2><p>*<a href="https://leetcode.com/problems/odd-even-jump/" target="_blank" rel="noopener">odd-even-jump</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">oddEvenJumps</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n  = A.length, res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">boolean</span>[] higher = <span class="keyword">new</span> <span class="keyword">boolean</span>[n], lower = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">    higher[n - <span class="number">1</span>] = lower[n - <span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">    TreeMap&lt;Integer, Integer&gt; map = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">    map.put(A[n - <span class="number">1</span>], n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        Integer hi = map.ceilingKey(A[i]), lo = map.floorKey(A[i]);</span><br><span class="line">        <span class="keyword">if</span> (hi != <span class="keyword">null</span>) higher[i] = lower[map.get(hi)];</span><br><span class="line">        <span class="keyword">if</span> (lo != <span class="keyword">null</span>) lower[i] = higher[map.get(lo)];</span><br><span class="line">        <span class="keyword">if</span> (higher[i]) res++;</span><br><span class="line">        map.put(A[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><ul>
 <li><p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">Best Time To Buy And Sell Stock With Cooldown</a><br>buy[i] = Math.max(buy[i - 1], sell[i - 2] - prices[i]);<br>sell[i] = Math.max(sell[i - 1], buy[i - 1] + prices[i]);<br>buy[i] 表示到i哪天为止，最后一个交易动作是buy的最大profit。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> buy = Integer.MIN_VALUE, pre_buy = <span class="number">0</span>, sell = <span class="number">0</span>, pre_sell = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> price : prices) &#123;</span><br><span class="line">            pre_buy = buy;</span><br><span class="line">            buy = Math.max(pre_sell - price, pre_buy);</span><br><span class="line">            pre_sell = sell;</span><br><span class="line">            sell = Math.max(pre_buy + price, pre_sell);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sell;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -652,7 +653,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrfov0eq0004g99zsz2cc0hw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrhsq2nx0004ae9zf096d7nk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -748,7 +749,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrfov0ef0002g99zk995ejua" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrhsq2nl0002ae9zsnx6ke0y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -936,7 +937,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrfov0er0005g99zhqum0a7g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrhsq2ny0006ae9zui52sfog" class="article-share-link">Share</a>
       
       
     </footer>
@@ -994,7 +995,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrfov0e60001g99z9ol4ep6r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrhsq2na0001ae9z1p32kab2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1068,7 +1069,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrfov0eg0003g99zatavx8lz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrhsq2nm0003ae9zvjwguggw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1152,7 +1153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrfov0et0006g99zvx7mxjwu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrhsq2nz0007ae9zqo4olhiv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1275,7 +1276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrfov0eu0007g99zultjd364" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrhsq2nx0005ae9zbp46l3k0" class="article-share-link">Share</a>
       
       
     </footer>
