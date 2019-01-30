@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-28T00:16:43.000Z">
+<meta property="og:updated_time" content="2019-01-30T12:59:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sort">
 <meta name="twitter:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
@@ -100,6 +100,7 @@
 <li>radix sort: understand it</li>
 <li>bucket sort: understand it</li>
 <li>two point related question</li>
+<li>string related question</li>
 </ul>
 <h2 id="compare-based-sort"><a href="#compare-based-sort" class="headerlink" title="compare based sort"></a>compare based sort</h2><h4 id="elementary-sort"><a href="#elementary-sort" class="headerlink" title="elementary sort"></a>elementary sort</h4><ul>
 <li><strong>bubble sort</strong><br>is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted</li>
@@ -238,11 +239,11 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Define “X-Straight” as X cards with consecutive numbers (X &gt;= 3).</span></span><br><span class="line"><span class="comment">Determine if the deck can be fully divided into sets of “X-Straight”.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// assuming number on the card is 1 to 13</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XStraight</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">13</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isXStraights</span><span class="params">(<span class="keyword">int</span>[] cards)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] count = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> card : cards) count[card]++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] head = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</span><br><span class="line">        head[<span class="number">1</span>] = count[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; m + <span class="number">2</span>; ++i) &#123;</span><br><span class="line">            head[i] = Math.max(<span class="number">0</span>, count[i] - count[i - <span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span> (count[i] &lt; head[i - <span class="number">1</span>] + head[i - <span class="number">2</span>])</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-
+<h3 id="string-related-problem"><a href="#string-related-problem" class="headerlink" title="string related problem"></a>string related problem</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrhsq2ny0006ae9zui52sfog" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrj76yff0004db9zx1z9xcms" class="article-share-link">Share</a>
       
       
     </footer>

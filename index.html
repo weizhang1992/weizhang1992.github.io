@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrhsq2n70000ae9zii30mebk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrj76yer0000db9zdif01zfh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -344,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrhsq2o90008ae9zkvo02qeu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrj76yfs0009db9zhh8ozsaa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -543,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrhsq2oa0009ae9za06o6ke6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrj76yfr0008db9zpwqtzccj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -653,7 +653,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrhsq2nx0004ae9zf096d7nk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrj76yfg0005db9zloiuxzyr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -749,7 +749,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrhsq2nl0002ae9zsnx6ke0y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrj76yf40002db9z0perr3kl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -795,6 +795,7 @@
 <li>radix sort: understand it</li>
 <li>bucket sort: understand it</li>
 <li>two point related question</li>
+<li>string related question</li>
 </ul>
 <h2 id="compare-based-sort"><a href="#compare-based-sort" class="headerlink" title="compare based sort"></a>compare based sort</h2><h4 id="elementary-sort"><a href="#elementary-sort" class="headerlink" title="elementary sort"></a>elementary sort</h4><ul>
 <li><strong>bubble sort</strong><br>is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted</li>
@@ -933,11 +934,11 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Define “X-Straight” as X cards with consecutive numbers (X &gt;= 3).</span></span><br><span class="line"><span class="comment">Determine if the deck can be fully divided into sets of “X-Straight”.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// assuming number on the card is 1 to 13</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XStraight</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">13</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isXStraights</span><span class="params">(<span class="keyword">int</span>[] cards)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] count = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> card : cards) count[card]++;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] head = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">2</span>];</span><br><span class="line">        head[<span class="number">1</span>] = count[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; m + <span class="number">2</span>; ++i) &#123;</span><br><span class="line">            head[i] = Math.max(<span class="number">0</span>, count[i] - count[i - <span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span> (count[i] &lt; head[i - <span class="number">1</span>] + head[i - <span class="number">2</span>])</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-
+<h3 id="string-related-problem"><a href="#string-related-problem" class="headerlink" title="string related problem"></a>string related problem</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrhsq2ny0006ae9zui52sfog" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrj76yff0004db9zx1z9xcms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -995,7 +996,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrhsq2na0001ae9z1p32kab2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrj76yev0001db9za0f9wwmi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1069,7 +1070,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrhsq2nm0003ae9zvjwguggw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrj76yf50003db9z5cqge2a0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1153,7 +1154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrhsq2nz0007ae9zqo4olhiv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-Heap-PriorityQueue/" data-id="cjrj76yfi0007db9z35sn4wgn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1276,7 +1277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrhsq2nx0005ae9zbp46l3k0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrj76yfh0006db9zxiujdeyj" class="article-share-link">Share</a>
       
       
     </footer>
