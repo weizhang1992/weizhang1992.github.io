@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="keypoint find the Recurrence formula  to see if we can get general formula by 求出特征根方程，看解的个数。  top down(recursion) is easy to write  but interviewer may want the bottom up way(iterative)  there may nee">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-31T13:40:00.000Z">
+<meta property="og:updated_time" content="2019-02-01T20:08:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dp,greedy">
 <meta name="twitter:description" content="keypoint find the Recurrence formula  to see if we can get general formula by 求出特征根方程，看解的个数。  top down(recursion) is easy to write  but interviewer may want the bottom up way(iterative)  there may nee">
@@ -103,7 +103,11 @@
 </li>
 </ul>
 <h2 id="2D-dp"><a href="#2D-dp" class="headerlink" title="2D dp"></a>2D dp</h2><ul>
-<li><a href="https://leetcode.com/problems/unique-paths/" target="_blank" rel="noopener">unique-paths</a></li>
+<li><p><a href="https://leetcode.com/problems/minimum-window-subsequence/" target="_blank" rel="noopener">minimum-window-subsequence</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dp[i][j] 表示范围S中前i个字符包含范围T中前j个字符的子串的起始位置</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String S, String T)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] s = S.toCharArray(), t = T.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> m = s.length, n = t.length, start = -<span class="number">1</span>, minLen = Integer.MAX_VALUE;</span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= m; ++i) </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; ++j)</span><br><span class="line">            dp[i][j] = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= m; ++i) dp[i][<span class="number">0</span>] = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= Math.min(i, n); ++j)</span><br><span class="line">            dp[i][j] = (s[i - <span class="number">1</span>] == t[j - <span class="number">1</span>]) ? dp[i - <span class="number">1</span>][j - <span class="number">1</span>] : dp[i - <span class="number">1</span>][j];</span><br><span class="line">        <span class="keyword">if</span> (dp[i][n] != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i - dp[i][n] &lt; minLen) &#123;</span><br><span class="line">                minLen = i - dp[i][n];</span><br><span class="line">                start = dp[i][n];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (start != -<span class="number">1</span>) ? S.substring(start, start + minLen) : <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://leetcode.com/problems/unique-paths/" target="_blank" rel="noopener">unique-paths</a></p>
+</li>
 <li><a href="https://leetcode.com/problems/unique-paths-ii/" target="_blank" rel="noopener">unique-paths-ii</a></li>
 <li><a href="https://leetcode.com/problems/wildcard-matching/" target="_blank" rel="noopener">wildcard-matching</a><br>public boolean isMatch(String s, String p) {<br>  boolean[][] state = new boolean[s.length() + 1][p.length() + 1];<br>  state[0][0] = true;<br>  for (int j = 1; j &lt;= p.length(); ++j) {<pre><code>if (p.charAt(j - 1) == &apos;*&apos;) {
     state[0][j] = state[0][j - 1];
@@ -178,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrm2vake00044h9zojcukc8f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrmhe6dr0003hw9zvyf92ah3" class="article-share-link">Share</a>
       
       
     </footer>
