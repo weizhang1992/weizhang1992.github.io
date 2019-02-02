@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrnt1yoj0000a69z7bgc3mw3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrnx4fxh0000ck9zy8q2ddkt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrnt1ypk0008a69z8kg2l8ir" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrnx4fye0008ck9z3dankmlc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -503,7 +503,9 @@
 <li><a href="https://leetcode.com/problems/robot-room-cleaner/" target="_blank" rel="noopener">robot-room-cleaner</a><h1 id="binary-search-tree"><a href="#binary-search-tree" class="headerlink" title="binary search tree"></a>binary search tree</h1></li>
 </ul>
 </li>
-<li>undetstand what’s is tree:<br>  tree question can always solved by recursive method<br>  <a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener">validate-binary-search-tree</a><br>  <a href="https://www.geeksforgeeks.org/tree-isomorphism-problem/" target="_blank" rel="noopener">tree-isomorphism-problem</a></li>
+<li><p>undetstand what’s is tree:<br>  tree question can always solved by recursive method<br>  <a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener">validate-binary-search-tree</a><br>  <a href="https://www.geeksforgeeks.org/tree-isomorphism-problem/" target="_blank" rel="noopener">tree-isomorphism-problem</a><br>  <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/" target="_blank" rel="noopener">binary-tree-maximum-path-sum</a></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> maxValue;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxPathSum</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    maxValue = Integer.MIN_VALUE;</span><br><span class="line">    maxPathDown(root);</span><br><span class="line">    <span class="keyword">return</span> maxValue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">maxPathDown</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> left = Math.max(<span class="number">0</span>, maxPathDown(node.left));</span><br><span class="line">    <span class="keyword">int</span> right = Math.max(<span class="number">0</span>, maxPathDown(node.right));</span><br><span class="line">    maxValue = Math.max(maxValue, left + right + node.val);</span><br><span class="line">    <span class="keyword">return</span> Math.max(left, right) + node.val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>usage: search min, max, floor, ceiling, rank, range search</p>
 <ul>
 <li>implementation:<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTreeImpl</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> TreeNode root;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BinarySearchTreeImpl</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        root = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">find</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> find(value, root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        root = insert(value, root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        root = delete(value, root);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">find</span><span class="params">(<span class="keyword">int</span> value, TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (value == node.val) &#123;</span><br><span class="line">            <span class="keyword">return</span> node;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value &lt; node.val) &#123;</span><br><span class="line">            <span class="keyword">return</span> find(value, root.left);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> find(value, root.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">insert</span><span class="params">(<span class="keyword">int</span> value, TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> TreeNode(value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (value == node.val) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"not allow duplicate"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value &lt; node.val) &#123;</span><br><span class="line">            root.left = insert(value, root.left);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            root.right = insert(value, root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">delete</span><span class="params">(<span class="keyword">int</span> value, TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"you can not delete null node"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (value == node.val) &#123;</span><br><span class="line">            <span class="keyword">if</span> (root.left != <span class="keyword">null</span> &amp;&amp; root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                root.val = findMin(root.right).val;</span><br><span class="line">                root.right = removeMin(root.right);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                root = (root.left != <span class="keyword">null</span> ) ? root.left : root.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value &lt; node.val) &#123;</span><br><span class="line">            root.left = delete(value, root.left);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            root.right = delete(value, root.right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">findMin</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> findMin(node.left);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> node;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> TreeNode <span class="title">removeMin</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (node.left == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> node.right;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            node.left = removeMin(node.left);</span><br><span class="line">            <span class="keyword">return</span> node;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -562,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrnt1ypb0006a69zibfwafsx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrnx4fy70006ck9z2qc3d378" class="article-share-link">Share</a>
       
       
     </footer>
@@ -684,7 +686,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrnt1yp60004a69z9qzhdox3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrnx4fy40004ck9z0o6ntich" class="article-share-link">Share</a>
       
       
     </footer>
@@ -783,7 +785,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrnt1yow0002a69z2ig32j1r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrnx4fxu0002ck9zusi0dit9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1008,7 +1010,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrnt1yph0007a69zg5favcpm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrnx4fyc0007ck9zgdmcacmd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1066,7 +1068,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrnt1yon0001a69zfksoovj2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrnx4fxl0001ck9zl846ozig" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1140,7 +1142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrnt1yox0003a69zewhfb3oz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrnx4fxu0003ck9zcwoxchck" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1263,7 +1265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrnt1yp70005a69zqfkkvfh2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrnx4fy50005ck9zpw9tyeq6" class="article-share-link">Share</a>
       
       
     </footer>
