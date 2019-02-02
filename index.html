@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrngsmgp0000ya9za9ofweqt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrnh3jel0000zt9zh4pueolq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -361,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrngsmi00008ya9zuwoxxwix" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrnh3jfi0008zt9z8porpncv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -561,7 +561,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrngsmhr0006ya9zslt4qqah" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrnh3jfc0006zt9zyfrwx2n0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -618,21 +618,8 @@
 <li><p><a href="https://leetcode.com/problems/unique-paths-ii/" target="_blank" rel="noopener">unique-paths-ii</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A robot is located at the top-left corner of a m x n grid</span></span><br><span class="line"><span class="comment">//Now consider if some obstacles are added to the grids. How many unique paths would there be?</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="keyword">int</span>[][] obstacleGrid)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (obstacleGrid.length == <span class="number">0</span> || obstacleGrid[<span class="number">0</span>].length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span>[][] res = <span class="keyword">new</span> <span class="keyword">int</span>[obstacleGrid.length][obstacleGrid[<span class="number">0</span>].length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obstacleGrid.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; obstacleGrid[i].length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (obstacleGrid[i][j] == <span class="number">1</span>) &#123;</span><br><span class="line">                res[i][j] = <span class="number">0</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">0</span> &amp;&amp; j == <span class="number">0</span>) &#123;</span><br><span class="line">                res[i][j] = <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == <span class="number">0</span>) &#123;</span><br><span class="line">                res[i][j] = res[i - <span class="number">1</span>][j];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">                res[i][j] = res[i][j - <span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res[i][j] = res[i - <span class="number">1</span>][j] + res[i][j - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res[obstacleGrid.length - <span class="number">1</span>][obstacleGrid[<span class="number">0</span>].length - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://leetcode.com/problems/wildcard-matching/" target="_blank" rel="noopener">wildcard-matching</a><br>public boolean isMatch(String s, String p) {<br>  boolean[][] state = new boolean[s.length() + 1][p.length() + 1];<br>  state[0][0] = true;<br>  for (int j = 1; j &lt;= p.length(); ++j) {</p>
-<pre><code>if (p.charAt(j - 1) == &apos;*&apos;) {
-    state[0][j] = state[0][j - 1];
-}
-</code></pre><p>  }<br>  for (int i = 1; i &lt;= s.length(); ++i) {</p>
-<pre><code>for (int j = 1; j &lt;= p.length(); ++j) {
-    if (p.charAt(j - 1) == &apos;?&apos;) {
-        state[i][j] = state[i - 1][j - 1];
-    } else if (p.charAt(j - 1) == &apos;*&apos;) {
-        state[i][j] = state[i - 1][j] || state[i][j - 1];
-    } else {
-        state[i][j] = state[i - 1][j - 1] &amp;&amp; s.charAt(i - 1) == p.charAt(j - 1);
-    }
-}
-</code></pre><p>  }<br>  return state[s.length()][p.length()];<br>}</p>
+<li><p><a href="https://leetcode.com/problems/wildcard-matching/" target="_blank" rel="noopener">wildcard-matching</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span>[][] state = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length() + <span class="number">1</span>][p.length() + <span class="number">1</span>];</span><br><span class="line">    state[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= p.length(); ++j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'*'</span>) &#123;</span><br><span class="line">            state[<span class="number">0</span>][j] = state[<span class="number">0</span>][j - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= s.length(); ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= p.length(); ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'?'</span>) &#123;</span><br><span class="line">                state[i][j] = state[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'*'</span>) &#123;</span><br><span class="line">                state[i][j] = state[i - <span class="number">1</span>][j] || state[i][j - <span class="number">1</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                state[i][j] = state[i - <span class="number">1</span>][j - <span class="number">1</span>] &amp;&amp; s.charAt(i - <span class="number">1</span>) == p.charAt(j - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state[s.length()][p.length()];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://leetcode.com/problems/regular-expression-matching/" target="_blank" rel="noopener">regular-expression-matching</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//'.' Matches any single character.</span></span><br><span class="line"><span class="comment">//'*' Matches zero or more of the preceding element.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length(), m = p.length();</span><br><span class="line">        <span class="keyword">boolean</span>[][] states = <span class="keyword">new</span> <span class="keyword">boolean</span>[n + <span class="number">1</span>][m + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">            states[i][<span class="number">0</span>] = (i == <span class="number">0</span>) ? <span class="keyword">true</span> : <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">            states[<span class="number">0</span>][j] = (j &gt;= <span class="number">2</span> &amp;&amp; p.charAt(j - <span class="number">1</span>) == <span class="string">'*'</span>) ? states[<span class="number">0</span>][j - <span class="number">2</span>] : <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'.'</span>) &#123;</span><br><span class="line">                    states[i][j] = states[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p.charAt(j - <span class="number">1</span>) == <span class="string">'*'</span>) &#123;</span><br><span class="line">                    states[i][j] = j &gt;= <span class="number">2</span> &amp;&amp; ((states[i][j - <span class="number">2</span>]) || (states[i - <span class="number">1</span>][j] &amp;&amp; (p.charAt(j - <span class="number">2</span>) == s.charAt(i - <span class="number">1</span>) || p.charAt(j - <span class="number">2</span>) == <span class="string">'.'</span>)));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    states[i][j] = states[i - <span class="number">1</span>][j - <span class="number">1</span>] &amp;&amp; p.charAt(j - <span class="number">1</span>) == s.charAt(i - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> states[n][m];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -696,7 +683,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrngsmh70002ya9zsskymwhj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrnh3jf80004zt9z9ap71ppy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -795,7 +782,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrngsmh80003ya9zotdrlsxq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrnh3jex0002zt9z0kayfx2u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1020,7 +1007,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrngsmhv0007ya9zbyjsp947" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrnh3jfh0007zt9z9xj6vjds" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1078,7 +1065,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrngsmgu0001ya9zx3vv853o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrnh3jep0001zt9zt5wnbvx7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1152,7 +1139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrngsmha0004ya9z8h93mvzd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrnh3jey0003zt9zdf7srqh3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1275,7 +1262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrngsmhg0005ya9ze4kqv15y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrnh3jf90005zt9z5bzjl48z" class="article-share-link">Share</a>
       
       
     </footer>
