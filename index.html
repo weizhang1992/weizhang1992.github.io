@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrp1qyia0000zl9zvvbn55al" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrp2eilk0000089zgqbiidgl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrp1qyje0008zl9zeqmba5xy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrp2eimm0008089z5l2cedfh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -515,6 +515,8 @@
 </li>
 <li><p>undetstand what’s is tree:<br>  tree question can always solved by recursive method<br>  <a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener">validate-binary-search-tree</a></p>
   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValidBST</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> isValid(root, Long.MIN_VALUE, Long.MAX_VALUE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(TreeNode node, <span class="keyword">long</span> min, <span class="keyword">long</span> max)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (node.val &lt;= min || node.val &gt;= max) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> isValid(node.left, min, node.val) &amp;&amp; isValid(node.right, node.val, max);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <a href="https://leetcode.com/problems/recover-binary-search-tree/" target="_blank" rel="noopener">recover-binary-search-tree</a></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    TreeNode firstElement = <span class="keyword">null</span>;</span><br><span class="line">    TreeNode secondElement = <span class="keyword">null</span>;</span><br><span class="line">    TreeNode prevElement = <span class="keyword">new</span> TreeNode(Integer.MIN_VALUE);</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recoverTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        traverse(root);</span><br><span class="line">        <span class="keyword">int</span> temp = firstElement.val;</span><br><span class="line">        firstElement.val = secondElement.val;</span><br><span class="line">        secondElement.val = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        traverse(root.left);</span><br><span class="line">        <span class="keyword">if</span> (firstElement == <span class="keyword">null</span> &amp;&amp; prevElement.val &gt;= root.val)</span><br><span class="line">            firstElement = prevElement;</span><br><span class="line">        <span class="keyword">if</span> (firstElement != <span class="keyword">null</span> &amp;&amp; prevElement.val &gt;= root.val)</span><br><span class="line">            secondElement = root;      </span><br><span class="line">        prevElement = root;</span><br><span class="line">        traverse(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  <a href="https://www.geeksforgeeks.org/tree-isomorphism-problem/" target="_blank" rel="noopener">tree-isomorphism-problem</a></p>
   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isIsomorphic</span><span class="params">(Node n1, Node n2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n1 == <span class="keyword">null</span> &amp;&amp; n2 == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n1 == <span class="keyword">null</span> || n2 == <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n1.val != n2.val)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> isIsomorphic(n1.left,n2.right) &amp;&amp; isIsomorphic(n1.right, n2.left) ||</span><br><span class="line">        isIsomorphic(n1.left, n2.left) &amp;&amp; isIsomorphic(n1.right, n2.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/" target="_blank" rel="noopener">binary-tree-maximum-path-sum</a></p>
@@ -578,7 +580,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrp1qyj60006zl9zy4tgtf7m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrp2eime0006089zau25a0pn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -700,7 +702,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrp1qyiy0004zl9ziehgzt9u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrp2eima0004089zdybi3y8j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -799,7 +801,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrp1qyio0002zl9zskbjbx4c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrp2eilv0002089zfiafuhy1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1025,7 +1027,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrp1qyjc0007zl9zuy6ye98j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrp2eimj0007089zt76wxq7i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1083,7 +1085,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrp1qyie0001zl9z0f4n6jhn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrp2eilo0001089zct9uc7kd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1157,7 +1159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrp1qyip0003zl9zcxptbvxj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrp2eilw0003089zmrnrg3nr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1280,7 +1282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrp1qyiz0005zl9zn0705fx2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrp2eimb0005089z71zdusz6" class="article-share-link">Share</a>
       
       
     </footer>
