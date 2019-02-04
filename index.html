@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrpl5na50000ev9z47xqfc5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrpodvkg0000gd9z9pugm9xl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrpl5nb90008ev9zksny0gxt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrpodvlm0008gd9zmnlkk9ly" class="article-share-link">Share</a>
       
       
     </footer>
@@ -587,7 +587,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrpl5nb10006ev9z72rnugnc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrpodvld0006gd9zcc8whwhl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -709,7 +709,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrpl5nas0004ev9z13wg2dyf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrpodvl80004gd9z4bb1tbpp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -808,7 +808,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrpl5nai0002ev9zaqmxzy1l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrpodvl50002gd9zg7j8i41z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1030,11 +1030,12 @@
 </ul>
 <h3 id="string-related-problem"><a href="#string-related-problem" class="headerlink" title="string related problem"></a>string related problem</h3><h3 id="line-sweep-problem"><a href="#line-sweep-problem" class="headerlink" title="line sweep problem"></a>line sweep problem</h3><p>*<a href="https://leetcode.com/problems/rectangle-area-ii/" target="_blank" rel="noopener">rectangle-area-ii</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Find the total area covered by all rectangles in the plane</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rectangleArea</span><span class="params">(<span class="keyword">int</span>[][] rectangles)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> OPEN = <span class="number">0</span>, CLOSE = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[][] events = <span class="keyword">new</span> <span class="keyword">int</span>[rectangles.length * <span class="number">2</span>][<span class="number">4</span>];</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] rec: rectangles) &#123;</span><br><span class="line">        events[t++] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;rec[<span class="number">1</span>], OPEN, rec[<span class="number">0</span>], rec[<span class="number">2</span>]&#125;;</span><br><span class="line">        events[t++] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;rec[<span class="number">3</span>], CLOSE, rec[<span class="number">0</span>], rec[<span class="number">2</span>]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    Arrays.sort(events, (a, b) -&gt; Integer.compare(a[<span class="number">0</span>], b[<span class="number">0</span>]));</span><br><span class="line">    List&lt;<span class="keyword">int</span>[]&gt; active = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">int</span> cur_y = events[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] event: events) &#123;</span><br><span class="line">        <span class="keyword">int</span> y = event[<span class="number">0</span>], typ = event[<span class="number">1</span>], x1 = event[<span class="number">2</span>], x2 = event[<span class="number">3</span>];</span><br><span class="line">        <span class="keyword">long</span> mergedLen = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cur = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] xs: active) &#123;</span><br><span class="line">            cur = Math.max(cur, xs[<span class="number">0</span>]);</span><br><span class="line">            mergedLen += Math.max(xs[<span class="number">1</span>] - cur, <span class="number">0</span>);</span><br><span class="line">            cur = Math.max(cur, xs[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        ans += mergedLen * (y - cur_y);</span><br><span class="line">        <span class="keyword">if</span> (typ == OPEN) &#123;</span><br><span class="line">            active.add(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;x1, x2&#125;);</span><br><span class="line">            Collections.sort(active, (a, b) -&gt; Integer.compare(a[<span class="number">0</span>], b[<span class="number">0</span>]));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; active.size(); ++i)</span><br><span class="line">                <span class="keyword">if</span> (active.get(i)[<span class="number">0</span>] == x1 &amp;&amp; active.get(i)[<span class="number">1</span>] == x2) &#123;</span><br><span class="line">                    active.remove(i);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cur_y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    ans %= <span class="number">1_000_000_007</span>;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>*<a href="https://leetcode.com/problems/car-fleet/" target="_blank" rel="noopener">car-fleet</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//N cars are going to the same destination along a one lane road.</span></span><br><span class="line"><span class="comment">//Each car i has a constant speed speed[i], and initial position position[i] miles towards the target along the road.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">carFleet</span><span class="params">(<span class="keyword">int</span> target, <span class="keyword">int</span>[] position, <span class="keyword">int</span>[] speed)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N = position.length;</span><br><span class="line">    Car[] cars = <span class="keyword">new</span> Car[N];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        cars[i] = <span class="keyword">new</span> Car(position[i], (<span class="keyword">double</span>) (target - position[i]) / speed[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    Arrays.sort(cars, (a, b) -&gt; a.position - b.position);</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>, t = N;</span><br><span class="line">    <span class="keyword">while</span> (--t &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cars[t].time &lt; cars[t-<span class="number">1</span>].time) ans++; </span><br><span class="line">        <span class="keyword">else</span> cars[t-<span class="number">1</span>] = cars[t];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans + (t == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> position;</span><br><span class="line">    <span class="keyword">double</span> time;</span><br><span class="line">    Car(<span class="keyword">int</span> p, <span class="keyword">double</span> t) &#123;</span><br><span class="line">        position = p;</span><br><span class="line">        time = t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>*<a href="https://leetcode.com/problems/couples-holding-hands/" target="_blank" rel="noopener">couples-holding-hands</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSwapsCouples</span><span class="params">(<span class="keyword">int</span>[] row)</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.length; i++) </span><br><span class="line">        map.put(row[i], i);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> tgt = <span class="number">0</span>, cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row.length; i += <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (row[i] % <span class="number">2</span> == <span class="number">0</span>) tgt = row[i] + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> tgt = row[i] - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> ngh = row[i + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (ngh != tgt) &#123;</span><br><span class="line">            cnt++;</span><br><span class="line">            row[map.get(tgt)] = ngh; <span class="comment">// push neighbor to a later position in row.</span></span><br><span class="line">            map.put(ngh, map.get(tgt)); <span class="comment">// update neighbor position in the map</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrpl5nb70007ev9zzzjiocqo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrpodvlk0007gd9zgxkfrfvo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1092,7 +1093,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrpl5na90001ev9z57dqytph" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrpodvkv0001gd9z16jt79nw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1166,7 +1167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrpl5nak0003ev9z9702i2og" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrpodvl70003gd9zpir96baf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1289,7 +1290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrpl5nat0005ev9zexb90b5d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrpodvlc0005gd9z8cyifboa" class="article-share-link">Share</a>
       
       
     </footer>
