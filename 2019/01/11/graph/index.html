@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="summary basic knowledge representation basic traverse, found path, print path, maze cycle detection connectivity shortest path schedule networks/dependency advanced: spanning tree, euler cycle, hamlit">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-07T02:48:29.000Z">
+<meta property="og:updated_time" content="2019-02-07T03:02:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="graph">
 <meta name="twitter:description" content="summary basic knowledge representation basic traverse, found path, print path, maze cycle detection connectivity shortest path schedule networks/dependency advanced: spanning tree, euler cycle, hamlit">
@@ -262,10 +262,7 @@
 <ul>
 <li><p>exist condition<br>For the existence of Eulerian trails it is necessary that zero or two vertices have an odd degree; this means the Königsberg graph is not Eulerian. If there are no vertices of odd degree, all Eulerian trails are circuits. If there are exactly two vertices of odd degree, all Eulerian trails start at one of them and end at the other</p>
 </li>
-<li><p>fleury’s algorithm</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less efficient than hierholzer</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>hierholzer’s algorithm</p>
+<li><p>hierholzer’s algorithm: iterative vs recursive, add node vs add edge</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">stack.push(s);</span><br><span class="line"></span><br><span class="line"><span class="comment">// greedily add to putative cycle, depth-first search style</span></span><br><span class="line">cycle = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"><span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = stack.pop();</span><br><span class="line">    <span class="keyword">while</span> (adj[v].hasNext()) &#123;</span><br><span class="line">        stack.push(v);</span><br><span class="line">        v = adj[v].next();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// add vertex with no more leaving edges to cycle</span></span><br><span class="line">    cycle.push(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// check if all edges have been used</span></span><br><span class="line"><span class="comment">// (in case there are two or more vertex-disjoint Eulerian cycles)</span></span><br><span class="line"><span class="keyword">if</span> (cycle.size() != G.E() + <span class="number">1</span>)</span><br><span class="line">    cycle = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -305,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjru0vypt0008sx9z4t9266ny" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjru1ehkb0008uy9zof0739al" class="article-share-link">Share</a>
       
       
     </footer>

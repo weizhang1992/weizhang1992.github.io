@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjru0vyos0000sx9zwn8tl17n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjru1ehje0000uy9z6uo6rbid" class="article-share-link">Share</a>
       
       
     </footer>
@@ -334,10 +334,7 @@
 <ul>
 <li><p>exist condition<br>For the existence of Eulerian trails it is necessary that zero or two vertices have an odd degree; this means the Königsberg graph is not Eulerian. If there are no vertices of odd degree, all Eulerian trails are circuits. If there are exactly two vertices of odd degree, all Eulerian trails start at one of them and end at the other</p>
 </li>
-<li><p>fleury’s algorithm</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less efficient than hierholzer</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>hierholzer’s algorithm</p>
+<li><p>hierholzer’s algorithm: iterative vs recursive, add node vs add edge</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">stack.push(s);</span><br><span class="line"></span><br><span class="line"><span class="comment">// greedily add to putative cycle, depth-first search style</span></span><br><span class="line">cycle = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"><span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">    <span class="keyword">int</span> v = stack.pop();</span><br><span class="line">    <span class="keyword">while</span> (adj[v].hasNext()) &#123;</span><br><span class="line">        stack.push(v);</span><br><span class="line">        v = adj[v].next();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// add vertex with no more leaving edges to cycle</span></span><br><span class="line">    cycle.push(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// check if all edges have been used</span></span><br><span class="line"><span class="comment">// (in case there are two or more vertex-disjoint Eulerian cycles)</span></span><br><span class="line"><span class="keyword">if</span> (cycle.size() != G.E() + <span class="number">1</span>)</span><br><span class="line">    cycle = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -377,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjru0vypt0008sx9z4t9266ny" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjru1ehkb0008uy9zof0739al" class="article-share-link">Share</a>
       
       
     </footer>
@@ -590,7 +587,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjru0vypl0006sx9zy8kjrqk8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjru1ehk50006uy9zr7tkmlfb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -712,7 +709,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjru0vyph0004sx9zfpdcwlc9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjru1ehk10004uy9zok5chrog" class="article-share-link">Share</a>
       
       
     </footer>
@@ -811,7 +808,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjru0vyp80003sx9z4v2ain60" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjru1ehjr0002uy9znpahi8vt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1038,7 +1035,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjru0vypr0007sx9zms6n9unp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjru1ehk90007uy9zqipra7gy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1096,7 +1093,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjru0vyow0001sx9z5vv49j7t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjru1ehji0001uy9zsqm7bufx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1170,7 +1167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjru0vyp60002sx9z5xu9nuum" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjru1ehjs0003uy9znc9ipdb6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1293,7 +1290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjru0vypi0005sx9zkdsc6n9n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjru1ehk20005uy9zbaq7o4yh" class="article-share-link">Share</a>
       
       
     </footer>
