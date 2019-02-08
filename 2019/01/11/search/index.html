@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="summary binary search hash table search bfs search dfs search binary search tree range search string search  Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [000">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-08T02:18:35.000Z">
+<meta property="og:updated_time" content="2019-02-08T03:01:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Search">
 <meta name="twitter:description" content="summary binary search hash table search bfs search dfs search binary search tree range search string search  Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [000">
@@ -152,12 +152,13 @@
 </ul>
 </li>
 </ul>
-<h1 id="bfs-search"><a href="#bfs-search" class="headerlink" title="bfs search"></a>bfs search</h1><ul>
+<h1 id="bfs-search-node-by-node-or-level-by-level"><a href="#bfs-search-node-by-node-or-level-by-level" class="headerlink" title="bfs search, node by node, or level by level."></a>bfs search, node by node, or level by level.</h1><ul>
 <li><p>in intree</p>
   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        q.offer(root);</span><br><span class="line">    &#125; </span><br><span class="line">    Queue&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">while</span>(!q.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> size = q.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = q.poll();</span><br><span class="line">            System.out.print(cur.val + <span class="string">","</span>);</span><br><span class="line">            <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(cur.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(cur.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>in graph</p>
+<li><p><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">binary-tree-level-order-traversal</a></p>
 </li>
+<li>in graph</li>
 <li>tree is acyclic connected graph<h1 id="dfs-search"><a href="#dfs-search" class="headerlink" title="dfs search"></a>dfs search</h1></li>
 <li><p>in tree</p>
 <ul>
@@ -271,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrvf9c9a0006ug9zatmgdkba" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrvgss0c0006w39zxul50q4p" class="article-share-link">Share</a>
       
       
     </footer>
