@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrvhrrr60000y49ziiq3ma7z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrvht5nt0000yg9z5cpeks7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,6 +192,9 @@
 <li>iterative: stack</li>
 <li>time complexity: O(V + E)</li>
 <li>use case: Generate Maze, check if exist a path, print path, cycle detection</li>
+<li><p><a href="https://leetcode.com/problems/robot-room-cleaner/" target="_blank" rel="noopener">robot-room-cleaner</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Design an algorithm to clean the entire room using only the 4 given APIs shown below.</span></span><br><span class="line"><span class="keyword">int</span>[][] dirs = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;,&#123;<span class="number">0</span>, <span class="number">1</span>&#125;,&#123;<span class="number">1</span>, <span class="number">0</span>&#125;,&#123;<span class="number">0</span>, -<span class="number">1</span>&#125;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cleanRoom</span><span class="params">(Robot robot)</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; visited = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    dfs(visited, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, robot);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(Set&lt;String&gt; visited, <span class="keyword">int</span> curDir, <span class="keyword">int</span> x, <span class="keyword">int</span> y, Robot robot)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//we will make sure current point is unvisited and can be cleaned</span></span><br><span class="line">    String key = x + <span class="string">","</span> + y;</span><br><span class="line">    visited.add(key);</span><br><span class="line">    robot.clean();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> nextDir = (curDir + i) % <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">int</span>[] next = dirs[nextDir];</span><br><span class="line">        <span class="keyword">int</span> nextX = x + next[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> nextY = y + next[<span class="number">1</span>];</span><br><span class="line">        String nextKey = nextX + <span class="string">","</span> + nextY;</span><br><span class="line">        <span class="keyword">if</span> (!visited.contains(nextKey) &amp;&amp; robot.move()) &#123;</span><br><span class="line">            dfs(visited, nextDir, nextX, nextY, robot);</span><br><span class="line">            robot.turnLeft();</span><br><span class="line">            robot.turnLeft();</span><br><span class="line">            robot.move();</span><br><span class="line">            robot.turnLeft();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            robot.turnRight();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p><a href="https://leetcode.com/problems/longest-increasing-path-in-a-matrix/" target="_blank" rel="noopener">Longest Increasing Path In Matrix</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// dfs + memorization, time complexity: O(n*m)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> [][] offsets = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">0</span>,<span class="number">1</span>&#125;, &#123;<span class="number">1</span>,<span class="number">0</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;,&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestIncreasingPath</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.length == <span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> [][] cache = <span class="keyword">new</span> <span class="keyword">int</span>[matrix.length][matrix[<span class="number">0</span>].length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; matrix[<span class="number">0</span>].length; ++j) &#123;</span><br><span class="line">                maxLen = Math.max(maxLen, findMaxLen(matrix, <span class="number">1</span>, i, j, cache));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxLen;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findMaxLen</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> tempLen, <span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span>[][] cache)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cache[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> cache[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> curLen = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] offset : offsets) &#123;</span><br><span class="line">            <span class="keyword">if</span> (isInMatrix(matrix, i + offset[<span class="number">0</span>], j + offset[<span class="number">1</span>]) &amp;&amp; matrix[i + offset[<span class="number">0</span>]][j + offset[<span class="number">1</span>]] &gt; matrix[i][j]) &#123;</span><br><span class="line">                <span class="keyword">int</span> len = <span class="number">1</span> + findMaxLen(matrix, tempLen + <span class="number">1</span>, i + offset[<span class="number">0</span>], j + offset[<span class="number">1</span>], cache);</span><br><span class="line">                curLen = Math.max(curLen, len);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cache[i][j] = curLen;</span><br><span class="line">        <span class="keyword">return</span> curLen;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isInMatrix</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> i &lt; matrix.length &amp;&amp; i &gt;= <span class="number">0</span> &amp;&amp; j &lt; matrix[<span class="number">0</span>].length &amp;&amp; j &gt;= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -373,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrvhrrsd0008y49zhny59ixc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrvht5ot0008yg9zwu77fp0r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -519,16 +522,12 @@
 </li>
 </ul>
 </li>
-<li><p>in graph</p>
+<li><p>in graph: see graph’s link</p>
 <ul>
 <li>iterative</li>
-<li>recursive </li>
-<li><a href="https://leetcode.com/problems/robot-room-cleaner/" target="_blank" rel="noopener">robot-room-cleaner</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Design an algorithm to clean the entire room using only the 4 given APIs shown below.</span></span><br><span class="line"><span class="keyword">int</span>[][] dirs = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;,&#123;<span class="number">0</span>, <span class="number">1</span>&#125;,&#123;<span class="number">1</span>, <span class="number">0</span>&#125;,&#123;<span class="number">0</span>, -<span class="number">1</span>&#125;&#125;;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cleanRoom</span><span class="params">(Robot robot)</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; visited = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    dfs(visited, <span class="number">3</span>, <span class="number">0</span>, <span class="number">0</span>, robot);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(Set&lt;String&gt; visited, <span class="keyword">int</span> curDir, <span class="keyword">int</span> x, <span class="keyword">int</span> y, Robot robot)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//we will make sure current point is unvisited and can be cleaned</span></span><br><span class="line">    String key = x + <span class="string">","</span> + y;</span><br><span class="line">    visited.add(key);</span><br><span class="line">    robot.clean();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> nextDir = (curDir + i) % <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">int</span>[] next = dirs[nextDir];</span><br><span class="line">        <span class="keyword">int</span> nextX = x + next[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> nextY = y + next[<span class="number">1</span>];</span><br><span class="line">        String nextKey = nextX + <span class="string">","</span> + nextY;</span><br><span class="line">        <span class="keyword">if</span> (!visited.contains(nextKey) &amp;&amp; robot.move()) &#123;</span><br><span class="line">            dfs(visited, nextDir, nextX, nextY, robot);</span><br><span class="line">            robot.turnLeft();</span><br><span class="line">            robot.turnLeft();</span><br><span class="line">            robot.move();</span><br><span class="line">            robot.turnLeft();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            robot.turnRight();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>recursive <h1 id="binary-search-tree"><a href="#binary-search-tree" class="headerlink" title="binary search tree"></a>binary search tree</h1></li>
 </ul>
 </li>
-</ul>
-<h1 id="binary-search-tree"><a href="#binary-search-tree" class="headerlink" title="binary search tree"></a>binary search tree</h1><ul>
 <li><p>undetstand what’s is tree:<br>  tree question can always solved by recursive method<br>  <a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener">validate-binary-search-tree</a></p>
   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValidBST</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> isValid(root, Long.MIN_VALUE, Long.MAX_VALUE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(TreeNode node, <span class="keyword">long</span> min, <span class="keyword">long</span> max)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (node.val &lt;= min || node.val &gt;= max) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">return</span> isValid(node.left, min, node.val) &amp;&amp; isValid(node.right, node.val, max);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  <a href="https://leetcode.com/problems/recover-binary-search-tree/" target="_blank" rel="noopener">recover-binary-search-tree</a></p>
@@ -598,7 +597,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrvhrrs50006y49zkd02b72s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrvht5on0006yg9zghg4hcb7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -720,7 +719,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrvhrrru0004y49z1ajl381e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrvht5oi0005yg9zbe77iu7b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -819,7 +818,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrvhrrrj0002y49zbjcg4m27" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrvht5o60002yg9zjso6sr6o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1046,7 +1045,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrvhrrsa0007y49z2bgm3065" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrvht5oq0007yg9zvuyuvmh2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1104,7 +1103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrvhrrra0001y49zxsu16qgn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrvht5nx0001yg9zsvcxwlms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1178,7 +1177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrvhrrrk0003y49zy9xjqngj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrvht5o70003yg9z6v1x6nfk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1301,7 +1300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrvhrrrv0005y49zvmsvdnsq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrvht5og0004yg9zgr5lblu2" class="article-share-link">Share</a>
       
       
     </footer>
