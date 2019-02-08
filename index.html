@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrvepp0p0000th9zbcnjljv7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrvf40f00000u19zsdau9rr5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrvepp210008th9zhk4dc3t2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrvf40fz0008u19zol2vxof7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -457,7 +457,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// unsorted: hashmap</span></span><br><span class="line"><span class="comment">// sorted: binary search</span></span><br><span class="line"><span class="comment">// key point: find candidate target at n/4, n/2, 3*n/4</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>weighted random</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">大概就是一个数组, 1,4,2,6.... 每次调用一个函数，按照数组里面的数字的大小，返回相应的Index。</span></span><br><span class="line"><span class="comment">比如， 上面的例子就是, 1/13 的概率返回0, 4/13的概率返回1.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeightedRandom</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] sum; <span class="comment">// sum[i] is the sum of weight [0, i]</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WeightedRandom</span><span class="params">(<span class="keyword">int</span> weight[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = weight.length;</span><br><span class="line">        sum = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        sum[<span class="number">0</span>] = weight[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + weight[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = sum.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (sum[mid] &lt; w) &#123;</span><br><span class="line">                l = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum[mid] == w) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (w == sum[l]) &#123;</span><br><span class="line">            <span class="keyword">return</span> l;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nextIndex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// generate random weight in [1, sum[n-1]]</span></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">return</span> search(random.nextInt(sum[sum.length - <span class="number">1</span>]) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://leetcode.com/problems/random-pick-with-weight/</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">大概就是一个数组, 1,4,2,6.... 每次调用一个函数，按照数组里面的数字的大小，返回相应的Index。</span></span><br><span class="line"><span class="comment">比如， 上面的例子就是, 1/13 的概率返回0, 4/13的概率返回1.</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeightedRandom</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] sum; <span class="comment">// sum[i] is the sum of weight [0, i]</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WeightedRandom</span><span class="params">(<span class="keyword">int</span> weight[])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = weight.length;</span><br><span class="line">        sum = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        sum[<span class="number">0</span>] = weight[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            sum[i] = sum[i - <span class="number">1</span>] + weight[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = sum.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = l + (r - l) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (sum[mid] &lt; w) &#123;</span><br><span class="line">                l = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sum[mid] == w) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (w == sum[l]) &#123;</span><br><span class="line">            <span class="keyword">return</span> l;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nextIndex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// generate random weight in [1, sum[n-1]]</span></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">return</span> search(random.nextInt(sum[sum.length - <span class="number">1</span>]) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="Hash-table"><a href="#Hash-table" class="headerlink" title="Hash table"></a>Hash table</h1><ul>
@@ -589,7 +589,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrvepp1s0006th9z4i9lcjbk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrvf40fu0006u19z13fmgzf2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -711,7 +711,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrvepp1e0005th9znlyalleg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrvf40fn0004u19z45kbkf2w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -810,7 +810,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrvepp150002th9zmfxpf7x0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrvf40fe0002u19zi01930o0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1037,7 +1037,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrvepp1v0007th9za287rfjf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrvf40fy0007u19za7dun8n2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1095,7 +1095,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrvepp0t0001th9zd2bhi2qc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrvf40f40001u19zrssk40s3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1169,7 +1169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrvepp160003th9zkv0k6cuo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrvf40ff0003u19z2zwp1m9x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1292,7 +1292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrvepp1d0004th9zn5icumxu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrvf40fo0005u19zliqcjewh" class="article-share-link">Share</a>
       
       
     </footer>
