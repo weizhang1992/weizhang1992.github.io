@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrzg5c8j0000z59zdkmk6rca" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrzgtm5s00000n9zgf8d0gnb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrzg5c9g0008z59zyx0j7bkh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrzgtm6s00080n9z3ec3n7mt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -598,7 +598,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrzg5c9f0007z59zv4rtzze1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrzgtm6p00070n9z33hs41dd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -720,7 +720,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrzg5c950004z59z9xypriaf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrzgtm6g00040n9zwlqvtalh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -819,7 +819,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrzg5c8v0002z59zi9hfqy3a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrzgtm6600020n9zr2ar037v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -900,7 +900,7 @@
 </li>
 </ul>
 <h4 id="other-advanced-sort"><a href="#other-advanced-sort" class="headerlink" title="other advanced sort"></a>other advanced sort</h4><ul>
-<li>heap sort</li>
+<li>heap sort(see point 5 first)</li>
 </ul>
 <ol>
 <li><p>Priority Queue 的底层实现是bcomplete binary min-heap. </p>
@@ -924,8 +924,8 @@
 <li>heap allow duplicate, but TreeSet does(TreeSet use compareTo() check equals, be careful)</li>
 </ul>
 </li>
-<li><p>heapify implementation</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> n = arr.length; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Build heap (rearrange array) </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) </span><br><span class="line">        heapify(arr, n, i); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// One by one extract an element from heap </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n-<span class="number">1</span>; i&gt;=<span class="number">0</span>; i--) &#123; </span><br><span class="line">        <span class="comment">// Move current root to end </span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[<span class="number">0</span>]; </span><br><span class="line">        arr[<span class="number">0</span>] = arr[i]; </span><br><span class="line">        arr[i] = temp; </span><br><span class="line"></span><br><span class="line">        <span class="comment">// call max heapify on the reduced heap </span></span><br><span class="line">        heapify(arr, i, <span class="number">0</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// To heapify a subtree rooted with node i which is </span></span><br><span class="line"><span class="comment">// an index in arr[]. n is size of heap </span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> n, <span class="keyword">int</span> i)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> largest = i; <span class="comment">// Initialize largest as root </span></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">2</span>*i + <span class="number">1</span>; <span class="comment">// left = 2*i + 1 </span></span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">2</span>*i + <span class="number">2</span>; <span class="comment">// right = 2*i + 2 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// If left child is larger than root </span></span><br><span class="line">    <span class="keyword">if</span> (l &lt; n &amp;&amp; arr[l] &gt; arr[largest]) </span><br><span class="line">        largest = l; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// If right child is larger than largest so far </span></span><br><span class="line">    <span class="keyword">if</span> (r &lt; n &amp;&amp; arr[r] &gt; arr[largest]) </span><br><span class="line">        largest = r; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// If largest is not root </span></span><br><span class="line">    <span class="keyword">if</span> (largest != i) &#123; </span><br><span class="line">        swap(arr, largest, i)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Recursively heapify the affected sub-tree </span></span><br><span class="line">        heapify(arr, n, largest); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] n, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = n[a];</span><br><span class="line">    n[a] = n[b];</span><br><span class="line">    n[b] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>heapify implementation: think about why build heap is O(n)?</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> n = arr.length; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// Build heap (rearrange array) </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) </span><br><span class="line">        heapify(arr, n, i); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// One by one extract an element from heap </span></span><br><span class="line">    <span class="comment">//interesting, sort ascend need max heap because you need put the heap into tail</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n-<span class="number">1</span>; i&gt;=<span class="number">0</span>; i--) &#123; </span><br><span class="line">        <span class="comment">// Move current root to end </span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[<span class="number">0</span>]; </span><br><span class="line">        arr[<span class="number">0</span>] = arr[i]; </span><br><span class="line">        arr[i] = temp; </span><br><span class="line"></span><br><span class="line">        <span class="comment">// call max heapify on the reduced heap </span></span><br><span class="line">        heapify(arr, i, <span class="number">0</span>); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// To heapify a subtree rooted with node i which is </span></span><br><span class="line"><span class="comment">// an index in arr[]. n is size of heap </span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> n, <span class="keyword">int</span> i)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">int</span> largest = i; <span class="comment">// Initialize largest as root </span></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">2</span>*i + <span class="number">1</span>; <span class="comment">// left = 2*i + 1 </span></span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">2</span>*i + <span class="number">2</span>; <span class="comment">// right = 2*i + 2 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// If left child is larger than root </span></span><br><span class="line">    <span class="keyword">if</span> (l &lt; n &amp;&amp; arr[l] &gt; arr[largest]) </span><br><span class="line">        largest = l; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// If right child is larger than largest so far </span></span><br><span class="line">    <span class="keyword">if</span> (r &lt; n &amp;&amp; arr[r] &gt; arr[largest]) </span><br><span class="line">        largest = r; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// If largest is not root </span></span><br><span class="line">    <span class="keyword">if</span> (largest != i) &#123; </span><br><span class="line">        swap(arr, largest, i)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Recursively heapify the affected sub-tree </span></span><br><span class="line">        heapify(arr, n, largest); </span><br><span class="line">    &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] n, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = n[a];</span><br><span class="line">    n[a] = n[b];</span><br><span class="line">    n[b] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ul>
@@ -1047,7 +1047,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrzg5c9e0006z59zfs8cj9f6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrzgtm6o00060n9zol199hr5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1105,7 +1105,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrzg5c8n0001z59z92fu97ep" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrzgtm5w00010n9zte7domvp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1179,7 +1179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrzg5c8w0003z59z1flnhyjz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrzgtm6700030n9z5bui82fb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1302,7 +1302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrzg5c960005z59zt49oyhu1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrzgtm6h00050n9zxepukmqs" class="article-share-link">Share</a>
       
       
     </footer>
