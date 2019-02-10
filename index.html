@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrz2aw6p0000p19zl44vabe1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrz2bu0n0000pf9zd2b2ox70" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrz2aw7q0008p19zlnaw4ygh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrz2bu1o0008pf9zgg8m7gmi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -598,7 +598,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrz2aw7n0006p19zza0x5y0h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrz2bu1k0006pf9zzu516axw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -720,7 +720,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrz2aw790004p19zriwx9t1q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrz2bu1b0004pf9zo91rwbb5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -819,7 +819,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrz2aw740002p19z7ea33av3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrz2bu100002pf9zel4vzitk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -878,7 +878,7 @@
 <li><strong>insertion sort</strong><br>Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. At each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.<br><a href="https://leetcode.com/problems/insertion-sort-list/" target="_blank" rel="noopener">insertion-sort-list</a></li>
 </ul>
 <h4 id="advanced-sort"><a href="#advanced-sort" class="headerlink" title="advanced sort"></a>advanced sort</h4><ul>
-<li><p>merge sort:</p>
+<li><p>merge sort: why time complexity is O(nlogn), compare mergesort with quicksort</p>
 <ul>
 <li><p>recursive</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//t: O(nlogn), s: O(n)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">    mergeSort(arr, <span class="keyword">new</span> <span class="keyword">int</span>[arr.length], <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span>[] temp, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">int</span> m = (l + r) / <span class="number">2</span>;</span><br><span class="line">        mergeSort(arr, temp, l, m);</span><br><span class="line">        mergeSort(arr , temp, m + <span class="number">1</span>, r);</span><br><span class="line">        merge(arr, l, m, r, temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> m, <span class="keyword">int</span> r, <span class="keyword">int</span>[] temp)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = l; i &lt;= r; ++i) temp[i] = arr[i];</span><br><span class="line">   <span class="keyword">int</span> i = l, j = m + <span class="number">1</span>, k = l;</span><br><span class="line">   <span class="keyword">while</span> (i &lt; m + <span class="number">1</span> &amp;&amp; j &lt; r + <span class="number">1</span>) &#123;</span><br><span class="line">       <span class="keyword">if</span> (temp[i] &lt;= temp[j]) arr[k++] = temp[i++];</span><br><span class="line">       <span class="keyword">else</span> arr[k++] = temp[j++];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">while</span> (i &lt; m + <span class="number">1</span>) arr[k++] = temp[i++];</span><br><span class="line">   <span class="keyword">while</span> (j &lt; r + <span class="number">1</span>) arr[k++] = temp[j++];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1046,7 +1046,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrz2aw7o0007p19z54dpqm4d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrz2bu1m0007pf9zc84cc9kt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1104,7 +1104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrz2aw6t0001p19z1dml0emq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrz2bu0r0001pf9z68joszjh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1178,7 +1178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrz2aw750003p19z98v2uaux" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrz2bu110003pf9zfnwicuo7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1301,7 +1301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrz2aw7a0005p19zlt825j61" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrz2bu1c0005pf9zanmtc3n6" class="article-share-link">Share</a>
       
       
     </footer>
