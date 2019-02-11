@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjs0ei3h600000w9zyxbv1pwx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjs0fjnhh00001y9zgcyvb1z8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjs0ei3i300080w9zwbiha6my" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjs0fjnij00081y9zhdgdy6r2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -598,7 +598,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjs0ei3hz00060w9zwjj4jbrq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjs0fjnih00071y9zzt1ehoah" class="article-share-link">Share</a>
       
       
     </footer>
@@ -720,7 +720,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjs0ei3hs00040w9z5b2hoj4x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjs0fjni800041y9z5qys2s4r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -819,7 +819,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjs0ei3hi00020w9z81noe0yc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjs0fjnhs00021y9z5oj9kemb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -986,10 +986,10 @@
 </ul>
 <h3 id="sort-related-questions"><a href="#sort-related-questions" class="headerlink" title="sort related questions"></a>sort related questions</h3><ul>
 <li><p><a href="https://leetcode.com/problems/wiggle-sort/" target="_blank" rel="noopener">wiggle sort</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果i是奇数，nums[i] &gt;= nums[i - 1]</span></span><br><span class="line"><span class="comment">//如果i是偶数，nums[i] &lt;= nums[i - 1]</span></span><br><span class="line"><span class="comment">//后面的交换不会影响前面的, num[i-1] &lt; num[i] &lt; num[i+1] -&gt; nums[i-1] &lt; nums[i+1]</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wiggleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">if</span> (nums.length &lt; <span class="number">3</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length - <span class="number">1</span>; i = i + <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">        nums[i] = nums[i + <span class="number">1</span>];</span><br><span class="line">        nums[i + <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果i是奇数，nums[i] &gt;= nums[i - 1]</span></span><br><span class="line"><span class="comment">//如果i是偶数，nums[i] &lt;= nums[i - 1]</span></span><br><span class="line"><span class="comment">//后面的交换不会影响前面的, num[i-1] &lt; num[i] &lt; num[i+1] -&gt; nums[i-1] &lt; nums[i+1]</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wiggleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.length;i++)</span><br><span class="line">        <span class="keyword">if</span>(i%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i-<span class="number">1</span>]&gt;nums[i])</span><br><span class="line">                swap(nums, i);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i-<span class="number">1</span>]&lt;nums[i]) </span><br><span class="line">                swap(nums, i);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">      <span class="keyword">int</span> tmp=nums[i];</span><br><span class="line">      nums[i]=nums[i-<span class="number">1</span>];</span><br><span class="line">      nums[i-<span class="number">1</span>]=tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://leetcode.com/problems/wiggle-sort-ii/" target="_blank" rel="noopener">wiggle sort2</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//wtf</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wiggleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> median = KthLargestElementInArray.findKthLargest(nums, nums.length &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> s = <span class="number">0</span>, t = nums.length-<span class="number">1</span>, mid = (nums.length+<span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] tmp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] &lt; median) tmp[s++] = nums[i];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] &gt; median) tmp[t--] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(s &lt; mid) tmp[s++] = median;</span><br><span class="line">    <span class="keyword">while</span>(t &gt;= mid) tmp[t--] = median;</span><br><span class="line">    t = nums.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        nums[i] = (i &amp; <span class="number">1</span>) == <span class="number">0</span> ? tmp[--s] : tmp[--t];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//wtf</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wiggleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> median = findKthLargest(nums, (nums.length + <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">int</span> n = nums.length;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, i = <span class="number">0</span>, right = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[newIndex(i,n)] &gt; median) &#123;</span><br><span class="line">            swap(nums, newIndex(left++,n), newIndex(i++,n));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums[newIndex(i,n)] &lt; median) &#123;</span><br><span class="line">            swap(nums, newIndex(right--,n), newIndex(i,n));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">newIndex</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span> + <span class="number">2</span>*index) % (n | <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="other-questions"><a href="#other-questions" class="headerlink" title="other questions:"></a>other questions:</h3><ul>
@@ -1034,7 +1034,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjs0ei3i100070w9zo4hvww3r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjs0fjnig00061y9zc8ltqjsx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1092,7 +1092,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjs0ei3ha00010w9zrvs8mkxl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjs0fjnhl00011y9zpkub1lq9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1166,7 +1166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjs0ei3hi00030w9zltwpyron" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjs0fjnht00031y9zyig4e0yu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1289,7 +1289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjs0ei3ht00050w9z5byd3xl2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjs0fjni900051y9zla0ftxvf" class="article-share-link">Share</a>
       
       
     </footer>
