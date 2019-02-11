@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjs0l7ugl0000am9zdhmdf9n2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjs0wf9u100003f9zd67s5oc0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjs0l7uhj0008am9zcoxwy9pr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjs0wf9vc00083f9zjfp53fsp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -467,9 +467,13 @@
 <li>seperate chain</li>
 <li>linear probing</li>
 <li>implementation</li>
-<li>questions:<ul>
+<li><p>questions:</p>
+<ul>
 <li><a href="https://leetcode.com/problems/design-hashmap/" target="_blank" rel="noopener">design-hashmap</a></li>
-<li><a href="https://leetcode.com/problems/find-and-replace-pattern/" target="_blank" rel="noopener">find-and-replace-pattern</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findAndReplacePattern</span><span class="params">(String[] words, String pattern)</span> </span>&#123;</span><br><span class="line">    List&lt;String&gt; ans = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">for</span> (String word: words)</span><br><span class="line">        <span class="keyword">if</span> (match(word, pattern))</span><br><span class="line">            ans.add(word);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">match</span><span class="params">(String word, String pattern)</span> </span>&#123;</span><br><span class="line">    Map&lt;Character, Character&gt; m1 = <span class="keyword">new</span> HashMap();</span><br><span class="line">    Map&lt;Character, Character&gt; m2 = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); ++i) &#123;</span><br><span class="line">        <span class="keyword">char</span> w = word.charAt(i);</span><br><span class="line">        <span class="keyword">char</span> p = pattern.charAt(i);</span><br><span class="line">        m1.putIfAbsent(w, p);</span><br><span class="line">        m2.putIfAbsent(p, w);</span><br><span class="line">        <span class="keyword">if</span> (m1.get(w) != p || m2.get(p) != w) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p><a href="https://leetcode.com/problems/find-and-replace-pattern/" target="_blank" rel="noopener">find-and-replace-pattern</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findAndReplacePattern</span><span class="params">(String[] words, String pattern)</span> </span>&#123;</span><br><span class="line">    List&lt;String&gt; ans = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="keyword">for</span> (String word: words)</span><br><span class="line">        <span class="keyword">if</span> (match(word, pattern))</span><br><span class="line">            ans.add(word);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">match</span><span class="params">(String word, String pattern)</span> </span>&#123;</span><br><span class="line">    Map&lt;Character, Character&gt; m1 = <span class="keyword">new</span> HashMap();</span><br><span class="line">    Map&lt;Character, Character&gt; m2 = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); ++i) &#123;</span><br><span class="line">        <span class="keyword">char</span> w = word.charAt(i);</span><br><span class="line">        <span class="keyword">char</span> p = pattern.charAt(i);</span><br><span class="line">        m1.putIfAbsent(w, p);</span><br><span class="line">        m2.putIfAbsent(p, w);</span><br><span class="line">        <span class="keyword">if</span> (m1.get(w) != p || m2.get(p) != w) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/split-array-into-consecutive-subsequences/" target="_blank" rel="noopener">split-array-into-consecutive-subsequences</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPossible</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; count = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    Map&lt;Integer, Integer&gt; tails = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> x: nums) count.put(x, count.getOrDefault(x, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> x: nums) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count.get(x) == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (tails.getOrDefault(x, <span class="number">0</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            tails.put(x, tails.get(x) - <span class="number">1</span>);</span><br><span class="line">            tails.put(x + <span class="number">1</span>, tails.getOrDefault(x + <span class="number">1</span>, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (count.getOrDefault(x+<span class="number">1</span>, <span class="number">0</span>) &gt; <span class="number">0</span> &amp;&amp; count.getOrDefault(x+<span class="number">2</span>, <span class="number">0</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            count.put(x + <span class="number">1</span>, count.get(x + <span class="number">1</span>) -<span class="number">1</span>);</span><br><span class="line">            count.put(x + <span class="number">2</span>, count.get(x + <span class="number">2</span>) -<span class="number">1</span>);</span><br><span class="line">            tails.put(x + <span class="number">3</span>, tails.getOrDefault(x + <span class="number">3</span>, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        count.put(x, count.getOrDefault(x, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -598,7 +602,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjs0l7uhg0006am9zotyxc7qz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjs0wf9v800073f9z13begf7g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -720,7 +724,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjs0l7uh70004am9zp4fzbr69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjs0wf9uq00043f9z6yx6cmrm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -819,7 +823,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjs0l7ugx0002am9zcfjeuyrg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjs0wf9ug00023f9zf56yxgnk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1034,7 +1038,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjs0l7uhh0007am9z7vwmp2a5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjs0wf9v700063f9zf1avb3rp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1092,7 +1096,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjs0l7ugo0001am9zzfd87m4o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjs0wf9u500013f9z8nf5q06y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1165,7 +1169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjs0l7ugy0003am9zl2n5pc0a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjs0wf9uh00033f9zfpcmsr3y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1288,7 +1292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjs0l7uh80005am9z3wr0a1yh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjs0wf9ur00053f9zwpddke2u" class="article-share-link">Share</a>
       
       
     </footer>
