@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjrzu9ur50000eo9zlmkysy4c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="cjs0doosv0000xi9z1elsgufz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjrzu9us80008eo9zkr8t566n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="cjs0dootv0008xi9zfryiy6rn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -598,7 +598,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjrzu9us50007eo9z70ddym7i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="cjs0doott0006xi9zv8hh5dwq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -720,7 +720,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjrzu9urw0004eo9z7esckmji" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="cjs0dootj0005xi9zxod6kdan" class="article-share-link">Share</a>
       
       
     </footer>
@@ -819,7 +819,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjrzu9urn0003eo9z1bteatcb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="cjs0doot90002xi9zal5fak2o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -966,7 +966,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//# is backspace</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">backspaceCompare</span><span class="params">(String S, String T)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = S.length() - <span class="number">1</span>, j = T.length() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> skipS = <span class="number">0</span>, skipT = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span>) &#123; <span class="comment">// While there may be chars in build(S) or build (T)</span></span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123; <span class="comment">// Find position of next possible char in build(S)</span></span><br><span class="line">            <span class="keyword">if</span> (S.charAt(i) == <span class="string">'#'</span>) &#123;skipS++; i--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (skipS &gt; <span class="number">0</span>) &#123;skipS--; i--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span>) &#123; <span class="comment">// Find position of next possible char in build(T)</span></span><br><span class="line">            <span class="keyword">if</span> (T.charAt(j) == <span class="string">'#'</span>) &#123;skipT++; j--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (skipT &gt; <span class="number">0</span>) &#123;skipT--; j--;&#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &gt;= <span class="number">0</span> &amp;&amp; S.charAt(i) != T.charAt(j)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> ((i &gt;= <span class="number">0</span>) != (j &gt;= <span class="number">0</span>)) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        i--; j--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://leetcode.com/problems/fruit-into-baskets/submissions/" target="_blank" rel="noopener">fruit-into-baskets</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//What is the total amount of fruit you can collect with only two type</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">totalFruit</span><span class="params">(<span class="keyword">int</span>[] tree)</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; count = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tree.length; ++j) &#123;</span><br><span class="line">        count.put(tree[j], count.getOrDefault(tree[j], <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">while</span> (count.size() &gt; <span class="number">2</span>) &#123;</span><br><span class="line">            count.put(tree[i], count.get(tree[i]) - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (count.get(tree[i]) == <span class="number">0</span>) count.remove(tree[i]);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        res = Math.max(res, j - i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/" target="_blank" rel="noopener">longest-substring-with-at-most-two-distinct-characters/</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">totalFruit</span><span class="params">(<span class="keyword">int</span>[] tree)</span> </span>&#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; count = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tree.length; ++j) &#123;</span><br><span class="line">            count.put(tree[j], count.getOrDefault(tree[j], <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (count.size() &gt; <span class="number">2</span>) &#123;</span><br><span class="line">                count.put(tree[i], count.get(tree[i]) - <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">if</span> (count.get(tree[i]) == <span class="number">0</span>) count.remove(tree[i]);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            res = Math.max(res, j - i + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1037,7 +1036,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjrzu9us40006eo9zmx1b0k7l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="cjs0dootu0007xi9z0v7xd6h4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1095,7 +1094,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjrzu9ur90001eo9zt6qyce23" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="cjs0doosz0001xi9zz9e19z93" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1169,7 +1168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjrzu9urm0002eo9zub5wzwsp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="cjs0doota0003xi9zhi11tdii" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1292,7 +1291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjrzu9urx0005eo9z5qa06ecg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="cjs0dooti0004xi9zdmydnglp" class="article-share-link">Share</a>
       
       
     </footer>
