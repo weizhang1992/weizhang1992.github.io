@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7f9hjt30000cx9z14s8ywe3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7f9nv4u0000df9zsk22p4tz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7f9hju30008cx9zd5e0xojv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7f9nv5u0008df9zpqi7j7k9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -478,12 +478,11 @@
 </ul>
 </li>
 </ul>
-<h1 id="bfs-search-node-by-node-or-level-by-level-in-tree"><a href="#bfs-search-node-by-node-or-level-by-level-in-tree" class="headerlink" title="bfs search, node by node, or level by level in tree"></a>bfs search, node by node, or level by level in tree</h1><pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelBylevelTreeTraversal</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        q.offer(root);</span><br><span class="line">    &#125; </span><br><span class="line">    Queue&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">while</span>(!q.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> size = q.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = q.poll();</span><br><span class="line">            System.out.print(cur.val + <span class="string">","</span>);</span><br><span class="line">            <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(cur.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(cur.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="bfs-search-node-by-node-or-level-by-level-in-tree"><a href="#bfs-search-node-by-node-or-level-by-level-in-tree" class="headerlink" title="bfs search, node by node, or level by level in tree"></a>bfs search, node by node, or level by level in tree</h1><pre><code>* [binary-tree-level-order-traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelBylevelTreeTraversal</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</span><br><span class="line">        q.offer(root);</span><br><span class="line">    &#125; </span><br><span class="line">    Queue&lt;Node&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">while</span>(!q.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> size = q.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = q.poll();</span><br><span class="line">            System.out.print(cur.val + <span class="string">","</span>);</span><br><span class="line">            <span class="keyword">if</span>(cur.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(cur.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                q.offer(cur.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 * [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/)
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">widthOfBinaryTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    Map&lt;TreeNode, Integer&gt; nodeToIndexMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    queue.offer(root);</span><br><span class="line">    nodeToIndexMap.put(root, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> leftmostIdx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> levelSize = queue.size();</span><br><span class="line">        <span class="keyword">int</span> curIdxInLevel = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (curIdxInLevel++ &lt; levelSize) &#123;</span><br><span class="line">            TreeNode head = queue.poll();</span><br><span class="line">            <span class="keyword">int</span> headIdx = nodeToIndexMap.get(head);</span><br><span class="line">            <span class="keyword">if</span> (head.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                queue.offer(head.left);</span><br><span class="line">                nodeToIndexMap.put(head.left, <span class="number">2</span> * headIdx);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (head.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                queue.offer(head.right);</span><br><span class="line">                nodeToIndexMap.put(head.right, <span class="number">2</span> * headIdx + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (curIdxInLevel == <span class="number">1</span>) leftmostIdx = headIdx;</span><br><span class="line">            <span class="keyword">if</span> (curIdxInLevel == levelSize) result = Math.max(result, headIdx - leftmostIdx + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-* [binary-tree-level-order-traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 </code></pre><h1 id="dfs-search-in-tree"><a href="#dfs-search-in-tree" class="headerlink" title="dfs search in tree"></a>dfs search in tree</h1><pre><code>* preOrder: 
     * recursion: 
     <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    visit(root);</span><br><span class="line">    preOrder(root.left);</span><br><span class="line">    preOrder(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -586,7 +585,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7f9hjtz0006cx9zae19sski" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7f9nv5p0006df9zrgf30yk8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -708,7 +707,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7f9hjtr0004cx9zk0qk5g1k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7f9nv5h0004df9z0ce649lo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -807,7 +806,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7f9hjtg0002cx9zt0e8wbhb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7f9nv570002df9zj3yflhcp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1022,7 +1021,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7f9hju10007cx9z982yqfk9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7f9nv5r0007df9z8wfuipnh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1080,7 +1079,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7f9hjt70001cx9zri9lsyus" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7f9nv4y0001df9z9nfzkpht" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1153,7 +1152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7f9hjth0003cx9zxs77atyu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7f9nv570003df9z3r2lrjio" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1280,7 +1279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7f9hjts0005cx9z63jkji4v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7f9nv5i0005df9z8t2zbd80" class="article-share-link">Share</a>
       
       
     </footer>
