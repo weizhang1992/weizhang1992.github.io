@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7g8u9x90000wi9z40p30exw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7gg0wg400004z9z7rd21xcn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7g8u9y80008wi9z5oni14gn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7gg0whh00084z9zmdflh7up" class="article-share-link">Share</a>
       
       
     </footer>
@@ -589,7 +589,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7g8u9y30006wi9zj8rt9rk4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7gg0whb00064z9zszz7cwt9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -711,7 +711,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7g8u9xv0004wi9zl8j1xbzy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7gg0wgu00054z9zzij7ew83" class="article-share-link">Share</a>
       
       
     </footer>
@@ -810,7 +810,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7g8u9xl0002wi9zvyhgk7dc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7gg0wgk00024z9zx98x0l9u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -971,6 +971,7 @@
 <li><p><a href="https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/" target="_blank" rel="noopener">longest-substring-with-at-most-k-distinct-characters</a></p>
 </li>
 <li><p><a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/" target="_blank" rel="noopener">Find All Anagrams in a String</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">findAnagrams</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt; p.length()) <span class="keyword">return</span> res;</span><br><span class="line">    Map&lt;Character, Integer&gt; pCounts = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    Map&lt;Character, Integer&gt; cCounts = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p.length(); i++) &#123;</span><br><span class="line">        pCounts.put(p.charAt(i), pCounts.getOrDefault(p.charAt(i), <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        cCounts.put(s.charAt(i), cCounts.getOrDefault(s.charAt(i), <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cCounts.equals(pCounts)) res.add(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = p.length(); i &lt; s.length(); i++) &#123;</span><br><span class="line">        cCounts.put(s.charAt(i), cCounts.getOrDefault(s.charAt(i), <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        cCounts.put(s.charAt(i - p.length()), cCounts.getOrDefault(s.charAt(i - p.length()), <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (cCounts.get(s.charAt(i - p.length())) == <span class="number">0</span>)</span><br><span class="line">            cCounts.remove(s.charAt(i - p.length()));</span><br><span class="line">        <span class="keyword">if</span> (cCounts.get(s.charAt(i)) == <span class="number">0</span>)</span><br><span class="line">            cCounts.remove(s.charAt(i));</span><br><span class="line">        <span class="keyword">if</span> (cCounts.equals(pCounts)) res.add(i - p.length() + <span class="number">1</span>);</span><br><span class="line">    &#125;        </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/" target="_blank" rel="noopener">longest-substring-with-at-least-k-repeating-characters</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Find the length of the longest substring T of a given string (consists of lowercase letters only) such that every character in T appears no less than k times</span></span><br><span class="line"><span class="comment">//For each h, apply two pointer technique to find the longest substring with at least K repeating characters and the number of unique characters in substring is h.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestSubstring</span><span class="params">(String s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] str = s.toCharArray();</span><br><span class="line">    <span class="keyword">int</span>[] counts = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">int</span> h, i, j, idx, max = <span class="number">0</span>, unique, noLessThanK;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (h = <span class="number">1</span>; h &lt;= <span class="number">26</span>; h++) &#123;</span><br><span class="line">        Arrays.fill(counts, <span class="number">0</span>);</span><br><span class="line">        i = <span class="number">0</span>; </span><br><span class="line">        j = <span class="number">0</span>;</span><br><span class="line">        unique = <span class="number">0</span>;</span><br><span class="line">        noLessThanK = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; str.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (unique &lt;= h) &#123;</span><br><span class="line">                idx = str[j] - <span class="string">'a'</span>;</span><br><span class="line">                <span class="keyword">if</span> (counts[idx] == <span class="number">0</span>)</span><br><span class="line">                    unique++;</span><br><span class="line">                counts[idx]++;</span><br><span class="line">                <span class="keyword">if</span> (counts[idx] == k)</span><br><span class="line">                    noLessThanK++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                idx = str[i] - <span class="string">'a'</span>;</span><br><span class="line">                <span class="keyword">if</span> (counts[idx] == k)</span><br><span class="line">                    noLessThanK--;</span><br><span class="line">                counts[idx]--;</span><br><span class="line">                <span class="keyword">if</span> (counts[idx] == <span class="number">0</span>)</span><br><span class="line">                    unique--;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (unique == h &amp;&amp; unique == noLessThanK)</span><br><span class="line">                max = Math.max(j - i, max);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1047,7 +1048,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7g8u9y60007wi9zw9x82sg7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7gg0whe00074z9z20t4pcf4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1105,7 +1106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7g8u9xd0001wi9zypfxlh6j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7gg0wg900014z9z8713a4is" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1178,7 +1179,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7g8u9xm0003wi9zqcuxr9tw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7gg0wgl00034z9ztjghkeub" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1305,7 +1306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7g8u9xw0005wi9z1vmn2azj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7gg0wgt00044z9ze1wuxcz5" class="article-share-link">Share</a>
       
       
     </footer>
