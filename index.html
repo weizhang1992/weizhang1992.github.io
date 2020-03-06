@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7g658dn0000nl9zpyo9vkxx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7g7g0x50000ta9zou2ezyny" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7g658ez0008nl9zvawyzlw3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7g7g0y30008ta9zyuiyelg3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -589,7 +589,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7g658eu0006nl9zz3ecll5e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7g7g0y00006ta9zwwh4yzrl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -711,7 +711,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7g658ed0004nl9zgoyob9bz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7g7g0xs0004ta9znpdgn15l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -810,7 +810,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7g658dr0001nl9zsn0o19gu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7g7g0xi0002ta9z9u3a2mbg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -921,6 +921,9 @@
 </li>
 </ol>
 <ul>
+<li><p><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank" rel="noopener">Merge k Sorted Lists</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeKLists</span><span class="params">(ListNode[] lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lists==<span class="keyword">null</span>||lists.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    Queue&lt;ListNode&gt; queue= <span class="keyword">new</span> PriorityQueue&lt;ListNode&gt;(lists.length, (a, b) -&gt; a.val -b.val);</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode head=dummy;</span><br><span class="line">    <span class="keyword">for</span> (ListNode node:lists)</span><br><span class="line">        <span class="keyword">if</span> (node!=<span class="keyword">null</span>) queue.add(node);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty())&#123;</span><br><span class="line">        head.next=queue.poll();</span><br><span class="line">        head=head.next;</span><br><span class="line">        <span class="keyword">if</span> (head.next!=<span class="keyword">null</span>) queue.add(head.next);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p><a href="https://leetcode.com/problems/meeting-rooms-ii/" target="_blank" rel="noopener">meeting-rooms-ii</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...]</span></span><br><span class="line"><span class="comment">//find the minimum number of conference rooms required.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minMeetingRooms</span><span class="params">(Interval[] intervals)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (intervals == <span class="keyword">null</span> || intervals.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    Arrays.sort(intervals, (a, b) -&gt; a.start == b.start ? a.end - b.end : a.start - b.start);</span><br><span class="line">    PriorityQueue&lt;Integer&gt; pq= <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; intervals.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pq.isEmpty() &amp;&amp; pq.peek() &lt;= intervals[i].start) pq.poll();</span><br><span class="line">        pq.offer(intervals[i].end);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pq.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -1041,7 +1044,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7g658ex0007nl9zxybnuqcm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7g7g0y10007ta9ztfa7sqfv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1099,7 +1102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7g658dt0002nl9zagb6tbh4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7g7g0x90001ta9zvf6k0liz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1172,7 +1175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7g658e50003nl9z2w2le9cb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7g7g0xj0003ta9zmmn8bv7f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1299,7 +1302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7g658ee0005nl9zm1ybz4ww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7g7g0xt0005ta9zh5qnaes9" class="article-share-link">Share</a>
       
       
     </footer>

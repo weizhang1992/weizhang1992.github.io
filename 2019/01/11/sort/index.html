@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-06T03:41:48.000Z">
+<meta property="og:updated_time" content="2020-03-06T13:18:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sort">
 <meta name="twitter:description" content="Summary bubble sort: know it select sort: know it insert sort: understand it merge sort: implement it quick sort: implement it quick select: implement it heap sort: implement it external sort: know it">
@@ -165,6 +165,9 @@
 </li>
 </ol>
 <ul>
+<li><p><a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank" rel="noopener">Merge k Sorted Lists</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">mergeKLists</span><span class="params">(ListNode[] lists)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (lists==<span class="keyword">null</span>||lists.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    Queue&lt;ListNode&gt; queue= <span class="keyword">new</span> PriorityQueue&lt;ListNode&gt;(lists.length, (a, b) -&gt; a.val -b.val);</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode head=dummy;</span><br><span class="line">    <span class="keyword">for</span> (ListNode node:lists)</span><br><span class="line">        <span class="keyword">if</span> (node!=<span class="keyword">null</span>) queue.add(node);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty())&#123;</span><br><span class="line">        head.next=queue.poll();</span><br><span class="line">        head=head.next;</span><br><span class="line">        <span class="keyword">if</span> (head.next!=<span class="keyword">null</span>) queue.add(head.next);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p><a href="https://leetcode.com/problems/meeting-rooms-ii/" target="_blank" rel="noopener">meeting-rooms-ii</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...]</span></span><br><span class="line"><span class="comment">//find the minimum number of conference rooms required.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minMeetingRooms</span><span class="params">(Interval[] intervals)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (intervals == <span class="keyword">null</span> || intervals.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    Arrays.sort(intervals, (a, b) -&gt; a.start == b.start ? a.end - b.end : a.start - b.start);</span><br><span class="line">    PriorityQueue&lt;Integer&gt; pq= <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; intervals.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!pq.isEmpty() &amp;&amp; pq.peek() &lt;= intervals[i].start) pq.poll();</span><br><span class="line">        pq.offer(intervals[i].end);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pq.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -285,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7g658ex0007nl9zxybnuqcm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7g7g0y10007ta9ztfa7sqfv" class="article-share-link">Share</a>
       
       
     </footer>
