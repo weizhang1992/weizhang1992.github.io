@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7h3q6ij0000cf9ztflvkjg3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7hqa8sw0000ri9zyzkstqbn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,7 +238,7 @@
 <li><p>undirected graph: dfs with <strong>visited[] and parent</strong> check</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CycleDetectionInUndirectedGraph</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; graph, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span>[] visit = <span class="keyword">new</span> <span class="keyword">boolean</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visit[i]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (containsCycle(i, visit, graph)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">containsCycle</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">boolean</span>[] visit, List&lt;List&lt;Integer&gt;&gt; graph)</span> </span>&#123;</span><br><span class="line">        visit[i] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> node : graph.get(i)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!visit[node]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (containsCycle(node, visit, graph)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (node != i) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>directed graph:<br>  cycle-detection: <a href="http://www.geeksforgeeks.org/detect-cycle-in-a-graph/" target="_blank" rel="noopener">DFS, white, grey, black</a></p>
+<li><p>directed graph:<br>  cycle-detection: <a href="http://www.geeksforgeeks.org/detect-cycle-in-a-graph/" target="_blank" rel="noopener">DFS, white, grey, black</a>, topological sort</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CycleDetectionInDirectedGraph</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; graph, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//o represent white, 1 represent grey, 2 represent black</span></span><br><span class="line">        <span class="keyword">int</span>[] nodeColors = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nodeColors[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (containsCycle(i, nodeColors, graph)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">containsCycle</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span>[] nodeColors, List&lt;List&lt;Integer&gt;&gt; graph)</span> </span>&#123;</span><br><span class="line">        nodeColors[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> node : graph.get(i)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nodeColors[node] == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nodeColors[node] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (containsCycle(node, nodeColors, graph)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        nodeColors[i] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7h3q6jz0008cf9z83nw6286" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7hqa8u30008ri9z2gqwnxwo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -594,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7h3q6jr0006cf9zakpi2px4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7hqa8tx0006ri9z8louimfi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -716,7 +716,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7h3q6j90004cf9zj7ejoppa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7hqa8tj0004ri9zx5hvzxyn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -815,7 +815,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7h3q6iw0002cf9za9fohf7j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7hqa8ta0002ri9z5gqehvks" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1057,7 +1057,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7h3q6jw0007cf9zij0598y8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7hqa8u10007ri9ztgyg327z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1115,7 +1115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7h3q6in0001cf9z7z1uvves" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7hqa8t00001ri9zikdddidu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1188,7 +1188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7h3q6ix0003cf9zwkrssj7w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7hqa8tb0003ri9ztlpu26xa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1315,7 +1315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7h3q6ja0005cf9zejeevoln" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7hqa8ts0005ri9z1ff52y7k" class="article-share-link">Share</a>
       
       
     </footer>
