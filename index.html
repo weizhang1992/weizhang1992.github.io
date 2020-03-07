@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7gsktda0000o69zoooue47e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7h3q6ij0000cf9ztflvkjg3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7gskte80008o69zha8ig3e4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7h3q6jz0008cf9z83nw6286" class="article-share-link">Share</a>
       
       
     </footer>
@@ -594,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7gskte40006o69zls2tigso" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7h3q6jr0006cf9zakpi2px4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -716,7 +716,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7gsktdx0004o69zy1lhoqq7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7h3q6j90004cf9zj7ejoppa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -815,7 +815,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7gsktdn0002o69z0tn8a7kb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7h3q6iw0002cf9za9fohf7j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -918,7 +918,8 @@
 <li><p>difference with TreeSet, TreeMap</p>
 <ul>
 <li>heap not sort all element, but TreeSet does</li>
-<li>heap allow duplicate, but TreeSet does(TreeSet use compareTo() check equals, be careful)</li>
+<li>heap allow duplicate, but TreeSet does(TreeSet use compareTo() check equals, be careful)<br>*<a href="https://leetcode.com/problems/sliding-window-median/submissions/" target="_blank" rel="noopener">Sliding Window Median</a><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">double</span>[] medianSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">    Comparator&lt;Integer&gt; comparator = (a, b) -&gt; nums[a] != nums[b] ? Integer.compare(nums[a], nums[b]) : a - b;</span><br><span class="line">    TreeSet&lt;Integer&gt; left = <span class="keyword">new</span> TreeSet&lt;&gt;(comparator.reversed());</span><br><span class="line">    TreeSet&lt;Integer&gt; right = <span class="keyword">new</span> TreeSet&lt;&gt;(comparator);</span><br><span class="line">    <span class="keyword">double</span>[] result = <span class="keyword">new</span> <span class="keyword">double</span>[nums.length - k + <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) left.add(i);</span><br><span class="line">    balance(left, right); </span><br><span class="line">    result[<span class="number">0</span>] = getMedian(left, right, nums, k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = k, r = <span class="number">1</span>; i &lt; nums.length; i++, r++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!left.remove(i - k)) right.remove(i - k);</span><br><span class="line">        right.add(i); </span><br><span class="line">        left.add(right.pollFirst());</span><br><span class="line">        balance(left, right); </span><br><span class="line">        result[r] = getMedian(left, right, nums, k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">getMedian</span><span class="params">(TreeSet&lt;Integer&gt; left, TreeSet&lt;Integer&gt; right, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (k % <span class="number">2</span> == <span class="number">0</span>) ? </span><br><span class="line">        ((<span class="keyword">double</span>) nums[left.first()] + nums[right.first()]) / <span class="number">2</span> :</span><br><span class="line">        (<span class="keyword">double</span>) nums[right.first()];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">balance</span><span class="params">(TreeSet&lt;Integer&gt; left, TreeSet&lt;Integer&gt; right)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (left.size() &gt; right.size()) right.add(left.pollFirst());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 <li><p>heapify implementation: think about why build heap is O(n)?</p>
@@ -1056,7 +1057,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7gskte70007o69zlwik51nx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7h3q6jw0007cf9zij0598y8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1114,7 +1115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7gsktde0001o69zunfykhzi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7h3q6in0001cf9z7z1uvves" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1187,7 +1188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7gsktdo0003o69zz9ytsoek" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7h3q6ix0003cf9zwkrssj7w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1314,7 +1315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7gsktdy0005o69zh22fty12" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7h3q6ja0005cf9zejeevoln" class="article-share-link">Share</a>
       
       
     </footer>
