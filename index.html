@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7i3rkdl00001t9zm4bv6jpw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7i4u9mr00002x9znz8qkb8g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -376,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7i3rkex00081t9zbcoos5zi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7i4u9nq00082x9z0xy7904y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -491,10 +491,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    visit(root);</span><br><span class="line">    preOrder(root.left);</span><br><span class="line">    preOrder(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>iterative: </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// An iterative process to print preorder traversal of Binary tree</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">iterativePreorder</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    Deque&lt;Node&gt; nodeStack = <span class="keyword">new</span> LinkedList&lt;Node&gt;();</span><br><span class="line">    nodeStack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!nodeStack.isEmpty()) &#123;</span><br><span class="line">        Node mynode = nodeStack.peekFirst();</span><br><span class="line">        System.out.print(mynode.data + <span class="string">" "</span>);</span><br><span class="line">        nodeStack.pollFirst();</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> (mynode.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            nodeStack.addFirst(mynode.right);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mynode.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            nodeStack.addFirst(mynode.left);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// An iterative process to print preorder traversal of Binary tree</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">iterativePreorder</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    Deque&lt;Node&gt; nodeStack = <span class="keyword">new</span> LinkedList&lt;Node&gt;();</span><br><span class="line">    nodeStack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!nodeStack.isEmpty()) &#123;</span><br><span class="line">        Node mynode = nodeStack.peekFirst();</span><br><span class="line">        System.out.print(mynode.data + <span class="string">" "</span>);</span><br><span class="line">        nodeStack.pollFirst();</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> (mynode.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            nodeStack.addFirst(mynode.right);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (mynode.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            nodeStack.addFirst(mynode.left);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">[Binary Tree Maximum Path Sum](https:<span class="comment">//leetcode.com/problems/binary-tree-maximum-path-sum/)</span></span><br><span class="line">```java</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxPathSum</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        maxPathSumDown(root);</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">maxPathSumDown</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = Math.max(<span class="number">0</span>, maxPathSumDown(root.left));</span><br><span class="line">        <span class="keyword">int</span> right = Math.max(<span class="number">0</span>, maxPathSumDown(root.right));</span><br><span class="line">        max = Math.max(max,left + root.val + right);</span><br><span class="line">        <span class="keyword">return</span> root.val + Math.max(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><a href="https://leetcode.com/problems/diameter-of-binary-tree/" target="_blank" rel="noopener">Diameter of Binary Tree</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">diameterOfBinaryTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        depth(root);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">depth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> leftDepth = depth(root.left);</span><br><span class="line">        <span class="keyword">int</span> rightDepth = depth(root.right);</span><br><span class="line">        res = Math.max(res, leftDepth + rightDepth);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + Math.max(leftDepth, rightDepth);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)</span><br><span class="line">```java</span><br><span class="line">class Solution &#123;</span><br><span class="line">    int res = 0;</span><br><span class="line">    public int diameterOfBinaryTree(TreeNode root) &#123;</span><br><span class="line">        if (root == null) return 0;</span><br><span class="line">        depth(root);</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    private int depth(TreeNode root) &#123;</span><br><span class="line">        if (root == null) return 0;</span><br><span class="line">        int leftDepth = depth(root.left);</span><br><span class="line">        int rightDepth = depth(root.right);</span><br><span class="line">        res = Math.max(res, leftDepth + rightDepth);</span><br><span class="line">        return 1 + Math.max(leftDepth, rightDepth);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/" target="_blank" rel="noopener">Lowest Common Ancestor of a Binary Tree</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span> || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">    TreeNode leftRes = lowestCommonAncestor(root.left, p, q);</span><br><span class="line">    TreeNode rightRes = lowestCommonAncestor(root.right, p, q);</span><br><span class="line">    <span class="keyword">if</span> (leftRes != <span class="keyword">null</span> &amp;&amp; rightRes != <span class="keyword">null</span>) <span class="keyword">return</span> root;</span><br><span class="line">    <span class="keyword">return</span> leftRes == <span class="keyword">null</span> ? rightRes : leftRes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>inOrder: in-order traversal retrieves data in sorted order for bst</li>
@@ -594,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7i3rker00061t9z8d8ji62p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7i4u9nn00062x9zpqtdql1d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -716,7 +716,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7i3rkea00041t9zr48to0nu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7i4u9ne00042x9z6lz7iyef" class="article-share-link">Share</a>
       
       
     </footer>
@@ -815,7 +815,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7i3rke100021t9z3xg75924" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7i4u9n400022x9zkcgadokm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1059,7 +1059,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7i3rkeu00071t9z5waziyl7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7i4u9no00072x9zge8qe80m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1117,7 +1117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7i3rkdq00011t9zgos9xxde" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7i4u9mv00012x9zr0tb2rnu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1190,7 +1190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7i3rke200031t9z2n1thbkb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7i4u9n500032x9zm63uymcy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1317,7 +1317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7i3rkeb00051t9zklb1oyxj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7i4u9ng00052x9zumjbvh95" class="article-share-link">Share</a>
       
       
     </footer>
