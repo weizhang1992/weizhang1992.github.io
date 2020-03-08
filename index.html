@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7jimvvp0000o59zipvmywcp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7jo9ckz0000xr9zpynrij6s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,6 +215,9 @@
 <li>time complexity: O(V + E)</li>
 <li>use case: Min distance(only deal with weight = 1), </li>
 <li><strong>multi-end bfs</strong> to solve </li>
+<li><p>we can use bfs to check <a href="https://leetcode.com/problems/is-graph-bipartite/" target="_blank" rel="noopener">Is Graph Bipartite</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBipartite</span><span class="params">(<span class="keyword">int</span>[][] graph)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 0(not meet), 1(black), 2(white)</span></span><br><span class="line">    <span class="keyword">int</span>[] visited = <span class="keyword">new</span> <span class="keyword">int</span>[graph.length];</span><br><span class="line">    Queue&lt;Integer&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; graph.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (graph[i].length != <span class="number">0</span> &amp;&amp; visited[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            visited[i] = <span class="number">1</span>;</span><br><span class="line">            q.offer(i);</span><br><span class="line">            <span class="keyword">while</span>(!q.isEmpty()) &#123;</span><br><span class="line">                <span class="keyword">int</span> current = q.poll();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> c: graph[current]) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (visited[c] == <span class="number">0</span>) &#123;</span><br><span class="line">                        visited[c] = (visited[current] == <span class="number">1</span>) ? <span class="number">2</span> : <span class="number">1</span>;</span><br><span class="line">                        q.offer(c);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span> (visited[c] == visited[current]) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;                        </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p><a href="https://leetcode.com/problems/walls-and-gates/" target="_blank" rel="noopener">Walls and Gates</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//multi-end bfs</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">wallsAndGates</span><span class="params">(<span class="keyword">int</span>[][] rooms)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] d = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">if</span> (rooms.length == <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> m = rooms.length, n = rooms[<span class="number">0</span>].length;</span><br><span class="line">    Deque&lt;Integer&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            <span class="keyword">if</span> (rooms[i][j] == <span class="number">0</span>) queue.offer(i * n + j); <span class="comment">// Put gates in the queue</span></span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = queue.poll();</span><br><span class="line">        <span class="keyword">int</span> i = x / n, j = x % n;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">4</span>; ++k) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = i + d[k], q = j + d[k + <span class="number">1</span>]; <span class="comment">// empty room</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> &lt;= p &amp;&amp; p &lt; m &amp;&amp; <span class="number">0</span> &lt;= q &amp;&amp; q &lt; n &amp;&amp; rooms[p][q] == Integer.MAX_VALUE) &#123;</span><br><span class="line">                rooms[p][q] = rooms[i][j] + <span class="number">1</span>;</span><br><span class="line">                queue.offer(p * n + q);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -376,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7jimvwl0008o59z5qxo9k5q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7jo9clw0008xr9z7jglu4xo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -596,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7jimvwi0006o59z6muaoc6g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7jo9clt0006xr9z798e1qpu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -718,7 +721,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7jimvw90004o59zaoo0sjvg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7jo9clm0004xr9zwemz2512" class="article-share-link">Share</a>
       
       
     </footer>
@@ -817,7 +820,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7jimvw50003o59zynkfjtkb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7jo9clc0003xr9z48j2k6pj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1060,7 +1063,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7jimvwk0007o59z1majk12s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7jo9clv0007xr9zo2q5kyzo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1121,7 +1124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7jimvvt0001o59zcglp2wyg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7jo9cl30001xr9zpytcp45y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1194,7 +1197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7jimvw40002o59z5rrpr8i0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7jo9clb0002xr9zg6ua5vpm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1321,7 +1324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7jimvwa0005o59zc8uqj26i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7jo9cln0005xr9z6hlb8b5k" class="article-share-link">Share</a>
       
       
     </footer>
