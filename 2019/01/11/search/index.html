@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="summary binary search hash table search bfs search dfs search binary search tree range search string search  Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [000">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-08T17:03:20.000Z">
+<meta property="og:updated_time" content="2020-03-08T18:45:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Search">
 <meta name="twitter:description" content="summary binary search hash table search bfs search dfs search binary search tree range search string search  Binary Searchused to reduce O(n) time complexity to O(logn) for ordered, part ordered, [000">
@@ -147,6 +147,7 @@
 <li>implementation</li>
 <li>questions:</li>
 <li><a href="https://leetcode.com/problems/design-hashmap/" target="_blank" rel="noopener">design-hashmap</a></li>
+<li><a href="https://leetcode.com/problems/sparse-matrix-multiplication/" target="_blank" rel="noopener">Sparse Matrix Multiplication</a></li>
 <li><p><a href="https://leetcode.com/problems/subarray-sum-equals-k/" target="_blank" rel="noopener">Subarray Sum Equals K</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//follow up是输出这个subsequence的区间</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">subarraySum</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; sumToCountMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    sumToCountMap.put(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>, res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        sum += nums[i];</span><br><span class="line">        res += sumToCountMap.getOrDefault(sum - k, <span class="number">0</span>);</span><br><span class="line">        sumToCountMap.put(sum, sumToCountMap.getOrDefault(sum, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -273,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7jbsygu0006gr9zd6x8fx5l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7jimvwi0006o59z6muaoc6g" class="article-share-link">Share</a>
       
       
     </footer>
