@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck7jvc0pd0000719zmox0htza" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/crack-interview/" data-id="ck81p17zd0000x19zepxwlsjj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck7jvc0qv0008719za1tl3xcz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/graph/" data-id="ck81p180t0008x19zcgscxjj7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -602,7 +602,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck7jvc0qp0006719zciqo7c8t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/search/" data-id="ck81p180m0006x19zvsmthyf2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -724,7 +724,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck7jvc0qb0004719z1bo9k6ym" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/dp/" data-id="ck81p18000004x19zwtj8p6il" class="article-share-link">Share</a>
       
       
     </footer>
@@ -823,7 +823,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck7jvc0py0002719zfyulajiv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/cpb/" data-id="ck81p17zp0002x19zgmxfcs8e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -869,7 +869,7 @@
 <li>radix sort: understand it</li>
 <li>bucket sort: understand it</li>
 <li>practive questions<ul>
-<li><strong>two point</strong> related question</li>
+<li><strong>two point</strong>/sliding window related question</li>
 <li>other sort related question</li>
 <li>string related question</li>
 <li><strong>line sweep</strong> problem</li>
@@ -995,7 +995,7 @@
 </ul>
 <p>*<a href="https://leetcode.com/problems/minimum-window-substring/" target="_blank" rel="noopener">Minimum Window Substring</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s == <span class="keyword">null</span> || s.length() &lt; t.length() || s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    Map&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character,Integer&gt;();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">char</span> c : t.toCharArray()) map.put(c, map.getOrDefault(c, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, minLeft = <span class="number">0</span>, minLen = s.length()+<span class="number">1</span>, count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> right = <span class="number">0</span>; right &lt; s.length(); right++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map.containsKey(s.charAt(right)))&#123;</span><br><span class="line">            map.put(s.charAt(right),map.get(s.charAt(right))-<span class="number">1</span>);</span><br><span class="line">            <span class="comment">//this can fall below 0</span></span><br><span class="line">            <span class="keyword">if</span>(map.get(s.charAt(right)) &gt;= <span class="number">0</span>) count ++;</span><br><span class="line">            <span class="keyword">while</span>(count == t.length())&#123;</span><br><span class="line">                <span class="keyword">if</span>(right-left+<span class="number">1</span> &lt; minLen)&#123;</span><br><span class="line">                    minLeft = left;</span><br><span class="line">                    minLen = right-left+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(map.containsKey(s.charAt(left)))&#123;</span><br><span class="line">                    map.put(s.charAt(left),map.get(s.charAt(left))+<span class="number">1</span>);</span><br><span class="line">                    <span class="comment">//only positive can make difference</span></span><br><span class="line">                    <span class="keyword">if</span>(map.get(s.charAt(left)) &gt; <span class="number">0</span>) count --;</span><br><span class="line">                &#125;</span><br><span class="line">                left ++ ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> minLen&gt;s.length() ? <span class="string">""</span> : s.substring(minLeft,minLeft+minLen);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>Three Sum Smaller<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Given an array of n integers nums and a target, </span></span><br><span class="line"><span class="comment">//find the number of index triplets i, j, k with 0 &lt;= i &lt; j &lt; k &lt; n that </span></span><br><span class="line"><span class="comment">//satisfy the condition nums[i] + nums[j] + nums[k] &lt; target.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">threeSumSmaller</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len-<span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> left = i+<span class="number">1</span>, right = len-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[left] + nums[right] &lt; target) &#123;</span><br><span class="line">                count += right-left;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>Three Sum Smaller/3 sum closest<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Given an array of n integers nums and a target, </span></span><br><span class="line"><span class="comment">//find the number of index triplets i, j, k with 0 &lt;= i &lt; j &lt; k &lt; n that </span></span><br><span class="line"><span class="comment">//satisfy the condition nums[i] + nums[j] + nums[k] &lt; target.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">threeSumSmaller</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len-<span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> left = i+<span class="number">1</span>, right = len-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[left] + nums[right] &lt; target) &#123;</span><br><span class="line">                count += right-left;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="sort-related-questions"><a href="#sort-related-questions" class="headerlink" title="sort related questions"></a>sort related questions</h3><ul>
@@ -1066,7 +1066,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck7jvc0qs0007719zx7wat6ll" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/11/sort/" data-id="ck81p180q0007x19z6mixyl7q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1127,7 +1127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck7jvc0po0001719zk96hcto6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-stack-related-question/" data-id="ck81p17zi0001x19z1in02mhg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1200,7 +1200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck7jvc0pz0003719zaw9phykk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/05/summary-for-Design-Data-Structure/" data-id="ck81p17zq0003x19z3l4et8u7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1327,7 +1327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck7jvc0qd0005719zdal8ulh8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/11/02/summary-for-tree/" data-id="ck81p18070005x19z8cfeg7pc" class="article-share-link">Share</a>
       
       
     </footer>
